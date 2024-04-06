@@ -1,4 +1,4 @@
-import { useColorScheme } from "@/components/useColorScheme";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { config } from "@gluestack-ui/config";
 import { GluestackUIProvider } from "@gluestack-ui/themed";
@@ -10,6 +10,7 @@ import {
 import { useFonts } from "expo-font";
 import { Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { Provider as JotaiProvider } from "jotai";
 import { useEffect, useState } from "react";
 
 export {
@@ -62,7 +63,9 @@ function RootLayoutNav() {
   return (
     <GluestackUIProvider config={config}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Slot />
+        <JotaiProvider>
+          <Slot />
+        </JotaiProvider>
       </ThemeProvider>
     </GluestackUIProvider>
   );
