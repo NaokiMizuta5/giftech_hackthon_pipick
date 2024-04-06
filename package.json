@@ -7,12 +7,18 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "biome:check": "biome check --apply ./src",
+    "biome": "biome check --apply-unsafe ./src",
+    "lefthook:install": "lefthook install",
+    "lefthook:uninstall": "lefthook uninstall",
+    "lefthook:reinstall": "bun run lefthook:uninstall && bun run lefthook:install"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@biomejs/biome": "^1.6.4",
     "@expo/vector-icons": "^14.0.0",
     "@gluestack-style/react": "latest",
     "@gluestack-ui/config": "latest",
