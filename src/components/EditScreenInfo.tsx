@@ -1,7 +1,5 @@
-import React from 'react';
-
-import { ExternalLink } from './ExternalLink';
-import { Text, Box } from '@gluestack-ui/themed';
+import { Box, Text } from "@gluestack-ui/themed";
+import { ExternalLink } from "./ExternalLink";
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
