@@ -10,9 +10,8 @@
     "test": "jest --watchAll",
     "biome:check": "biome check --apply ./src",
     "biome": "biome check --apply-unsafe ./src",
-    "lefthook:install": "lefthook install",
-    "lefthook:uninstall": "lefthook uninstall",
-    "lefthook:reinstall": "bun run lefthook:uninstall && bun run lefthook:install"
+    "lefthook:install": "bunx lefthook install",
+    "lefthook:uninstall": "bunx lefthook uninstall"
   },
   "jest": {
     "preset": "jest-expo"
