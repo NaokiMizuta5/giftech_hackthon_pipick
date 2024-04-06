@@ -1,13 +1,13 @@
-import { useCounter } from "../../hooks";
 import {
-  Text,
+  Box,
   Button,
   ButtonText,
   Center,
-  Box,
   HStack,
+  Text,
   VStack,
 } from "@gluestack-ui/themed";
+import { useCounter } from "../../hooks";
 
 export function Counter() {
   const { count, doubleCount, incrementCount, decrementCount } = useCounter();
@@ -26,7 +26,7 @@ export function Counter() {
           <Button onPress={decrementCount}>
             <ButtonText>count--</ButtonText>
           </Button>
-          
+
           <Button onPress={incrementCount}>
             <ButtonText>count++</ButtonText>
           </Button>
