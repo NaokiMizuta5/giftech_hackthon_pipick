@@ -15,6 +15,9 @@
       "@/components/*": [
         "./src/components/*"
       ],
+      "@/db": [
+        "./src/db"
+      ],
       "@/features/*": [
         "./src/features/*"
       ],

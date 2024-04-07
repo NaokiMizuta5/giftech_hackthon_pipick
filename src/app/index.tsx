@@ -1,6 +1,6 @@
 import { Box, ScrollView } from "@gluestack-ui/themed";
-import { Counter,  } from "../features/counter";
-import { DBHealthCheck } from "../db/components";
+import { Counter } from "../features/counter";
+import { DBHealthCheck } from "@/db/components";
 
 export default function Home() {
   return (
