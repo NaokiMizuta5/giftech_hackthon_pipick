@@ -82,9 +82,10 @@ Scan a QR Code with your iPhone or Android device.
 │   ├── DBHealthCheck
 │   │   └── index.tsx
 │   └── index.ts
-└── hooks
-    ├── index.ts
-    └── useHealthCheck.ts
+├── hooks
+└── utils
+    ├── healthCheck.ts
+    └── index.ts
 ```
 
 DB関係のファイル群。
