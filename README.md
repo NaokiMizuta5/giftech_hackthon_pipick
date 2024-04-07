@@ -5,7 +5,7 @@
 ### Install Bun
 
 ```bash
-curl hhtps://bun.sh/install | bash
+curl https://bun.sh/install | bash
 ```
 
 ```bash
@@ -35,5 +35,15 @@ bun run lefthook:install
 ```bash
 bun run start
 ```
+
+
+If encountering an error connecting to the Expo server from your phone while using WSL, 
+you can resolve it by executing the following command:
+
+```bash
+bun run start:wsl
+```
+
+@see https://stackoverflow.com/questions/58777404/how-can-i-connect-my-phone-to-expo-when-using-wsl2-to-run-it
 
 Scan a QR Code with your iPhone or Android device.
