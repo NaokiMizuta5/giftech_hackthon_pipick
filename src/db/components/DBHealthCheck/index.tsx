@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { Center, Text } from "@gluestack-ui/themed";
-import { healthCheck } from "../../hooks";
+import { healthCheck } from "../../utils";
 
 /**
  * Component just to check if the database is healthy
