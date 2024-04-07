@@ -13,6 +13,7 @@ export const healthCheck = async (): CanConnectToDB => {
         console.error('Error in health check');
         throw new Error('something went wrong with local DB');
     }
+    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
     console.log('DB health check passed');
     return true;
 };
@@ -29,6 +30,6 @@ const canConnectToDB = async (): CanConnectToDB => {
     return true;
 }
 
-const isSameObj = (obj1: any, obj2: any) => {
+const isSameObj = (obj1: object, obj2: object) => {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
 }

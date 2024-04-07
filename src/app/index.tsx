@@ -1,5 +1,6 @@
 import { Box, ScrollView } from "@gluestack-ui/themed";
-import { Counter } from "../features/counter";
+import { Counter,  } from "../features/counter";
+import { DBHealthCheck } from "../db/components";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
         style={{ height: "100%" }}
         contentContainerStyle={{ flexGrow: 1 }}
       />
-      <Counter />
+      {/* <Counter /> */}
+      <DBHealthCheck />
     </Box>
   );
 }
