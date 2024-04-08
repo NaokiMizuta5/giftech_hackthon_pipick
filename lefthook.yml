@@ -15,8 +15,8 @@
 pre-commit:
 #   parallel: true
   commands:
-  check:
-    run: bunx biome check --apply-unsafe --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+    check:
+      run: bunx biome check --apply-unsafe --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
 #     eslint:
 #       glob: "*.{js,ts,jsx,tsx}"
 #       run: yarn eslint {staged_files}
