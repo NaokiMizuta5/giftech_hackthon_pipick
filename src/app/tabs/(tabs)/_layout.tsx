@@ -1,4 +1,4 @@
-import { useClientOnlyValue } from "@/hooks/useClientOnlyValue";
+import { useClientOnlyValue } from "@/hooks";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 import type React from "react";

@@ -1,7 +1,7 @@
 import { Box, Text } from "@gluestack-ui/themed";
-import { ExternalLink } from "./ExternalLink";
+import { ExternalLink } from "../ExternalLink";
 
-export default function EditScreenInfo({ path }: { path: string }) {
+export function EditScreenInfo({ path }: { path: string }) {
   return (
     <Box>
       <Box alignItems="center" marginHorizontal="$4">

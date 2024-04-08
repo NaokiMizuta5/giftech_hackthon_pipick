@@ -10,7 +10,8 @@
 			"style": {
 				"noDefaultExport": "off",
 				"useNamingConvention": "off",
-				"useFilenamingConvention": "off"
+				"useFilenamingConvention": "off",
+				"useBlockStatements": "off"
 			},
 			"nursery": {
 				"noNodejsModules": "off"
