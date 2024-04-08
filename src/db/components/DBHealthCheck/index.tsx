@@ -20,7 +20,7 @@ export function DBHealthCheck() {
 
   // health check
   return (
-    <Center height="$full" width="$full">
+    <Center>
       <Text color="$white">{isDbHealth ? message : "checking..."}</Text>
     </Center>
   );
