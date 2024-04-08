@@ -1,8 +1,8 @@
-import { useAtom, useAtomValue } from "jotai";
-import { countAtom, doubleCounterAtom } from "../atom";
+import { useState } from "react";
 
 export const useCounter = () => {
-  const [count, setCount] = useAtom(countAtom);
+  const [count, setCount] = useState(0);
+  const doubleCount = count * 2;
 
   const incrementCount = () => {
     return setCount((prev) => prev + 1);
@@ -11,8 +11,6 @@ export const useCounter = () => {
   const decrementCount = () => {
     return setCount((prev) => prev - 1);
   };
-
-  const doubleCount = useAtomValue(doubleCounterAtom);
 
   return {
     count,
