@@ -13,7 +13,8 @@
     "biome": "biome check --apply-unsafe ./src",
     "lefthook:install": "bunx lefthook install",
     "lefthook:uninstall": "bunx lefthook uninstall",
-    "lefthook:reinstall": "bun run lefthook:uninstall && bun run lefthook:install"
+    "lefthook:reinstall": "bun run lefthook:uninstall && bun run lefthook:install",
+    "migrate": "bunx drizzle-kit generate:sqlite"
   },
   "jest": {
     "preset": "jest-expo"
