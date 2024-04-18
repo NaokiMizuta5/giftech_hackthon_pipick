@@ -1,16 +1,16 @@
+import { isSameObj } from "@/utils";
 import * as SQLite from "expo-sqlite/next";
-
-type CanConnectToDB = Promise<boolean>;
+import type { CanConnectToDB } from "../types";
 
 /**
  * Check if the local DB is working as expected
  * @returns {CanConnectToDB} - true if the DB is working as expected
  * @throws {Error} - if the DB is not working as expected
  */
-export const healthCheck = async (): CanConnectToDB => {
+const healthCheck = async (): CanConnectToDB => {
   const worksAsExpected = await canConnectToDB();
   if (!worksAsExpected) {
-    console.error("Error in health check");
+    console.error("Error in DB health check");
     throw new Error("something went wrong with local DB");
   }
   // biome-ignore lint/suspicious/noConsoleLog: <explanation>
@@ -25,11 +25,7 @@ const canConnectToDB = async (): CanConnectToDB => {
   await SQLite.deleteDatabaseAsync("health-check");
 
   const expected = [{ 1: 1 }];
-  const worksAsExpected = isSameObj(result, expected);
-  if (!worksAsExpected) return false;
-  return true;
+  return isSameObj(result, expected);
 };
 
-const isSameObj = (obj1: object, obj2: object) => {
-  return JSON.stringify(obj1) === JSON.stringify(obj2);
-};
+export default healthCheck;
