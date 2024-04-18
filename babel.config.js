@@ -1,4 +1,4 @@
-const path = require("node:path");
+const _path = require("node:path");
 module.exports = (api) => {
   api.cache(true);
   return {
