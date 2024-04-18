@@ -36,20 +36,20 @@ class RestaurantCollector implements ICollector {
 
   async collect(): Promise<Suggestion[]> {
     // TODO: chose what type of restaurant to fetchByGenre
-    const italianSuggestion = this.fetchByGenre(this.genreIds.italian);
-    const frenchSuggestion = this.fetchByGenre(this.genreIds.french);
-    const ramenSuggestion = this.fetchByGenre(this.genreIds.ramen);
-    const currySuggestion = this.fetchByGenre(this.genreIds.curry);
-    const sushiSuggestion = this.fetchByGenre(this.genreIds.sushi);
+    const italianSuggestions = this.fetchByGenre(this.genreIds.italian);
+    const frenchSuggestions = this.fetchByGenre(this.genreIds.french);
+    const ramenSuggestions = this.fetchByGenre(this.genreIds.ramen);
+    const currySuggestions = this.fetchByGenre(this.genreIds.curry);
+    const sushiSuggestions = this.fetchByGenre(this.genreIds.sushi);
 
-    const suggestions = await Promise.all([
-      italianSuggestion,
-      frenchSuggestion,
-      ramenSuggestion,
-      currySuggestion,
-      sushiSuggestion,
+    const suggestionsArray = await Promise.all([
+      italianSuggestions,
+      frenchSuggestions,
+      ramenSuggestions,
+      currySuggestions,
+      sushiSuggestions,
     ]);
-    suggestions.flat();
+    const suggestions = suggestionsArray.flat();
 
     return suggestions;
   }
