@@ -10,20 +10,40 @@ type Props = PropsWithChildren & {
   color: Color;
   height: GLinearGradientProps["height"];
   width: GLinearGradientProps["width"];
+  borderRadius?: GLinearGradientProps["borderRadius"];
+  borderTopLeftRadius?: GLinearGradientProps["borderTopLeftRadius"];
+  borderTopRightRadius?: GLinearGradientProps["borderTopRightRadius"];
+  borderBottomLeftRadius?: GLinearGradientProps["borderBottomLeftRadius"];
+  borderBottomRightRadius?: GLinearGradientProps["borderBottomRightRadius"];
 };
 
-export function LinearGradient({ color, children, height, width }: Props) {
+export function LinearGradient({
+  color,
+  children,
+  height,
+  width,
+  borderRadius,
+  borderTopLeftRadius,
+  borderTopRightRadius,
+  borderBottomLeftRadius,
+  borderBottomRightRadius,
+}: Props) {
   const themeLinearColor = getThemeLinearColor(color);
 
   return (
     <GLinearGradient
-      height={height}
-      width={width}
-      // @ts-ignore
-      colors={themeLinearColor}
       start={[0, 0] as unknown as DimensionValue}
       end={[1, 0] as unknown as DimensionValue}
       as={ExpoLinearGradient}
+      // @ts-ignore
+      colors={themeLinearColor}
+      height={height}
+      width={width}
+      borderRadius={borderRadius}
+      borderTopLeftRadius={borderTopLeftRadius}
+      borderTopRightRadius={borderTopRightRadius}
+      borderBottomLeftRadius={borderBottomLeftRadius}
+      borderBottomRightRadius={borderBottomRightRadius}
     >
       {children}
     </GLinearGradient>
