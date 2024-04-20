@@ -6,6 +6,7 @@
       "~/*": ["./*"],
       "@/*": ["./src/*"],
       "@/app/*": ["./src/app/*"],
+      "@/atom/*": ["./src/atom/*"],
       "@/components/*": ["./src/components/*"],
       "@/db": ["./src/db"],
       "@/features/*": ["./src/features/*"],
