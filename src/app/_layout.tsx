@@ -12,6 +12,7 @@ import { Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { Provider as JotaiProvider } from "jotai";
 import { useEffect, useState } from "react";
+import { Header } from "../features/header";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -64,6 +65,7 @@ function RootLayoutNav() {
     <GluestackUIProvider config={config}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <JotaiProvider>
+          <Header />
           <Slot />
         </JotaiProvider>
       </ThemeProvider>
