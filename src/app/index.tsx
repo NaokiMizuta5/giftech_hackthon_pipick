@@ -1,12 +1,12 @@
 // import { Counter } from "../features/counter";
-import { useGlobalAtom } from "@/atom/global";
+import { useStartGameAtom } from "@/atom";
 // import { DBHealthCheck } from "@/db/components";
 import { Button, ButtonText, Center, SafeAreaView } from "@gluestack-ui/themed";
 import { router } from "expo-router";
 import { useEffect } from "react";
 
 export default function Splash() {
-  const { isStartedGame, startGame } = useGlobalAtom();
+  const { isStartedGame, startGame } = useStartGameAtom();
 
   useEffect(() => {
     if (isStartedGame) {
