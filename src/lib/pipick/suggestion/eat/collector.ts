@@ -6,7 +6,7 @@ import type { YolpApiResponse } from "../../yolp/types/response";
 // interfaces
 import type { ICollector } from "../common/interfaces/collector";
 
-class RestaurantCollector implements ICollector {
+class Collector implements ICollector {
   private readonly location: Location;
 
   private readonly client: IYolpApiClient;
@@ -58,4 +58,4 @@ class RestaurantCollector implements ICollector {
   }
 }
 
-export default RestaurantCollector;
+export default Collector;

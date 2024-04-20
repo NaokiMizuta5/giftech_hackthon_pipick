@@ -1,5 +1,5 @@
 import { Suggestion } from '../types/suggestion';
 
 export interface ISuggestionGen {
-    generateSuggestions(): Promise<Suggestion[]>;
+    makeSuggestions(): Promise<Suggestion[]>;
 }
