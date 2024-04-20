@@ -5,15 +5,13 @@ import {
 } from "../constants";
 import type { Character, CharacterId } from "../types";
 
-export const charactersInfoAtom = atom<Character[]>(
-  INITIAL_CHARACTERS_INFO_ATOM,
-);
+const charactersInfoAtom = atom<Character[]>(INITIAL_CHARACTERS_INFO_ATOM);
 
-export const currentCharacterIdAtom = atom<CharacterId>(
+const currentCharacterIdAtom = atom<CharacterId>(
   INITIAL_CURRENT_CHARACTER_ID_ATOM,
 );
 
-export const currentCharacterAtom = atom((get) => {
+const currentCharacterAtom = atom((get) => {
   return get(charactersInfoAtom).find((character) => {
     return character.id === get(currentCharacterIdAtom);
   });
