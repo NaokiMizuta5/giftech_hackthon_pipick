@@ -11,15 +11,18 @@ export const INITIAL_MENU_ITEMS_ATOM: InitialMenuItemsAtom = [
     id: "1",
     label: "つくる",
     active: true,
+    color: "pink",
   },
   {
     id: "2",
     label: "あそぶ",
     active: false,
+    color: "blue",
   },
   {
     id: "3",
     label: "たべる",
     active: false,
+    color: "orange",
   },
 ];
