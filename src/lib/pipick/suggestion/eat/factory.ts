@@ -14,7 +14,7 @@ import { Location } from '../../yolp/types/location';
 
 class EatSuggestionGenFactory implements ISuggestionGenFactory<EatSuggestionGen> {
 
-  createSuggestionGen(location: Location): EatSuggestionGen {
+  create(location: Location): EatSuggestionGen {
     const client = new YolpApiClient();
     const factory = new YolpCommandFactory();
     const collector = new Collector(location, client, factory);
