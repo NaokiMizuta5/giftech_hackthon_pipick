@@ -14,7 +14,8 @@
     "lefthook:install": "bunx lefthook install",
     "lefthook:uninstall": "bunx lefthook uninstall",
     "lefthook:reinstall": "bun run lefthook:uninstall && bun run lefthook:install",
-    "migrate": "bunx drizzle-kit generate:sqlite"
+    "migrate": "bunx drizzle-kit generate:sqlite",
+    "generate": "plop"
   },
   "jest": {
     "preset": "jest-expo"
@@ -61,6 +62,7 @@
     "drizzle-kit": "^0.20.14",
     "jest": "^29.2.1",
     "jest-expo": "~50.0.1",
+    "plop": "^4.0.1",
     "react-test-renderer": "18.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.1.3"
