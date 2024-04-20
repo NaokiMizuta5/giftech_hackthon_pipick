@@ -1,0 +1,1 @@
+export { useStartGameAtom } from "./useStartGameAtom";
