@@ -2,13 +2,13 @@
 import type { ICollector } from "../common/interfaces/collector";
 import type { IConverter } from "../common/interfaces/converter";
 import type { IFilters } from "../common/interfaces/filter";
-import type { ISuggestionGen } from "../common/interfaces/suggestion-gen";
+import type { ISuggestionGen } from "../common/interfaces/suggestionGen";
 // types
 import type { Suggestion } from "../common/types/suggestion";
 // functions
 import { shuffle } from "../utils/shuffle";
 
-class RestaurantSuggestionGen implements ISuggestionGen {
+class EatSuggestionGen implements ISuggestionGen {
   private readonly collector: ICollector;
   private readonly converter: IConverter;
   private readonly filters: IFilters;
@@ -21,7 +21,7 @@ class RestaurantSuggestionGen implements ISuggestionGen {
     this.filters = filters;
   }
 
-  async generateSuggestions(): Promise<Suggestion[]> {
+  async makeSuggestions(): Promise<Suggestion[]> {
     const suggestionResponses = await this.collector.collect();
     const suggestions = this.converter.toSuggestion(suggestionResponses);
     const filteredSuggestions = await this.filterSuggestions(suggestions);
@@ -42,4 +42,4 @@ class RestaurantSuggestionGen implements ISuggestionGen {
   }
 }
 
-export default RestaurantSuggestionGen;
+export default EatSuggestionGen;
