@@ -10,8 +10,10 @@ export const useStartGameAtom = () => {
   // const eatSuggestionGenFactory = new EatSuggestionGenFactory();
 
   const generateSuggestedEats = async (_location: Location) => {
-    // const _suggestedEats = await eatSuggestionGenFactory .createSuggestionGen(location);
-    // setSuggestedEats(_suggestedEats);
+    // const factory = new EatSuggestionGenFactory();
+    // const suggestionGen = factory.create(_location);
+    // const suggestions = await suggestionGen.makeSuggestions();
+    // setSuggestedEats(suggestions);
   };
 
   return {
