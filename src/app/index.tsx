@@ -1,26 +1,26 @@
-import { DBHealthCheck } from "@/db/components";
-import { Box, ScrollView, Text, VStack } from "@gluestack-ui/themed";
-import { Counter } from "../features/counter";
+// import { Counter } from "../features/counter";
+import { useGlobalAtom } from "@/atom/global";
+// import { DBHealthCheck } from "@/db/components";
+import { Button, ButtonText, Center, SafeAreaView } from "@gluestack-ui/themed";
+import { router } from "expo-router";
+import { useEffect } from "react";
 
-export default function Home() {
+export default function Splash() {
+  const { isStartedGame, startGame } = useGlobalAtom();
+
+  useEffect(() => {
+    if (isStartedGame) {
+      router.push("/home/");
+    }
+  }, [isStartedGame]);
+
   return (
-    <Box flex={1} backgroundColor="$black" paddingVertical="$8">
-      <ScrollView
-        style={{ height: "100%" }}
-        contentContainerStyle={{ flexGrow: 1 }}
-      >
-        <VStack gap="$8">
-          <DBHealthCheck />
-          <Box>
-            <Text textAlign="center">Counter 1</Text>
-            <Counter />
-          </Box>
-          <Box>
-            <Text textAlign="center">Counter 2</Text>
-            <Counter />
-          </Box>
-        </VStack>
-      </ScrollView>
-    </Box>
+    <SafeAreaView>
+      <Center height="$full">
+        <Button onPress={() => startGame()}>
+          <ButtonText>Start</ButtonText>
+        </Button>
+      </Center>
+    </SafeAreaView>
   );
 }
