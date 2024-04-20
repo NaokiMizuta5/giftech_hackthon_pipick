@@ -41,6 +41,7 @@ export function Header() {
               <HStack gap="$2" alignItems="center">
                 {menuItems.map((item) => (
                   <Button
+                    key={item.id}
                     onPress={() => activateMenu(item.id)}
                     paddingHorizontal="$4"
                     {...(item.active
@@ -53,7 +54,6 @@ export function Header() {
                         })}
                   >
                     <Text
-                      key={item.id}
                       color={item.active ? "$black " : "$white"}
                       fontSize="$sm"
                       fontWeight="$bold"
