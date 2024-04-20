@@ -13,8 +13,8 @@ class RestaurantCollector implements ICollector {
   private readonly factory: IYolpCommandFactory;
   // TODO: design a way to set genreIds
   private readonly genreIds = {
-    // TODO: set correct genreIds
-    // incorrect genreIds are set now @see https://developer.yahoo.co.jp/webapi/map/
+    // TODO: set correct genreIds @see:https://developer.yahoo.co.jp/webapi/map/
+    // incorrect genreIds are set now
     italian: "G001",
     french: "G002",
     ramen: "G004",

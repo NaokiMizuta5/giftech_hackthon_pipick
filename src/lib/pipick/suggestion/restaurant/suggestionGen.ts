@@ -22,8 +22,8 @@ class RestaurantSuggestionGen implements ISuggestionGen {
   }
 
   async generateSuggestions(): Promise<Suggestion[]> {
-    const suggestionsResponses = await this.collector.collect();
-    const suggestions = this.converter.toSuggestion(suggestionsResponses);
+    const suggestionResponses = await this.collector.collect();
+    const suggestions = this.converter.toSuggestion(suggestionResponses);
     const filteredSuggestions = await this.filterSuggestions(suggestions);
     const chosenSuggestions = shuffle(filteredSuggestions).slice(
       0,
@@ -38,8 +38,7 @@ class RestaurantSuggestionGen implements ISuggestionGen {
   ): Promise<Suggestion[]> {
     const neverSeenSuggestions =
       await this.filters.seenSuggestionFilter(suggestions);
-    const filteredSuggestions = neverSeenSuggestions; // Add more filters here
-    return filteredSuggestions;
+    return neverSeenSuggestions;
   }
 }
 
