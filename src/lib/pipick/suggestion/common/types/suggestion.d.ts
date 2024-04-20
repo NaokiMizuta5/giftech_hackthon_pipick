@@ -1,5 +1,6 @@
 export type Suggestion = {
   // TODO: design what properties are required
+  id: string;
   name: string;
   description: string;
   address: string;

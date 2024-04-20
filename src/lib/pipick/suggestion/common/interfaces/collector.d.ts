@@ -1,5 +1,5 @@
-import { Suggestion } from '../types/suggestion';
+import type { YolpApiResponse } from "../../../yolp/types/response";
 
 export interface ICollector {
-    collect(): Promise<Suggestion[]>;
+  collect(): Promise<YolpApiResponse[]>;
 }
