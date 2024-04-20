@@ -1,7 +1,8 @@
-import type { IConverter } from "../common/interfaces/converter";
-
+// types
 import type { Feature } from "../../yolp/types/response";
 import type { YolpApiResponse } from "../../yolp/types/response";
+// interfaces
+import type { IConverter } from "../common/interfaces/converter";
 import type { Suggestion } from "../common/types/suggestion";
 
 export class RestaurantConverter implements IConverter {

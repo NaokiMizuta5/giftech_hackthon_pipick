@@ -1,5 +1,6 @@
+// interfaces
 import type { IFilters } from "../common/interfaces/filter";
-
+// types
 import type { Suggestion } from "../common/types/suggestion";
 
 // TODO: remove this after implementing IRestaurantQuery in lib/pipick/db/...

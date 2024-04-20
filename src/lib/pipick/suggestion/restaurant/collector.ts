@@ -1,9 +1,10 @@
 import type { IYolpApiClient } from "../../yolp/client";
 import type { IYolpCommandFactory } from "../../yolp/factory/command";
-import type { ICollector } from "../common/interfaces/collector";
-
+// types
 import type { Location } from "../../yolp/types/location";
 import type { YolpApiResponse } from "../../yolp/types/response";
+// interfaces
+import type { ICollector } from "../common/interfaces/collector";
 
 class RestaurantCollector implements ICollector {
   private readonly location: Location;

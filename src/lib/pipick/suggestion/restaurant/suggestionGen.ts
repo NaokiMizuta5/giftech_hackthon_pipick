@@ -1,10 +1,11 @@
+// interfaces
 import type { ICollector } from "../common/interfaces/collector";
-import type { ISuggestionGen } from "../common/interfaces/suggestion";
-
-import type { Suggestion } from "../common/types/suggestion";
-
 import type { IConverter } from "../common/interfaces/converter";
 import type { IFilters } from "../common/interfaces/filter";
+import type { ISuggestionGen } from "../common/interfaces/suggestion";
+// types
+import type { Suggestion } from "../common/types/suggestion";
+// functions
 import { shuffle } from "../utils/shuffle";
 
 class RestaurantSuggestionGen implements ISuggestionGen {
