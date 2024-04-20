@@ -11,26 +11,31 @@ import {
 } from "@gluestack-ui/themed";
 
 import { useColorThemeAtom } from "@/atom";
+import { type CharacterId, useCharactersInfoAtom } from "@/features/character";
 import type { Color } from "~/src/utils";
 import { useHeaderAtom } from "../../atom";
 
 export function Header() {
   const { menuItems, activateMenu } = useHeaderAtom();
   const { colorTheme, setSelectedColorTheme } = useColorThemeAtom();
+  const { setCurrentCharacterId } = useCharactersInfoAtom();
 
   const handlePressButton = ({
     color,
     itemId,
+    characterId,
   }: {
     color: Color;
     itemId: string;
+    characterId: CharacterId;
   }) => {
     setSelectedColorTheme(color);
+    setCurrentCharacterId(characterId);
     activateMenu(itemId);
   };
 
   return (
-    <Box bgColor="$black">
+    <Box bgColor="$black" width="$full">
       <LinearGradient
         color={colorTheme}
         height="$24"
@@ -57,7 +62,11 @@ export function Header() {
                   <Button
                     key={item.id}
                     onPress={() =>
-                      handlePressButton({ color: item.color, itemId: item.id })
+                      handlePressButton({
+                        color: item.color,
+                        itemId: item.id,
+                        characterId: item.characterId,
+                      })
                     }
                     paddingHorizontal="$4"
                     {...(item.active
