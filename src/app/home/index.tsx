@@ -1,13 +1,13 @@
-import { AnimatedView } from "@/features/animatedView";
+import { FadeInOutView } from "@/features/fadeInOutView";
 import { Header } from "@/features/header";
 import { Box } from "@gluestack-ui/themed";
 
 export default function Home() {
   return (
-    <AnimatedView>
+    <FadeInOutView>
       <Box>
         <Header />
       </Box>
-    </AnimatedView>
+    </FadeInOutView>
   );
 }
