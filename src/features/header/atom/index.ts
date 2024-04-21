@@ -6,9 +6,9 @@ import {
 } from "../constants";
 import type { MenuItem } from "../types";
 
-export const isLeftIconAtom = atom(INITIAL_IS_LEFT_ICON_ATOM);
-export const isRightIconAtom = atom(INITIAL_IS_RIGHT_ICON_ATOM);
-export const menuItemsAtom = atom(INITIAL_MENU_ITEMS_ATOM);
+const isLeftIconAtom = atom(INITIAL_IS_LEFT_ICON_ATOM);
+const isRightIconAtom = atom(INITIAL_IS_RIGHT_ICON_ATOM);
+const menuItemsAtom = atom(INITIAL_MENU_ITEMS_ATOM);
 
 export const useHeaderAtom = () => {
   const [isLeftIcon, setIsLeftIcon] = useAtom(isLeftIconAtom);
