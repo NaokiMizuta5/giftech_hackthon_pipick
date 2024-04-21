@@ -12,6 +12,7 @@ import { Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { Provider as JotaiProvider } from "jotai";
 import { useEffect, useState } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -64,9 +65,11 @@ function RootLayoutNav() {
     <GluestackUIProvider config={config}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <JotaiProvider>
-          <Box height="$full" backgroundColor="$black">
-            <Slot />
-          </Box>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <Box height="$full" backgroundColor="$black">
+              <Slot />
+            </Box>
+          </GestureHandlerRootView>
         </JotaiProvider>
       </ThemeProvider>
     </GluestackUIProvider>
