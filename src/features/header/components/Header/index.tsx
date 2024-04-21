@@ -18,7 +18,8 @@ import { useHeaderAtom } from "../../atom";
 export function Header() {
   const { menuItems, activateMenu } = useHeaderAtom();
   const { colorTheme, setSelectedColorTheme } = useColorThemeAtom();
-  const { setCurrentCharacterId } = useCharactersInfoAtom();
+  const { getCharacterIdWithMenuId, setCurrentCharacterId } =
+    useCharactersInfoAtom();
 
   const handlePressButton = ({
     color,
@@ -58,35 +59,38 @@ export function Header() {
             >
               <Icon as={ChevronLeftIcon} color="$white" size="xl" />
               <HStack gap="$2" alignItems="center">
-                {menuItems.map((item) => (
-                  <Button
-                    key={item.id}
-                    onPress={() =>
-                      handlePressButton({
-                        color: item.color,
-                        itemId: item.id,
-                        characterId: item.characterId,
-                      })
-                    }
-                    paddingHorizontal="$4"
-                    {...(item.active
-                      ? {
-                          backgroundColor: "$white",
-                          borderRadius: "$3xl",
-                        }
-                      : {
-                          backgroundColor: "transparent",
-                        })}
-                  >
-                    <Text
-                      color={item.active ? "$black " : "$white"}
-                      fontSize="$sm"
-                      fontWeight="$bold"
+                {menuItems.map((item) => {
+                  const characterId = getCharacterIdWithMenuId(item.id);
+                  return (
+                    <Button
+                      key={item.id}
+                      onPress={() =>
+                        handlePressButton({
+                          color: item.color,
+                          itemId: item.id,
+                          characterId: characterId,
+                        })
+                      }
+                      paddingHorizontal="$4"
+                      {...(item.active
+                        ? {
+                            backgroundColor: "$white",
+                            borderRadius: "$3xl",
+                          }
+                        : {
+                            backgroundColor: "transparent",
+                          })}
                     >
-                      {item.label}
-                    </Text>
-                  </Button>
-                ))}
+                      <Text
+                        color={item.active ? "$black " : "$white"}
+                        fontSize="$sm"
+                        fontWeight="$bold"
+                      >
+                        {item.label}
+                      </Text>
+                    </Button>
+                  );
+                })}
               </HStack>
               <Icon as={MenuIcon} color="$white" size="xl" />
             </HStack>

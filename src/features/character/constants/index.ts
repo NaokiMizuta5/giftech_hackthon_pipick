@@ -6,6 +6,7 @@ import type {
 export const INITIAL_CHARACTERS_INFO_ATOM: InitialCharactersInfoAtom = [
   {
     id: "1",
+    menuId: "1",
     enName: "Meika",
     jaName: "メイカ",
     level: 1,
@@ -14,6 +15,7 @@ export const INITIAL_CHARACTERS_INFO_ATOM: InitialCharactersInfoAtom = [
   },
   {
     id: "2",
+    menuId: "2",
     enName: "Abbie",
     jaName: "アビー",
     level: 2,
@@ -22,6 +24,7 @@ export const INITIAL_CHARACTERS_INFO_ATOM: InitialCharactersInfoAtom = [
   },
   {
     id: "3",
+    menuId: "3",
     enName: "Coo",
     jaName: "クウ",
     level: 3,

@@ -1,3 +1,4 @@
+import type { MenuId } from "@/features/header";
 import { atom, useAtom, useAtomValue } from "jotai";
 import {
   INITIAL_CHARACTERS_INFO_ATOM,
@@ -24,6 +25,10 @@ export const useCharactersInfoAtom = () => {
     return charactersInfo.find((character) => character.id === characterId);
   };
 
+  const getCharacterIdWithMenuId = (menuId: MenuId) => {
+    return charactersInfo.find((character) => character.menuId === menuId)?.id;
+  };
+
   const [currentCharacterId, _setCurrentCharacterId] = useAtom(
     currentCharacterIdAtom,
   );
@@ -47,6 +52,7 @@ export const useCharactersInfoAtom = () => {
   return {
     charactersInfo,
     currentCharacterId,
+    getCharacterIdWithMenuId,
     setCurrentCharacterId,
     currentCharacter,
     getCharacterInfo,
