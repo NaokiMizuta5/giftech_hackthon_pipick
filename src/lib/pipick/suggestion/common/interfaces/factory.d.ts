@@ -1,6 +1,8 @@
-import { ISuggestionGen } from "./suggestionGen";
-import { Location } from "../../../yolp/types/location";
+import type Location from "../../../yolp/types/location";
+import type SuggestionGen from "../suggestionGen";
 
-export interface ISuggestionGenFactory<T extends ISuggestionGen> {
-    create(location: Location): T;
+interface ISuggestionGenFactory {
+  create(location: Location): SuggestionGen;
 }
+
+export default ISuggestionGenFactory;
