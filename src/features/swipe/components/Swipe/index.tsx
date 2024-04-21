@@ -78,8 +78,10 @@ export function Swipe() {
                     <TagText key={label}>{placeInfo[label]}</TagText>
                   ))}
                 </HStack>
-                {/* Todo：詳細を見るボタンのコンポーネントを追加予定 */}
-                <Button bgColor="white" />
+                {/* Todo：詳細を見るボタンを押したら詳細コンポーネントが表示されるように修正予定 */}
+                <Button bgColor="rgba(255, 255, 255, 0.5)">
+                  <Text color="black">詳細を見る(後対応)</Text>
+                </Button>
               </VStack>
             </Box>
           </Box>
