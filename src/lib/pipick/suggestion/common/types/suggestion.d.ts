@@ -3,6 +3,7 @@ type Suggestion = {
   id: string;
   name: string;
   description: string;
+  catchCopy: string;
   address: string;
   // Google Maps URLを取るなら、Google Maps APIを使う必要がありそう。
   imageUri: string;
