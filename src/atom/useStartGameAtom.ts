@@ -1,8 +1,8 @@
 import { atom, useAtom } from "jotai";
 
-export const isStartedGameAtom = atom(false);
+const isStartedGameAtom = atom(false);
 
-export const useGlobalAtom = () => {
+export const useStartGameAtom = () => {
   const [isStartedGame, setIsStartedGame] = useAtom(isStartedGameAtom);
 
   const startGame = () => {

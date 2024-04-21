@@ -1,7 +1,7 @@
 import type { Float } from "react-native/Libraries/Types/CodegenTypes";
 
-type Device = "mobile";
-type SrotKey =
+export type Device = "mobile";
+export type SrotKey =
   | "rating"
   | "score"
   | "hybrid"
@@ -20,9 +20,9 @@ type SrotKey =
   | "-dist"
   | "-geo"
   | "-match";
-type Detail = "simple" | "standard" | "full";
-type Output = "json" | "xml";
-type Reservation = "1";
+export type Detail = "simple" | "standard" | "full";
+export type Output = "json" | "xml";
+export type Reservation = "1";
 
 export type YolpApiRequest = YolpApiRequestRequired &
   YolpApiRequestCustomRequired &

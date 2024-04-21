@@ -8,7 +8,7 @@ interface IRestaurantQuery {
   getSeenRestaurantIds(): Promise<string[]>;
 }
 
-class RestaurantFilters implements IFilters {
+class Filters implements IFilters {
   private readonly query: IRestaurantQuery;
 
   constructor(query: IRestaurantQuery) {
@@ -24,4 +24,4 @@ class RestaurantFilters implements IFilters {
   }
 }
 
-export default RestaurantFilters;
+export default Filters;
