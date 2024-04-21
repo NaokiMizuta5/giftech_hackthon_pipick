@@ -1,9 +1,9 @@
-import type { MenuId } from "@/features/header";
 import { atom, useAtom, useAtomValue } from "jotai";
 import {
   INITIAL_CHARACTERS_INFO_ATOM,
   INITIAL_CURRENT_CHARACTER_ID_ATOM,
 } from "../constants";
+import type { EnCharacterName } from "../types";
 import type { Character, CharacterId } from "../types";
 
 const charactersInfoAtom = atom<Character[]>(INITIAL_CHARACTERS_INFO_ATOM);
@@ -25,8 +25,8 @@ export const useCharactersInfoAtom = () => {
     return charactersInfo.find((character) => character.id === characterId);
   };
 
-  const getCharacterIdWithMenuId = (menuId: MenuId) => {
-    return charactersInfo.find((character) => character.menuId === menuId)?.id;
+  const getCharacterIdByEnCharacterName = (name: EnCharacterName) => {
+    return charactersInfo.find((character) => character.enName === name)?.id;
   };
 
   const [currentCharacterId, _setCurrentCharacterId] = useAtom(
@@ -52,7 +52,7 @@ export const useCharactersInfoAtom = () => {
   return {
     charactersInfo,
     currentCharacterId,
-    getCharacterIdWithMenuId,
+    getCharacterIdByEnCharacterName,
     setCurrentCharacterId,
     currentCharacter,
     getCharacterInfo,

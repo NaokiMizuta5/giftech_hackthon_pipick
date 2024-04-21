@@ -18,7 +18,7 @@ import { useHeaderAtom } from "../../atom";
 export function Header() {
   const { menuItems, activateMenu } = useHeaderAtom();
   const { colorTheme, setSelectedColorTheme } = useColorThemeAtom();
-  const { getCharacterIdWithMenuId, setCurrentCharacterId } =
+  const { getCharacterIdByEnCharacterName, setCurrentCharacterId } =
     useCharactersInfoAtom();
 
   const handlePressButton = ({
@@ -28,10 +28,12 @@ export function Header() {
   }: {
     color: Color;
     itemId: string;
-    characterId: CharacterId;
+    characterId: CharacterId | undefined;
   }) => {
     setSelectedColorTheme(color);
-    setCurrentCharacterId(characterId);
+    if (characterId) {
+      setCurrentCharacterId(characterId);
+    }
     activateMenu(itemId);
   };
 
@@ -60,7 +62,9 @@ export function Header() {
               <Icon as={ChevronLeftIcon} color="$white" size="xl" />
               <HStack gap="$2" alignItems="center">
                 {menuItems.map((item) => {
-                  const characterId = getCharacterIdWithMenuId(item.id);
+                  const characterId = getCharacterIdByEnCharacterName(
+                    item.enCharacterName,
+                  );
                   return (
                     <Button
                       key={item.id}
