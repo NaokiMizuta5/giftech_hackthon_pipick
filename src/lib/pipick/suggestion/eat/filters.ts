@@ -1,25 +1,25 @@
+import type { IIdQuery } from "../../db/query/interface/suggestion";
 // interfaces
 import type { IFilters } from "../common/interfaces/filter";
 // types
 import type { Suggestion } from "../common/types/suggestion";
 
-// TODO: remove this after implementing IRestaurantQuery in lib/pipick/db/...
-interface IRestaurantQuery {
-  getSeenRestaurantIds(): Promise<string[]>;
-}
-
 class Filters implements IFilters {
-  private readonly query: IRestaurantQuery;
+  private readonly query: IIdQuery;
 
-  constructor(query: IRestaurantQuery) {
+  constructor(query: IIdQuery) {
     this.query = query;
   }
 
   async seenSuggestionFilter(suggestions: Suggestion[]): Promise<Suggestion[]> {
-    const seenRestaurantIds = await this.query.getSeenRestaurantIds();
+    const suggestedIds = await this.query.findAlreadySuggestedIds(
+      suggestions.map((suggestion) => suggestion.id),
+    );
+    // This is for optimizing the filtering process
+    const suggestedIdsMap = new Map(suggestedIds.map((id) => [id, true]));
 
     return suggestions.filter((suggestion) => {
-      return !seenRestaurantIds.includes(suggestion.id);
+      return !suggestedIdsMap.has(suggestion.id);
     });
   }
 }
