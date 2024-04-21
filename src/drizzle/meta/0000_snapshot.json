@@ -1,11 +1,11 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "f706ee8e-1993-4e9a-bc79-610aceba4159",
+  "id": "a2fae34d-706e-48a1-af60-bab5a0a33c80",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "sample_table": {
-      "name": "sample_table",
+    "concierges": {
+      "name": "concierges",
       "columns": {
         "id": {
           "name": "id",
@@ -14,15 +14,173 @@
           "notNull": true,
           "autoincrement": false
         },
-        "text": {
-          "name": "text",
+        "en_name": {
+          "name": "en_name",
           "type": "text",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
+        },
+        "ja_name": {
+          "name": "ja_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "level": {
+          "name": "level",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "current_exp": {
+          "name": "current_exp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "required_exp": {
+          "name": "required_exp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIME"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIME"
         }
       },
       "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "suggestion_ids": {
+      "name": "suggestion_ids",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "yolp_uid": {
+          "name": "yolp_uid",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIME"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIME"
+        }
+      },
+      "indexes": {
+        "suggestion_ids_yolp_uid_idx": {
+          "name": "suggestion_ids_yolp_uid_idx",
+          "columns": ["yolp_uid"],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "suggestions": {
+      "name": "suggestions",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "yolp_uid": {
+          "name": "yolp_uid",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "domain_type": {
+          "name": "domain_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "state": {
+          "name": "state",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIME"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIME"
+        }
+      },
+      "indexes": {
+        "suggestion_yolp_uid_idx": {
+          "name": "suggestion_yolp_uid_idx",
+          "columns": ["yolp_uid"],
+          "isUnique": true
+        },
+        "suggestion_domain_type_idx": {
+          "name": "suggestion_domain_type_idx",
+          "columns": ["domain_type"],
+          "isUnique": true
+        },
+        "suggestion_state_idx": {
+          "name": "suggestion_state_idx",
+          "columns": ["state"],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
