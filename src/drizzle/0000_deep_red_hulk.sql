@@ -1,4 +1,4 @@
-CREATE TABLE `concierges` (
+CREATE TABLE `characters` (
 	`id` integer PRIMARY KEY NOT NULL,
 	`en_name` text NOT NULL,
 	`ja_name` text NOT NULL,

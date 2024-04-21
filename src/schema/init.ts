@@ -7,7 +7,7 @@ import {
 } from "drizzle-orm/sqlite-core";
 
 // NOTE: leveling logic is implemented in application layer
-export const concierges = sqliteTable("concierges", {
+export const characters = sqliteTable("characters", {
   id: integer("id").primaryKey(),
   enName: text("en_name").notNull(),
   jaName: text("ja_name").notNull(),
