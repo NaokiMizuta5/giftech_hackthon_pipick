@@ -17,7 +17,8 @@ class Converter implements IConverter {
           id: feature.Property.Uid,
           name: feature.Name,
           // TODO: think better solution for description
-          description: feature.Property.CatchCopy,
+          description: feature.Description,
+          catchCopy: feature.Property.CatchCopy,
           address: feature.Property.Address,
           imageUri: feature.Property.LeadImage,
           // NOTE: Maybe we should encode the query string
