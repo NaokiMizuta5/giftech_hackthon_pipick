@@ -74,3 +74,5 @@ export type YolpApiRequestOptional = {
   maxprice?: number; // maximum price
   minprice?: number; // minimum price
 };
+
+export default YolpApiRequest;
