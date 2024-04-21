@@ -1,9 +1,15 @@
+import type { Device } from "../types/request";
+import type { Output } from "../types/request";
+
 export type BaseCommand = {
   appId: string;
-  device: "mobile";
-  output: "json";
+  device: Device;
+  output: Output;
+  dist: number;
   lat: number;
   lon: number;
+  results?: number;
+  image: boolean;
 };
 
 export type AcceptableCommand = KeywordSearchCommand | GenreSearchCommand;
@@ -13,5 +19,5 @@ export type KeywordSearchCommand = BaseCommand & {
 };
 
 export type GenreSearchCommand = BaseCommand & {
-  gid: string;
+  gc: string; // genre code
 };

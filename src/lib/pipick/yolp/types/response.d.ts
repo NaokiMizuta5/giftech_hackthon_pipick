@@ -21,8 +21,8 @@ export interface Feature {
   Geometry: Geometry;
   Category: string[];
   Description: string;
-  // biome-ignore check: having style data is rare case so I can't define the type
-  Style: any[];
+  // biome-ignore lint/suspicious/noExplicitAny: ignore rule
+  Style?: any[];
   Property: Property;
 }
 
@@ -43,11 +43,11 @@ export interface Property {
   Genre: Genre[];
   Area: Area[];
   Station: Station[];
+  CatchCopy: string;
   LeadImage: string;
   ParkingFlag: string;
   SmartPhoneCouponFlag: string;
-  // biome-ignore check: having coupon data is rare case so I can't define the type
-  Coupon: any[];
+  Coupon: Coupon[];
   KeepCount: string;
 }
 
@@ -82,3 +82,12 @@ export interface Geometry2 {
   Type: string;
   Coordinates: string;
 }
+
+export interface Coupon {
+  Name: string;
+  PcUrl: string;
+  MobileFlag: string;
+  SmartPhoneUrl: string;
+}
+
+export default YolpApiResponse;

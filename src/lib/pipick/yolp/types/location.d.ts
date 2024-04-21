@@ -1,4 +1,6 @@
-export type Location = {
+type Location = {
   lat: number;
   lon: number;
 };
+
+export default Location;
