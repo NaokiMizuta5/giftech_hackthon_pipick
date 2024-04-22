@@ -19,10 +19,8 @@ import Animated, {
 import Carousel, {
   type TAnimationStyle,
 } from "react-native-reanimated-carousel";
+import { useSwipeAtom } from "../../atom";
 import { window } from "../../constants";
-import { getImages } from "../../utils/get-image";
-
-const data = getImages();
 
 type PlaceInfo = Record<string, string>;
 
@@ -41,18 +39,7 @@ const TagText = ({ children }: { children: React.ReactNode }) => {
 };
 
 export function Swipe() {
-  // const {  } = useSwipe();
-  // const {
-  //   count: atomCount,
-  // } = useSwipeAtom();
-  const placeInfo: PlaceInfo = {
-    placeName: "三鷹の森ジブリ美術館",
-    genre: "美術館",
-    prefecture: "東京都",
-    place: "井の頭公園",
-    station: "吉祥寺駅",
-    distance: "1.5km",
-  };
+  const { data, dataLength, placeInfo } = useSwipeAtom();
 
   const PAGE_WIDTH = window.width;
   const PAGE_HEIGHT = window.height;
@@ -75,7 +62,7 @@ export function Swipe() {
       const zIndex = interpolate(
         value,
         [0, 1, 2, 3, 4],
-        [0, 1, 2, 3, 4].map((v) => (data.length - v) * 10),
+        [0, 1, 2, 3, 4].map((v) => (dataLength - v) * 10),
         Extrapolation.CLAMP,
       );
 
@@ -99,7 +86,7 @@ export function Swipe() {
         opacity,
       };
     },
-    [directionAnimVal.value, PAGE_WIDTH],
+    [directionAnimVal.value, PAGE_WIDTH, dataLength],
   );
 
   return (
