@@ -5,8 +5,6 @@ import { Dimensions } from "react-native";
 
 import { isIos } from "../utils";
 
-export const HEADER_HEIGHT = 100;
-
 export const ElementsText = {
   AUTOPLAY: "AutoPlay",
 };
@@ -21,6 +19,7 @@ export const ElementsText = {
 export const window: ScaledSize = isIos
   ? {
       ...Dimensions.get("window"),
-      width: 400, //widthこれでいいのか？
+      height: 800, //height:微調整可能
+      width: 400, //width:微調整可能
     }
   : Dimensions.get("window");
