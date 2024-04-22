@@ -76,7 +76,6 @@ export function Swipe() {
         value,
         [0, 1, 2, 3, 4],
         [0, 1, 2, 3, 4].map((v) => (data.length - v) * 10),
-        // Extrapolate.CLAMP
         Extrapolation.CLAMP,
       );
 
@@ -86,7 +85,6 @@ export function Swipe() {
         value,
         [-1, -0.8, 0, 1],
         [0, 0.9, 1, 0.85],
-        // Extrapolate.EXTEND
         Extrapolation.EXTEND,
       );
 
@@ -111,7 +109,7 @@ export function Swipe() {
         defaultIndex={0}
         style={{
           width: PAGE_WIDTH,
-          height: PAGE_HEIGHT,
+          height: PAGE_HEIGHT * 0.8, //コンポーネントの高さを微調整可能
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "black",
@@ -141,7 +139,7 @@ const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
   placeInfo,
 }) => {
   const width = window.width * 0.7;
-  const height = window.height * 0.5;
+  const height = window.height * 0.6; //画像の高さを微調整可能
   //fetchしてきたデータの一部をここに入れる(仮)
   const tagLabels = ["genre", "prefecture", "place", "station", "distance"];
   return (
