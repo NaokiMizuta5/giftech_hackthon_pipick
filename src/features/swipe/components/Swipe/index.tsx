@@ -45,6 +45,14 @@ export function Swipe() {
   // const {
   //   count: atomCount,
   // } = useSwipeAtom();
+  const placeInfo: PlaceInfo = {
+    placeName: "三鷹の森ジブリ美術館",
+    genre: "美術館",
+    prefecture: "東京都",
+    place: "井の頭公園",
+    station: "吉祥寺駅",
+    distance: "1.5km",
+  };
 
   const PAGE_WIDTH = window.width;
   const PAGE_HEIGHT = window.height;
@@ -106,7 +114,7 @@ export function Swipe() {
           height: PAGE_HEIGHT,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "white",
+          backgroundColor: "black",
         }}
         width={PAGE_WIDTH}
         height={PAGE_HEIGHT}
@@ -119,26 +127,23 @@ export function Swipe() {
           });
         }}
         fixedDirection="negative"
-        renderItem={({ index, item }) => <Item key={index} img={item} />}
+        renderItem={({ index, item }) => (
+          <Item key={index} img={item} placeInfo={placeInfo} />
+        )}
         customAnimation={animationStyle}
       />
     </View>
   );
 }
 
-const Item: React.FC<{ img: ImageSourcePropType }> = ({ img }) => {
+const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
+  img,
+  placeInfo,
+}) => {
   const width = window.width * 0.7;
   const height = window.height * 0.5;
   //fetchしてきたデータの一部をここに入れる(仮)
   const tagLabels = ["genre", "prefecture", "place", "station", "distance"];
-  const placeInfo: PlaceInfo = {
-    placeName: "三鷹の森ジブリ美術館",
-    genre: "美術館",
-    prefecture: "東京都",
-    place: "井の頭公園",
-    station: "吉祥寺駅",
-    distance: "1.5km",
-  };
   return (
     <Animated.View
       entering={FadeInDown.duration(300)}
