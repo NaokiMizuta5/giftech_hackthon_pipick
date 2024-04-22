@@ -1,5 +1,7 @@
 import type { YolpApiResponse } from "../../../yolp/types/response";
 
-export interface ICollector {
+interface ICollector {
   collect(): Promise<YolpApiResponse[]>;
 }
+
+export default ICollector;

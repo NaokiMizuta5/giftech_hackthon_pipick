@@ -1,61 +1,25 @@
-import type { IYolpApiClient } from "../../yolp/client";
-import type { IYolpCommandFactory } from "../../yolp/factory/command";
-// types
-import type { Location } from "../../yolp/types/location";
-import type { YolpApiResponse } from "../../yolp/types/response";
-// interfaces
-import type { ICollector } from "../common/interfaces/collector";
+import type YolpApiResponse from "../../yolp/types/response";
+import BaseCollector from "../common/abstracts/collector";
 
-class Collector implements ICollector {
-  private readonly location: Location;
-
-  private readonly client: IYolpApiClient;
-  private readonly factory: IYolpCommandFactory;
-  // TODO: design a way to set genreIds
-  private readonly genreIds = {
-    // TODO: set correct genreIds @see:https://developer.yahoo.co.jp/webapi/map/
-    // incorrect genreIds are set now
-    italian: "G001",
-    french: "G002",
-    ramen: "G004",
-    curry: "G005",
-    sushi: "G006",
+class EatCollector extends BaseCollector {
+  // HACK: make this better
+  public readonly GENRE_CODES = {
+    //  @see:https://developer.yahoo.co.jp/webapi/map/openlocalplatform/genre.html
+    food: "01",
   };
 
-  constructor(
-    location: Location,
-    client: IYolpApiClient,
-    factory: IYolpCommandFactory,
-  ) {
-    this.client = client;
-    this.location = location;
-    this.factory = factory;
-  }
-
   async collect(): Promise<YolpApiResponse[]> {
-    // TODO: chose what type of restaurant to fetchByGenre
-    const italianSuggestions = this.fetchByGenre(this.genreIds.italian);
-    const frenchSuggestions = this.fetchByGenre(this.genreIds.french);
-    const ramenSuggestions = this.fetchByGenre(this.genreIds.ramen);
-    const currySuggestions = this.fetchByGenre(this.genreIds.curry);
-    const sushiSuggestions = this.fetchByGenre(this.genreIds.sushi);
+    const foodSuggestions = await this.fetchByGenre(this.GENRE_CODES.food);
+    // you can add more suggestion types here
 
+    // parallel fetching
     const suggestionResponses = await Promise.all([
-      italianSuggestions,
-      frenchSuggestions,
-      ramenSuggestions,
-      currySuggestions,
-      sushiSuggestions,
+      foodSuggestions,
+      // add more suggestion types here
     ]);
 
     return suggestionResponses;
   }
-
-  private async fetchByGenre(gid: string): Promise<YolpApiResponse> {
-    const command = this.factory.createGenreSearchCommand(gid, this.location);
-    const response = await this.client.get(command);
-    return response;
-  }
 }
 
-export default Collector;
+export default EatCollector;

@@ -3,6 +3,7 @@ import {
   INITIAL_CHARACTERS_INFO_ATOM,
   INITIAL_CURRENT_CHARACTER_ID_ATOM,
 } from "../constants";
+import type { EnCharacterName } from "../types";
 import type { Character, CharacterId } from "../types";
 
 const charactersInfoAtom = atom<Character[]>(INITIAL_CHARACTERS_INFO_ATOM);
@@ -22,6 +23,10 @@ export const useCharactersInfoAtom = () => {
 
   const getCharacterInfo = (characterId: CharacterId) => {
     return charactersInfo.find((character) => character.id === characterId);
+  };
+
+  const getCharacterIdByEnCharacterName = (name: EnCharacterName) => {
+    return charactersInfo.find((character) => character.enName === name)?.id;
   };
 
   const [currentCharacterId, _setCurrentCharacterId] = useAtom(
@@ -47,6 +52,7 @@ export const useCharactersInfoAtom = () => {
   return {
     charactersInfo,
     currentCharacterId,
+    getCharacterIdByEnCharacterName,
     setCurrentCharacterId,
     currentCharacter,
     getCharacterInfo,

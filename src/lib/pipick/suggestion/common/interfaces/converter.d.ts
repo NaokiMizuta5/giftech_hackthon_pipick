@@ -1,6 +1,8 @@
 import type { YolpApiResponse } from "../../../yolp/types/response";
-import type { Suggestion } from "../types/suggestion";
+import type Suggestion from "../types/suggestion";
 
-export interface IConverter {
+interface IConverter {
   toSuggestion(responses: YolpApiResponse[]): Suggestion[];
 }
+
+export default IConverter;

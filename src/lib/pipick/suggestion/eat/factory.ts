@@ -1,28 +1,25 @@
-import SuggestionIdQuery from "TODO";
-// interface
-import type { ISuggestionGenFactory } from "../common/interfaces/factory";
-import Collector from "./collector";
-import Converter from "./converter";
-import Filters from "./filters";
 // objects
-import EatSuggestionGen from "./suggestionGen";
-
+import SuggestionIdQuery from "TODO";
 import YolpApiClient from "../../yolp/client";
-import { YolpCommandFactory } from "../../yolp/factory/command";
+import YolpCommandFactory from "../../yolp/factory/command";
+import Converter from "../common/converter";
+// interface
+import type ISuggestionGenFactory from "../common/interfaces/factory";
+import SuggestionGen from "../common/suggestionGen";
+import EatCollector from "./collector";
+import EatFilters from "./filters";
 
-import type { Location } from "../../yolp/types/location";
+import type Location from "../../yolp/types/location";
 
-class EatSuggestionGenFactory
-  implements ISuggestionGenFactory<EatSuggestionGen>
-{
-  create(location: Location): EatSuggestionGen {
+class EatSuggestionGenFactory implements ISuggestionGenFactory {
+  create(location: Location): SuggestionGen {
     const client = new YolpApiClient();
     const factory = new YolpCommandFactory();
-    const collector = new Collector(location, client, factory);
+    const collector = new EatCollector(location, client, factory);
     const converter = new Converter();
     const query = new SuggestionIdQuery();
-    const filters = new Filters(query);
-    return new EatSuggestionGen(collector, converter, filters);
+    const filters = new EatFilters(query);
+    return new SuggestionGen(collector, converter, filters);
   }
 }
 

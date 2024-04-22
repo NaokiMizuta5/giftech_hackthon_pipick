@@ -2,8 +2,8 @@
 import type { Feature } from "../../yolp/types/response";
 import type { YolpApiResponse } from "../../yolp/types/response";
 // interfaces
-import type { IConverter } from "../common/interfaces/converter";
-import type { Suggestion } from "../common/types/suggestion";
+import type IConverter from "./interfaces/converter";
+import type Suggestion from "./types/suggestion";
 
 class Converter implements IConverter {
   toSuggestion(responses: YolpApiResponse[]): Suggestion[] {
@@ -14,12 +14,15 @@ class Converter implements IConverter {
       // TODO: modify this after defining the Suggestion type
       return response.Feature.map((feature: Feature) => {
         return {
-          id: feature.Id,
+          id: feature.Property.Uid,
           name: feature.Name,
-          description: feature.Description,
+          // TODO: think better solution for description
+          description: feature.Property.CatchCopy,
           address: feature.Property.Address,
-          distance: Number(feature.Property.Station[0].Distance),
-          url: "",
+          imageUri: feature.Property.LeadImage,
+          // NOTE: Maybe we should encode the query string
+          googleMapUri: `https://www.google.com/maps/search/?api=1&query=${feature.Name}`,
+          tags: String(feature.Category).split(","),
         };
       });
     });

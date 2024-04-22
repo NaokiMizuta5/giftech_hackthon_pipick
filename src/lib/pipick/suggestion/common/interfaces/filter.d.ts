@@ -1,5 +1,6 @@
-import type { Suggestion } from "../types/suggestion";
-
-export interface IFilters {
-  seenSuggestionFilter(suggestions: Suggestion[]): Promise<Suggestion[]>;
+import type Suggestion from "../types/suggestion";
+interface IFilters {
+  apply(suggestions: Suggestion[]): Promise<Suggestion[]>;
 }
+
+export default IFilters;
