@@ -1,10 +1,3 @@
-// import { INITIAL_COUNT_ATOM } from "../constants";
-
-// export const countAtom = atom(INITIAL_COUNT_ATOM);
-
-// export const doubleCounterAtom = atom((get) => {
-//   return get(countAtom) * 2;
-// });
 import { getImages } from "../utils/get-image";
 
 type PlaceInfo = Record<string, string>;
@@ -23,8 +16,8 @@ export const useSwipeAtom = () => {
   };
 
   return {
-    data,
-    dataLength: data.length,
+    data, //画像データ
+    dataLength: data.length, //dataの長さ
     placeInfo,
   };
 };
