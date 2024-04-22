@@ -8,10 +8,17 @@ import {
   View,
 } from "@gluestack-ui/themed";
 import type * as React from "react";
+import { useCallback } from "react";
 import type { ImageSourcePropType } from "react-native";
-import Animated, { FadeInDown, useSharedValue } from "react-native-reanimated";
-// import Carousel, { TAnimationStyle } from "react-native-reanimated-carousel";
-import Carousel from "react-native-reanimated-carousel";
+import Animated, {
+  Extrapolation,
+  FadeInDown,
+  interpolate,
+  useSharedValue,
+} from "react-native-reanimated";
+import Carousel, {
+  type TAnimationStyle,
+} from "react-native-reanimated-carousel";
 import { window } from "../../constants";
 import { getImages } from "../../utils/get-image";
 
@@ -39,56 +46,55 @@ export function Swipe() {
   //   count: atomCount,
   // } = useSwipeAtom();
 
-  const headerHeight = 100;
   const PAGE_WIDTH = window.width;
-  const PAGE_HEIGHT = window.height - headerHeight;
+  const PAGE_HEIGHT = window.height;
 
-  const _directionAnimVal = useSharedValue(0);
+  const directionAnimVal = useSharedValue(0);
 
-  // const _animationStyle: TAnimationStyle = React.useCallback(
-  //   (value: number) => {
-  //     "worklet";
-  //     const translateY = interpolate(value, [0, 1], [0, -18]);
+  const animationStyle: TAnimationStyle = useCallback(
+    (value: number) => {
+      "worklet";
+      const translateY = interpolate(value, [0, 1], [0, -18]);
 
-  //     const translateX =
-  //       interpolate(value, [-1, 0], [PAGE_WIDTH, 0], Extrapolation.CLAMP) *
-  //       directionAnimVal.value;
+      const translateX =
+        interpolate(value, [-1, 0], [PAGE_WIDTH, 0], Extrapolation.CLAMP) *
+        directionAnimVal.value;
 
-  //     const rotateZ =
-  //       interpolate(value, [-1, 0], [15, 0], Extrapolation.CLAMP) *
-  //       directionAnimVal.value;
+      const rotateZ =
+        interpolate(value, [-1, 0], [15, 0], Extrapolation.CLAMP) *
+        directionAnimVal.value;
 
-  //     const zIndex = interpolate(
-  //       value,
-  //       [0, 1, 2, 3, 4],
-  //       [0, 1, 2, 3, 4].map((v) => (data.length - v) * 10),
-  //       // Extrapolate.CLAMP
-  //       Extrapolation.CLAMP
-  //     );
+      const zIndex = interpolate(
+        value,
+        [0, 1, 2, 3, 4],
+        [0, 1, 2, 3, 4].map((v) => (data.length - v) * 10),
+        // Extrapolate.CLAMP
+        Extrapolation.CLAMP,
+      );
 
-  //     const scale = interpolate(value, [0, 1], [1, 0.95]);
+      const scale = interpolate(value, [0, 1], [1, 0.95]);
 
-  //     const opacity = interpolate(
-  //       value,
-  //       [-1, -0.8, 0, 1],
-  //       [0, 0.9, 1, 0.85],
-  //       // Extrapolate.EXTEND
-  //       Extrapolation.EXTEND
-  //     );
+      const opacity = interpolate(
+        value,
+        [-1, -0.8, 0, 1],
+        [0, 0.9, 1, 0.85],
+        // Extrapolate.EXTEND
+        Extrapolation.EXTEND,
+      );
 
-  //     return {
-  //       transform: [
-  //         { translateY },
-  //         { translateX },
-  //         { rotateZ: `${rotateZ}deg` },
-  //         { scale },
-  //       ],
-  //       zIndex,
-  //       opacity,
-  //     };
-  //   },
-  //   [PAGE_HEIGHT, PAGE_WIDTH]
-  // );
+      return {
+        transform: [
+          { translateY },
+          { translateX },
+          { rotateZ: `${rotateZ}deg` },
+          { scale },
+        ],
+        zIndex,
+        opacity,
+      };
+    },
+    [directionAnimVal.value, PAGE_WIDTH],
+  );
 
   return (
     <View style={{ flex: 1 }}>
@@ -107,14 +113,14 @@ export function Swipe() {
         data={data}
         scrollAnimationDuration={500}
         vertical={false}
-        // onConfigurePanGesture={(g) => {
-        //   g.onChange((e) => {
-        //     directionAnimVal.value = Math.sign(e.translationX);
-        //   });
-        // }}
+        onConfigurePanGesture={(g) => {
+          g.onChange((e) => {
+            directionAnimVal.value = Math.sign(e.translationX);
+          });
+        }}
         fixedDirection="negative"
         renderItem={({ index, item }) => <Item key={index} img={item} />}
-        // customAnimation={animationStyle}
+        customAnimation={animationStyle}
       />
     </View>
   );
