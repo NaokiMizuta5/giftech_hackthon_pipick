@@ -185,7 +185,8 @@ const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
           right={0}
           bottom={0}
           borderRadius={20}
-          backgroundColor="rgba(0, 0, 0, 0.5)" //黒色の50%透明度)
+          backgroundColor="rgba(0, 0, 0, 0.5)" //黒色の50%透明度
+          justifyContent="center"
           alignItems="center"
         >
           {/* 半透明の背景内に配置する要素 */}
@@ -193,25 +194,35 @@ const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
             {placeInfo.placeName}
           </Text>
           {/* ジャンルや場所などのハッシュタグを数個並べる+詳細ボタン */}
-          <Box>
-            <VStack>
-              <HStack
-                flexWrap="wrap"
-                justifyContent="center"
-                borderRadius={20}
-                mt={5}
-                mb={5}
-              >
-                {tagLabels.map((label) => (
-                  <TagText key={label}>{placeInfo[label]}</TagText>
-                ))}
-              </HStack>
-              {/* Todo：詳細を見るボタンを押したら詳細コンポーネントが表示されるように修正予定 */}
-              <Button bgColor="rgba(255, 255, 255, 0.5)">
-                <Text color="black">詳細を見る(後対応)</Text>
-              </Button>
-            </VStack>
-          </Box>
+          <VStack>
+            <HStack
+              flexWrap="wrap"
+              justifyContent="center"
+              borderRadius={20}
+              mt={5}
+              mb={5}
+            >
+              {tagLabels.map((label) => (
+                <TagText key={label}>{placeInfo[label]}</TagText>
+              ))}
+            </HStack>
+            <Button
+              backgroundColor="rgba(0, 0, 0, 0)"
+              borderRadius={20}
+              width={280}
+              height={50}
+              onPress={() => {}}
+            >
+              <Image
+                source={require("../../Images/detailMark.png")}
+                style={{
+                  width: 20, // 幅を小さくするための値を指定
+                  height: 20, // 高さを小さくするための値を指定
+                }}
+              />
+              <Text color="white"> 詳細を見る</Text>
+            </Button>
+          </VStack>
         </Box>
       </View>
     </Animated.View>
