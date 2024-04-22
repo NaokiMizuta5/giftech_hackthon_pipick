@@ -1,4 +1,21 @@
-import { Box, Button, HStack, Image, Text, VStack } from "@gluestack-ui/themed";
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  Text,
+  VStack,
+  View,
+} from "@gluestack-ui/themed";
+import type * as React from "react";
+import type { ImageSourcePropType } from "react-native";
+import Animated, { FadeInDown, useSharedValue } from "react-native-reanimated";
+// import Carousel, { TAnimationStyle } from "react-native-reanimated-carousel";
+import Carousel from "react-native-reanimated-carousel";
+import { window } from "../../constants";
+import { getImages } from "../../utils/get-image";
+
+const data = getImages();
 
 type PlaceInfo = Record<string, string>;
 
@@ -22,6 +39,90 @@ export function Swipe() {
   //   count: atomCount,
   // } = useSwipeAtom();
 
+  const headerHeight = 100;
+  const PAGE_WIDTH = window.width;
+  const PAGE_HEIGHT = window.height - headerHeight;
+
+  const _directionAnimVal = useSharedValue(0);
+
+  // const _animationStyle: TAnimationStyle = React.useCallback(
+  //   (value: number) => {
+  //     "worklet";
+  //     const translateY = interpolate(value, [0, 1], [0, -18]);
+
+  //     const translateX =
+  //       interpolate(value, [-1, 0], [PAGE_WIDTH, 0], Extrapolation.CLAMP) *
+  //       directionAnimVal.value;
+
+  //     const rotateZ =
+  //       interpolate(value, [-1, 0], [15, 0], Extrapolation.CLAMP) *
+  //       directionAnimVal.value;
+
+  //     const zIndex = interpolate(
+  //       value,
+  //       [0, 1, 2, 3, 4],
+  //       [0, 1, 2, 3, 4].map((v) => (data.length - v) * 10),
+  //       // Extrapolate.CLAMP
+  //       Extrapolation.CLAMP
+  //     );
+
+  //     const scale = interpolate(value, [0, 1], [1, 0.95]);
+
+  //     const opacity = interpolate(
+  //       value,
+  //       [-1, -0.8, 0, 1],
+  //       [0, 0.9, 1, 0.85],
+  //       // Extrapolate.EXTEND
+  //       Extrapolation.EXTEND
+  //     );
+
+  //     return {
+  //       transform: [
+  //         { translateY },
+  //         { translateX },
+  //         { rotateZ: `${rotateZ}deg` },
+  //         { scale },
+  //       ],
+  //       zIndex,
+  //       opacity,
+  //     };
+  //   },
+  //   [PAGE_HEIGHT, PAGE_WIDTH]
+  // );
+
+  return (
+    <View style={{ flex: 1 }}>
+      <Carousel
+        loop={false}
+        defaultIndex={0}
+        style={{
+          width: PAGE_WIDTH,
+          height: PAGE_HEIGHT,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "white",
+        }}
+        width={PAGE_WIDTH}
+        height={PAGE_HEIGHT}
+        data={data}
+        scrollAnimationDuration={500}
+        vertical={false}
+        // onConfigurePanGesture={(g) => {
+        //   g.onChange((e) => {
+        //     directionAnimVal.value = Math.sign(e.translationX);
+        //   });
+        // }}
+        fixedDirection="negative"
+        renderItem={({ index, item }) => <Item key={index} img={item} />}
+        // customAnimation={animationStyle}
+      />
+    </View>
+  );
+}
+
+const Item: React.FC<{ img: ImageSourcePropType }> = ({ img }) => {
+  const width = window.width * 0.7;
+  const height = window.height * 0.5;
   //fetchしてきたデータの一部をここに入れる(仮)
   const tagLabels = ["genre", "prefecture", "place", "station", "distance"];
   const placeInfo: PlaceInfo = {
@@ -32,61 +133,76 @@ export function Swipe() {
     station: "吉祥寺駅",
     distance: "1.5km",
   };
-
   return (
-    <Box justifyContent="center">
-      <VStack alignItems="center">
+    <Animated.View
+      entering={FadeInDown.duration(300)}
+      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+    >
+      <View
+        style={{
+          width,
+          height,
+          borderWidth: 1,
+          borderColor: "black",
+          borderRadius: 20,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "white",
+
+          shadowColor: "#000000d1",
+          shadowOffset: {
+            width: 0,
+            height: 10,
+          },
+          shadowOpacity: 0.51,
+          shadowRadius: 13.16,
+          elevation: 20,
+        }}
+      >
+        <Image
+          source={img}
+          style={{
+            width,
+            height,
+            borderRadius: 20,
+          }}
+        />
         <Box
-          position="relative"
-          width="80%"
-          height="80%"
+          position="absolute"
+          top="60%"
+          left={0}
+          right={0}
+          bottom={0}
           borderRadius={20}
-          overflow="hidden"
+          backgroundColor="rgba(0, 0, 0, 0.5)" //黒色の50%透明度)
+          alignItems="center"
         >
-          <Image
-            source={require("./sampleImg/swipeSampleImg.png")}
-            alt="Place Image"
-            width="100%"
-            height="100%"
-          />
-          {/* 画像上に重ねる半透明の背景 */}
-          <Box
-            position="absolute"
-            top="60%"
-            left={0}
-            right={0}
-            bottom={0}
-            borderRadius={20}
-            backgroundColor="rgba(0, 0, 0, 0.5)" //黒色の50%透明度)
-            alignItems="center"
-          >
-            {/* 半透明の背景内に配置する要素 */}
-            <Text fontSize="$xl" fontWeight="bold" color="white" mt={15}>
-              {placeInfo.placeName}
-            </Text>
-            {/* ジャンルや場所などのハッシュタグを数個並べる+詳細ボタン */}
-            <Box borderRadius={10}>
-              <VStack>
-                <HStack
-                  flexWrap="wrap"
-                  justifyContent="center"
-                  borderRadius={10}
-                  mt={5}
-                  mb={5}
-                >
-                  {tagLabels.map((label) => (
-                    <TagText key={label}>{placeInfo[label]}</TagText>
-                  ))}
-                </HStack>
-                {/* Todo：詳細を見るボタンを押したら詳細コンポーネントが表示されるように修正予定 */}
-                <Button bgColor="rgba(255, 255, 255, 0.5)">
-                  <Text color="black">詳細を見る(後対応)</Text>
-                </Button>
-              </VStack>
-            </Box>
+          {/* 半透明の背景内に配置する要素 */}
+          <Text fontSize="$xl" fontWeight="bold" color="white" mt={15}>
+            {placeInfo.placeName}
+          </Text>
+          {/* ジャンルや場所などのハッシュタグを数個並べる+詳細ボタン */}
+          <Box>
+            <VStack>
+              <HStack
+                flexWrap="wrap"
+                justifyContent="center"
+                borderRadius={20}
+                mt={5}
+                mb={5}
+              >
+                {tagLabels.map((label) => (
+                  <TagText key={label}>{placeInfo[label]}</TagText>
+                ))}
+              </HStack>
+              {/* Todo：詳細を見るボタンを押したら詳細コンポーネントが表示されるように修正予定 */}
+              <Button bgColor="rgba(255, 255, 255, 0.5)">
+                <Text color="black">詳細を見る(後対応)</Text>
+              </Button>
+            </VStack>
           </Box>
         </Box>
-      </VStack>
-    </Box>
+      </View>
+    </Animated.View>
   );
-}
+};
