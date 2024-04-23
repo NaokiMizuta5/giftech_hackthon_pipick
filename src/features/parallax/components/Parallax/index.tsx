@@ -9,7 +9,6 @@ import {
   useCharactersInfoAtom,
 } from "~/src/features/character";
 import { useHeaderAtom } from "~/src/features/header";
-import { useParallaxAtom } from "../../atom";
 import { SBItem } from "../SBItem";
 
 type CarouselProps = ComponentProps<typeof Carousel>;
@@ -23,56 +22,25 @@ export function Parallax() {
     height: PAGE_WIDTH * 1.2,
   } as CarouselProps;
 
-  const { currentIndex, setCurrentIndex } = useParallaxAtom();
   const { menuItems, activateMenu } = useHeaderAtom();
-  const { getCharacterIdByEnCharacterName, setCurrentCharacterId } =
-    useCharactersInfoAtom();
+  const { setCurrentCharacterId } = useCharactersInfoAtom();
   const { setSelectedColorTheme } = useColorThemeAtom();
 
   const carouselRef = useRef<any>(null);
   const [_currentIndex, _setCurrentIndex] = useState(0);
 
-  const changeCharacter = (characterId: CharacterId | undefined) => {
-    if (characterId) setCurrentCharacterId(characterId);
-    setSelectedColorTheme(menuItems[currentIndex].color);
-    activateMenu(`${currentIndex + 1}`);
+  const handleOnScrollEnd = (index: number) => {
+    setSelectedColorTheme(menuItems[index].color);
+    setCurrentCharacterId(`${index + 1}` as CharacterId);
+    activateMenu(`${index + 1}`);
   };
-
-  useEffect(() => {
-    if (Number.isInteger(_currentIndex)) {
-      setCurrentIndex(_currentIndex);
-    }
-  }, [_currentIndex]);
-
-  useEffect(() => {
-    if (!menuItems[currentIndex]) return;
-    switch (menuItems[currentIndex].enCharacterName) {
-      case "Meika": {
-        const characterId = getCharacterIdByEnCharacterName("Meika");
-        changeCharacter(characterId);
-        break;
-      }
-      case "Abbie": {
-        const characterId = getCharacterIdByEnCharacterName("Abbie");
-        changeCharacter(characterId);
-        break;
-      }
-      case "Coo": {
-        const characterId = getCharacterIdByEnCharacterName("Coo");
-        changeCharacter(characterId);
-        break;
-      }
-      default:
-        break;
-    }
-  }, [currentIndex]);
 
   useEffect(() => {
     if (carouselRef.current) {
       const targetMenuItem = menuItems.find((item) => item.active);
       if (targetMenuItem) {
         const targetIndex = menuItems.indexOf(targetMenuItem);
-        carouselRef.current.scrollTo({ index: targetIndex, animated: true });
+        carouselRef.current.scrollTo({ index: targetIndex });
       }
     }
   }, [menuItems]);
@@ -91,6 +59,7 @@ export function Parallax() {
           progressValue.value = absoluteProgress;
           _setCurrentIndex(absoluteProgress);
         }}
+        onScrollEnd={handleOnScrollEnd}
         mode="parallax"
         modeConfig={{
           parallaxScrollingScale: 0.88,
