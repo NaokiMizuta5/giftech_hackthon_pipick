@@ -16,9 +16,7 @@ import Animated, {
   interpolate,
   useSharedValue,
 } from "react-native-reanimated";
-import Carousel, {
-  type TAnimationStyle,
-} from "react-native-reanimated-carousel";
+import Carousel from "react-native-reanimated-carousel";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 import type { PlaceInfo } from "../../../placeInfo/types";
 import { window } from "../../constants";
@@ -110,12 +108,13 @@ const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
               mt={5}
               mb={5}
             >
-              {tagLabels.map(
-                (label) =>
-                  label !== "img" && (
-                    <TagText key={label}>{placeInfo[label]}</TagText>
-                  ),
-              )}
+              {tagLabels
+                .filter((label) => label !== "img")
+                .map((label) => (
+                  <TagText key={label}>
+                    {placeInfo[label] as keyof PlaceInfo}
+                  </TagText>
+                ))}
             </HStack>
             <Button
               backgroundColor="rgba(0, 0, 0, 0)"
@@ -155,7 +154,7 @@ export function Swipe() {
   const directionAnimVal = useSharedValue(0);
 
   //Tinder風のアニメーションを設定
-  const animationStyle: TAnimationStyle = useCallback(
+  const animationStyle: any = useCallback(
     (value: number) => {
       "worklet";
       const translateY = interpolate(value, [0, 1], [0, -18]);
@@ -216,13 +215,14 @@ export function Swipe() {
         scrollAnimationDuration={500}
         vertical={false}
         //onConfigurePanGestureがないとスワイプできない
+        // @ts-ignore
         onConfigurePanGesture={(g) => {
-          g.onChange((e) => {
+          g.onChange((e: any) => {
             directionAnimVal.value = Math.sign(e.translationX);
           });
         }}
         fixedDirection="negative"
-        renderItem={({ index, item }) => (
+        renderItem={({ index }) => (
           <Item
             key={index}
             img={placeInfoList[index].img}
