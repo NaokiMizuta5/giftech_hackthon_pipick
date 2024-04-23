@@ -1,15 +1,15 @@
 import type { ImageSourcePropType } from "react-native";
 
 const img_0 = require("./Images/0.png");
-const img_1 = require("./Images/1.png");
-const img_2 = require("./Images/2.png");
-const img_3 = require("./Images/3.png");
-const img_4 = require("./Images/4.png");
-const img_5 = require("./Images/5.png");
-const img_6 = require("./Images/6.png");
-const img_7 = require("./Images/7.png");
-const img_8 = require("./Images/8.png");
-const img_9 = require("./Images/9.png");
+const img_1 = require("./Images/0.png");
+const img_2 = require("./Images/0.png");
+const img_3 = require("./Images/0.png");
+const img_4 = require("./Images/0.png");
+const img_5 = require("./Images/0.png");
+const img_6 = require("./Images/0.png");
+const img_7 = require("./Images/0.png");
+const img_8 = require("./Images/0.png");
+const img_9 = require("./Images/0.png");
 
 export function getImages(length = 10): ImageSourcePropType[] {
   const imageList = [
