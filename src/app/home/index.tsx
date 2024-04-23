@@ -1,8 +1,11 @@
 import { useCharactersInfoAtom } from "@/features/character";
 import { FadeInOutView } from "@/features/fadeInOutView";
+import { FindButton } from "@/features/findButton";
 import { Gauge } from "@/features/gauge";
 import { Header } from "@/features/header";
-import { Box } from "@gluestack-ui/themed";
+import { ListButton } from "@/features/listButton";
+import { Parallax } from "@/features/parallax";
+import { Box, HStack } from "@gluestack-ui/themed";
 
 export default function Home() {
   const { currentCharacter } = useCharactersInfoAtom();
@@ -11,6 +14,11 @@ export default function Home() {
       <Box display="flex" flexDirection="column" alignItems="center">
         <Header />
         {currentCharacter && <Gauge character={currentCharacter} />}
+        <Parallax />
+        <HStack gap="$6" alignItems="center">
+          <ListButton />
+          <FindButton />
+        </HStack>
       </Box>
     </FadeInOutView>
   );
