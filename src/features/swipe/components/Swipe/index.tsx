@@ -19,10 +19,9 @@ import Animated, {
 import Carousel, {
   type TAnimationStyle,
 } from "react-native-reanimated-carousel";
-import { useSwipeAtom } from "../../atom";
+import { usePlaceInfoAtom } from "../../../placeInfo/atom";
+import type { PlaceInfo } from "../../../placeInfo/types";
 import { window } from "../../constants";
-
-type PlaceInfo = Record<string, string>;
 
 //TagTextコンポーネントを作成
 const TagText = ({ children }: { children: React.ReactNode }) => {
@@ -38,97 +37,21 @@ const TagText = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export function Swipe() {
-  const { data, dataLength, placeInfo } = useSwipeAtom();
-
-  const PAGE_WIDTH = window.width;
-  const PAGE_HEIGHT = window.height;
-
-  const directionAnimVal = useSharedValue(0);
-
-  const animationStyle: TAnimationStyle = useCallback(
-    (value: number) => {
-      "worklet";
-      const translateY = interpolate(value, [0, 1], [0, -18]);
-
-      const translateX =
-        interpolate(value, [-1, 0], [PAGE_WIDTH, 0], Extrapolation.CLAMP) *
-        directionAnimVal.value;
-
-      const rotateZ =
-        interpolate(value, [-1, 0], [15, 0], Extrapolation.CLAMP) *
-        directionAnimVal.value;
-
-      const zIndex = interpolate(
-        value,
-        [0, 1, 2, 3, 4],
-        [0, 1, 2, 3, 4].map((v) => (dataLength - v) * 10),
-        Extrapolation.CLAMP,
-      );
-
-      const scale = interpolate(value, [0, 1], [1, 0.95]);
-
-      const opacity = interpolate(
-        value,
-        [-1, -0.8, 0, 1],
-        [0, 0.9, 1, 0.85],
-        Extrapolation.EXTEND,
-      );
-
-      return {
-        transform: [
-          { translateY },
-          { translateX },
-          { rotateZ: `${rotateZ}deg` },
-          { scale },
-        ],
-        zIndex,
-        opacity,
-      };
-    },
-    [directionAnimVal.value, PAGE_WIDTH, dataLength],
-  );
-
-  return (
-    <View style={{ flex: 1 }}>
-      <Carousel
-        loop={false}
-        defaultIndex={0}
-        style={{
-          width: PAGE_WIDTH,
-          height: PAGE_HEIGHT * 0.8, //コンポーネントの高さを微調整可能
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "black",
-        }}
-        width={PAGE_WIDTH}
-        height={PAGE_HEIGHT}
-        data={data}
-        scrollAnimationDuration={500}
-        vertical={false}
-        onConfigurePanGesture={(g) => {
-          g.onChange((e) => {
-            directionAnimVal.value = Math.sign(e.translationX);
-          });
-        }}
-        fixedDirection="negative"
-        renderItem={({ index, item }) => (
-          <Item key={index} img={item} placeInfo={placeInfo} />
-        )}
-        customAnimation={animationStyle}
-      />
-    </View>
-  );
-}
-
+//Tinder風のカードコンポーネントを作成
 const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
   img,
   placeInfo,
 }) => {
   const width = window.width * 0.7;
   const height = window.height * 0.6; //画像の高さを微調整可能
-  //fetchしてきたデータの一部をここに入れる(仮)
-  const tagLabels = ["genre", "prefecture", "place", "station", "distance"];
+
+  const tagLabels: (keyof PlaceInfo)[] = [
+    "genre",
+    "prefecture",
+    "place",
+    "station",
+    "distance",
+  ];
   return (
     <Animated.View
       entering={FadeInDown.duration(300)}
@@ -187,9 +110,12 @@ const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
               mt={5}
               mb={5}
             >
-              {tagLabels.map((label) => (
-                <TagText key={label}>{placeInfo[label]}</TagText>
-              ))}
+              {tagLabels.map(
+                (label) =>
+                  label !== "img" && (
+                    <TagText key={label}>{placeInfo[label]}</TagText>
+                  ),
+              )}
             </HStack>
             <Button
               backgroundColor="rgba(0, 0, 0, 0)"
@@ -213,3 +139,98 @@ const Item: React.FC<{ img: ImageSourcePropType; placeInfo: PlaceInfo }> = ({
     </Animated.View>
   );
 };
+
+//Swipeコンポーネント
+export function Swipe() {
+  const { placeInfoList, placeInfoLength } = usePlaceInfoAtom();
+  const data: ImageSourcePropType[] = [];
+  //placeInfoListの中身を取り出して、dataに画像データを格納
+  for (let i = 0; i < placeInfoLength; i++) {
+    data.push(placeInfoList[i].img);
+  }
+
+  const PAGE_WIDTH = window.width;
+  const PAGE_HEIGHT = window.height;
+
+  const directionAnimVal = useSharedValue(0);
+
+  //Tinder風のアニメーションを設定
+  const animationStyle: TAnimationStyle = useCallback(
+    (value: number) => {
+      "worklet";
+      const translateY = interpolate(value, [0, 1], [0, -18]);
+
+      const translateX =
+        interpolate(value, [-1, 0], [PAGE_WIDTH, 0], Extrapolation.CLAMP) *
+        directionAnimVal.value;
+
+      const rotateZ =
+        interpolate(value, [-1, 0], [15, 0], Extrapolation.CLAMP) *
+        directionAnimVal.value;
+
+      const zIndex = interpolate(
+        value,
+        [0, 1, 2, 3, 4],
+        [0, 1, 2, 3, 4].map((v) => (placeInfoLength - v) * 10),
+        Extrapolation.CLAMP,
+      );
+
+      const scale = interpolate(value, [0, 1], [1, 0.95]);
+
+      const opacity = interpolate(
+        value,
+        [-1, -0.8, 0, 1],
+        [0, 0.9, 1, 0.85],
+        Extrapolation.EXTEND,
+      );
+
+      return {
+        transform: [
+          { translateY },
+          { translateX },
+          { rotateZ: `${rotateZ}deg` },
+          { scale },
+        ],
+        zIndex,
+        opacity,
+      };
+    },
+    [directionAnimVal.value, PAGE_WIDTH, placeInfoLength],
+  );
+
+  return (
+    <View style={{ flex: 1 }}>
+      <Carousel
+        loop={false}
+        defaultIndex={0}
+        style={{
+          width: PAGE_WIDTH,
+          height: PAGE_HEIGHT * 0.8, //コンポーネントの高さを微調整可能
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "black",
+        }}
+        width={PAGE_WIDTH}
+        height={PAGE_HEIGHT}
+        data={data}
+        scrollAnimationDuration={500}
+        vertical={false}
+        //onConfigurePanGestureがないとスワイプできない
+        onConfigurePanGesture={(g) => {
+          g.onChange((e) => {
+            directionAnimVal.value = Math.sign(e.translationX);
+          });
+        }}
+        fixedDirection="negative"
+        renderItem={({ index, item }) => (
+          <Item
+            key={index}
+            img={placeInfoList[index].img}
+            placeInfo={placeInfoList[index]}
+          />
+        )}
+        customAnimation={animationStyle}
+      />
+    </View>
+  );
+}
