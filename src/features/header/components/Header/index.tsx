@@ -5,10 +5,10 @@ import {
   ChevronLeftIcon,
   HStack,
   Icon,
-  MenuIcon,
   SafeAreaView,
   Text,
 } from "@gluestack-ui/themed";
+import { List } from "lucide-react-native";
 
 import { useColorThemeAtom } from "@/atom";
 import { type CharacterId, useCharactersInfoAtom } from "@/features/character";
@@ -96,7 +96,7 @@ export function Header() {
                   );
                 })}
               </HStack>
-              <Icon as={MenuIcon} color="$white" size="xl" />
+              <Icon as={List} color="$white" size="xl" />
             </HStack>
           </Box>
         </SafeAreaView>
