@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   overlayLabelText: { color: "white", fontSize: 32, fontWeight: "bold" },
   infoBox: {
     position: "absolute",
-    top: "70%",
+    top: "75%",
     left: 0,
     right: 0,
     bottom: 0,
