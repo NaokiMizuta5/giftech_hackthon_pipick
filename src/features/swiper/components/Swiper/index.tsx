@@ -1,3 +1,4 @@
+import { getThemeOneColor } from "@/utils";
 import {
   Box,
   Button,
@@ -20,7 +21,8 @@ import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 export function Swiper() {
   const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
-  const colorTheme = useColorThemeAtom(); //テーマカラーを取得
+  const { colorTheme } = useColorThemeAtom();
+  const backgroundColor = getThemeOneColor(colorTheme);
   const OverlayRight = () => {
     return (
       <Box
@@ -29,7 +31,7 @@ export function Swiper() {
         borderRadius={48}
         justifyContent="center"
         alignItems="center"
-        backgroundColor={colorTheme.colorTheme}
+        backgroundColor={backgroundColor}
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
           Like
