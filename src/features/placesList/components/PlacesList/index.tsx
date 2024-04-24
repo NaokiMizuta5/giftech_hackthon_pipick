@@ -49,7 +49,11 @@ export function PlacesList() {
       <ScrollView width="100%" height="100%">
         <VStack width="100%" alignItems="center" space="md">
           {placeInfoList.map((place) => (
-            <EachPlace placeName={place.placeName} Img={place.img} />
+            <EachPlace
+              key={place.index}
+              placeName={place.placeName}
+              Img={place.img}
+            />
           ))}
         </VStack>
       </ScrollView>
