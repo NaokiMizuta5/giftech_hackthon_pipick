@@ -51,18 +51,6 @@ export function Swiper() {
       </Box>
     );
   };
-  const _TagText = ({ children }: { children: React.ReactNode }) => {
-    return (
-      <Box
-        backgroundColor="rgba(255, 255, 255, 0.75)"
-        margin={3}
-        padding={5}
-        borderRadius={20}
-      >
-        <Text color="black">{children}</Text>
-      </Box>
-    );
-  };
 
   const [visible, setVisible] = React.useState(false);
 
