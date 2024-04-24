@@ -15,19 +15,21 @@ import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-compone
 import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
+import { useColorThemeAtom } from "~/src/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 export function Swiper() {
   const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
+  const colorTheme = useColorThemeAtom(); //テーマカラーを取得
   const OverlayRight = () => {
     return (
       <Box
         width="$full"
         height="$full"
-        borderRadius="$xl"
+        borderRadius={48}
         justifyContent="center"
         alignItems="center"
-        backgroundColor="$green"
+        backgroundColor={colorTheme.colorTheme}
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
           Like
@@ -40,10 +42,10 @@ export function Swiper() {
       <Box
         width="$full"
         height="$full"
-        borderRadius="$xl"
+        borderRadius={48}
         justifyContent="center"
         alignItems="center"
-        backgroundColor="$red"
+        backgroundColor="$gray"
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
           Nope
