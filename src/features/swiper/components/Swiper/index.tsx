@@ -1,5 +1,7 @@
+import { getThemeOneColor } from "@/utils";
 import {
   Box,
+  Button,
   CloseIcon,
   Heading,
   Modal,
@@ -14,29 +16,22 @@ import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-compone
 import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
-
-const data = [
-  "https://images.unsplash.com/photo-1681896616404-6568bf13b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  "https://images.unsplash.com/photo-1681871197336-0250ed2fe23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  "https://images.unsplash.com/photo-1681238091934-10fbb34b497a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1282&q=80",
-  "https://images.unsplash.com/photo-1681896616404-6568bf13b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  "https://images.unsplash.com/photo-1681871197336-0250ed2fe23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  "https://images.unsplash.com/photo-1681238091934-10fbb34b497a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1282&q=80",
-  "https://images.unsplash.com/photo-1681896616404-6568bf13b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  "https://images.unsplash.com/photo-1681871197336-0250ed2fe23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  "https://images.unsplash.com/photo-1681238091934-10fbb34b497a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1282&q=80",
-];
+import { useColorThemeAtom } from "~/src/atom";
+import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 export function Swiper() {
+  const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
+  const { colorTheme } = useColorThemeAtom();
+  const backgroundColor = getThemeOneColor(colorTheme);
   const OverlayRight = () => {
     return (
       <Box
         width="$full"
         height="$full"
-        borderRadius="$xl"
+        borderRadius={48}
         justifyContent="center"
         alignItems="center"
-        backgroundColor="$green"
+        backgroundColor={backgroundColor}
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
           Like
@@ -49,10 +44,10 @@ export function Swiper() {
       <Box
         width="$full"
         height="$full"
-        borderRadius="$xl"
+        borderRadius={48}
         justifyContent="center"
         alignItems="center"
-        backgroundColor="$red"
+        backgroundColor="$gray"
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
           Nope
@@ -69,9 +64,9 @@ export function Swiper() {
 
   return (
     <Box flex={1}>
-      {data.map((item, index) => {
+      {placeInfoList.map((item) => {
         return (
-          <Pressable onPress={handlePress} key={`${index}-${item}`}>
+          <Pressable onPress={handlePress} key={`${item.index}-${item.img}`}>
             <Box pointerEvents="box-none">
               <TinderCard
                 cardWidth={320}
@@ -82,11 +77,30 @@ export function Swiper() {
                 onSwipedRight={() => {}}
                 onSwipedLeft={() => {}}
               >
-                <Image
-                  alt="swiper"
-                  source={{ uri: item }}
-                  style={styles.image}
-                />
+                {/* 表示する画像 */}
+                <Image alt="swiper" source={item.img} style={styles.image} />
+                <Box style={styles.infoBox}>
+                  <Text fontSize="$xl" fontWeight="bold" color="white" mt={15}>
+                    {item.placeName}
+                  </Text>
+                  {/* 詳細を見るボタン */}
+                  <Button
+                    backgroundColor="rgba(0, 0, 0, 0)"
+                    borderRadius={20}
+                    width={280}
+                    height={50}
+                    onPress={() => {}} //Modalを表示する処理を追加
+                  >
+                    <Image
+                      source={require("../../Images/detailMark.png")}
+                      style={{
+                        width: 20, // 幅を小さくするための値を指定
+                        height: 20, // 高さを小さくするための値を指定
+                      }}
+                    />
+                    <Text color="white"> 詳細を見る</Text>
+                  </Button>
+                </Box>
               </TinderCard>
             </Box>
           </Pressable>
@@ -143,4 +157,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   overlayLabelText: { color: "white", fontSize: 32, fontWeight: "bold" },
+  infoBox: {
+    position: "absolute",
+    top: "75%",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 48,
+    backgroundColor: "rgba(0, 0, 0, 0.5)", //黒色の50%透明度
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
