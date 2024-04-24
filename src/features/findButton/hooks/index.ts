@@ -1,7 +1,9 @@
-// import { router } from "expo-router";
+import { router } from "expo-router";
 
 export const useFindButton = () => {
-  const handlePress = () => {};
+  const handlePress = () => {
+    router.push("/suggest/");
+  };
 
   return {
     handlePress,
