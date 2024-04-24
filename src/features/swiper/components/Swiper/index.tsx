@@ -14,20 +14,10 @@ import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-compone
 import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
-
-const data = [
-  "https://images.unsplash.com/photo-1681896616404-6568bf13b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  "https://images.unsplash.com/photo-1681871197336-0250ed2fe23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  "https://images.unsplash.com/photo-1681238091934-10fbb34b497a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1282&q=80",
-  "https://images.unsplash.com/photo-1681896616404-6568bf13b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  "https://images.unsplash.com/photo-1681871197336-0250ed2fe23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  "https://images.unsplash.com/photo-1681238091934-10fbb34b497a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1282&q=80",
-  "https://images.unsplash.com/photo-1681896616404-6568bf13b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  "https://images.unsplash.com/photo-1681871197336-0250ed2fe23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  "https://images.unsplash.com/photo-1681238091934-10fbb34b497a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1282&q=80",
-];
+import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 export function Swiper() {
+  const { placeInfoList } = usePlaceInfoAtom();
   const OverlayRight = () => {
     return (
       <Box
@@ -69,9 +59,9 @@ export function Swiper() {
 
   return (
     <Box flex={1}>
-      {data.map((item, index) => {
+      {placeInfoList.map((item) => {
         return (
-          <Pressable onPress={handlePress} key={`${index}-${item}`}>
+          <Pressable onPress={handlePress} key={`${item.index}-${item.img}`}>
             <Box pointerEvents="box-none">
               <TinderCard
                 cardWidth={320}
@@ -82,11 +72,7 @@ export function Swiper() {
                 onSwipedRight={() => {}}
                 onSwipedLeft={() => {}}
               >
-                <Image
-                  alt="swiper"
-                  source={{ uri: item }}
-                  style={styles.image}
-                />
+                <Image alt="swiper" source={item.img} style={styles.image} />
               </TinderCard>
             </Box>
           </Pressable>
