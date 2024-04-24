@@ -10,7 +10,6 @@ import {
   ModalContent,
   ModalHeader,
   Text,
-  VStack,
 } from "@gluestack-ui/themed";
 import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-components";
 import * as React from "react";
@@ -97,45 +96,27 @@ export function Swiper() {
               >
                 {/* 表示する画像 */}
                 <Image alt="swiper" source={item.img} style={styles.image} />
-                <Box style={styles.detailInfoBox}>
+                <Box style={styles.infoBox}>
                   <Text fontSize="$xl" fontWeight="bold" color="white" mt={15}>
                     {item.placeName}
                   </Text>
-                  <VStack>
-                    {/* タグ関連 */}
-                    {/* <HStack
-                      flexWrap="wrap"
-                      justifyContent="center"
-                      borderRadius={20}
-                      mt={5}
-                      mb={5}
-                    >
-                      {tagLabels
-                        .filter((label) => label !== "img")
-                        .map((label) => (
-                          <TagText key={label}>
-                            {placeInfo[label] as keyof PlaceInfo}
-                          </TagText>
-                        ))}
-                    </HStack> */}
-                    {/* 詳細を見るボタン */}
-                    <Button
-                      backgroundColor="rgba(0, 0, 0, 0)"
-                      borderRadius={20}
-                      width={280}
-                      height={50}
-                      onPress={() => {}}
-                    >
-                      <Image
-                        source={require("../../Images/detailMark.png")}
-                        style={{
-                          width: 20, // 幅を小さくするための値を指定
-                          height: 20, // 高さを小さくするための値を指定
-                        }}
-                      />
-                      <Text color="white"> 詳細を見る</Text>
-                    </Button>
-                  </VStack>
+                  {/* 詳細を見るボタン */}
+                  <Button
+                    backgroundColor="rgba(0, 0, 0, 0)"
+                    borderRadius={20}
+                    width={280}
+                    height={50}
+                    onPress={() => {}} //Modalを表示する処理を追加
+                  >
+                    <Image
+                      source={require("../../Images/detailMark.png")}
+                      style={{
+                        width: 20, // 幅を小さくするための値を指定
+                        height: 20, // 高さを小さくするための値を指定
+                      }}
+                    />
+                    <Text color="white"> 詳細を見る</Text>
+                  </Button>
                 </Box>
               </TinderCard>
             </Box>
@@ -193,9 +174,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   overlayLabelText: { color: "white", fontSize: 32, fontWeight: "bold" },
-  detailInfoBox: {
+  infoBox: {
     position: "absolute",
-    top: "60%",
+    top: "70%",
     left: 0,
     right: 0,
     bottom: 0,
