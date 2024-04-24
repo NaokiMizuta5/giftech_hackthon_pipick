@@ -16,18 +16,9 @@ import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
-import type { PlaceInfo } from "../../../placeInfo/types";
 
 export function Swiper() {
-  const { placeInfoList } = usePlaceInfoAtom();
-  //タグに表示する情報を指定できる。今回はジャンル、都道府県、場所、最寄り駅、距離。可変。
-  const _tagLabels: (keyof PlaceInfo)[] = [
-    "genre",
-    "prefecture",
-    "place",
-    "station",
-    "distance",
-  ];
+  const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
   const OverlayRight = () => {
     return (
       <Box
