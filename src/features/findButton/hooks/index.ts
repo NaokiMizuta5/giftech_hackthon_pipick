@@ -1,8 +1,10 @@
-import { router } from "expo-router";
+import { useRoutePathAtom } from "@/features/routePath";
 
 export const useFindButton = () => {
+  const { lazyRouterPush } = useRoutePathAtom();
+
   const handlePress = () => {
-    router.push("/suggest/");
+    lazyRouterPush("suggest");
   };
 
   return {

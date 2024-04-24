@@ -12,6 +12,8 @@ import { List } from "lucide-react-native";
 
 import { useColorThemeAtom } from "@/atom";
 import { type CharacterId, useCharactersInfoAtom } from "@/features/character";
+import { useRoutePathAtom } from "@/features/routePath";
+import { Pressable } from "react-native";
 import type { Color } from "~/src/utils";
 import { useHeaderAtom } from "../../atom";
 
@@ -20,6 +22,11 @@ export function Header() {
   const { colorTheme, setSelectedColorTheme } = useColorThemeAtom();
   const { getCharacterIdByEnCharacterName, setCurrentCharacterId } =
     useCharactersInfoAtom();
+  const { isHomePath, isListPath, lazyRouterPush } = useRoutePathAtom();
+
+  const renderMenuItems = menuItems.filter((item) => {
+    return isHomePath ? true : item.active;
+  });
 
   const handlePressButton = ({
     color,
@@ -59,9 +66,16 @@ export function Header() {
               paddingLeft="$4"
               paddingRight="$4"
             >
-              <Icon as={ChevronLeftIcon} color="$white" size="xl" />
+              <Pressable onPress={() => lazyRouterPush("home")}>
+                <Icon
+                  as={ChevronLeftIcon}
+                  color="$white"
+                  size="xl"
+                  opacity={isHomePath ? 0 : 100}
+                />
+              </Pressable>
               <HStack gap="$2" alignItems="center">
-                {menuItems.map((item) => {
+                {renderMenuItems.map((item) => {
                   const characterId = getCharacterIdByEnCharacterName(
                     item.enCharacterName,
                   );
@@ -76,7 +90,7 @@ export function Header() {
                         })
                       }
                       paddingHorizontal="$4"
-                      {...(item.active
+                      {...(item.active && renderMenuItems.length > 1
                         ? {
                             backgroundColor: "$white",
                             borderRadius: "$3xl",
@@ -86,7 +100,11 @@ export function Header() {
                           })}
                     >
                       <Text
-                        color={item.active ? "$black " : "$white"}
+                        color={
+                          item.active && renderMenuItems.length > 1
+                            ? "$black "
+                            : "$white"
+                        }
                         fontSize="$sm"
                         fontWeight="$bold"
                       >
@@ -96,7 +114,14 @@ export function Header() {
                   );
                 })}
               </HStack>
-              <Icon as={List} color="$white" size="xl" />
+              <Pressable onPress={() => lazyRouterPush("list")}>
+                <Icon
+                  as={List}
+                  color="$white"
+                  size="xl"
+                  opacity={isListPath ? 0 : 100}
+                />
+              </Pressable>
             </HStack>
           </Box>
         </SafeAreaView>
