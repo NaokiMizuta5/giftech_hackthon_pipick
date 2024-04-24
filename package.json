@@ -61,6 +61,7 @@
     "react-native-screens": "~3.29.0",
     "react-native-svg": "^13.4.0",
     "react-native-web": "~0.19.6",
+    "rn-tinder-card": "^1.7.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
