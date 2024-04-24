@@ -1,9 +1,15 @@
-import { Box, HStack, Image, Text, VStack } from "@gluestack-ui/themed";
+import {
+  Box,
+  HStack,
+  Image,
+  ScrollView,
+  Text,
+  VStack,
+} from "@gluestack-ui/themed";
 import type { ImageSourcePropType } from "react-native";
+import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
-//重要
 //List画面で表示する変数は、場所名と画像のみで良い。
-
 type EachPlaceProps = {
   placeName: string;
   Img: ImageSourcePropType;
@@ -37,31 +43,16 @@ export function PlacesList() {
   // const {
   //   count: atomCount,
   // } = usePlacesListAtom();
-
-  //Todo: ここで、PlacesListのデータを取得する。swipeコンポーネント削除後。
-  //データは、PlaceInfoから取得する。
-  const tempImg: ImageSourcePropType = require("../../constants/Image/0.png");
-  const placesList = [
-    {
-      placeName: "三鷹の森ジブリ美術館",
-      Img: tempImg,
-    },
-    {
-      placeName: "レゴランド・ディスカバリー・センター東京",
-      Img: tempImg,
-    },
-    {
-      placeName: "Place3",
-      Img: tempImg,
-    },
-  ];
+  const { placeInfoList } = usePlaceInfoAtom();
   return (
     <Box backgroundColor="$black" justifyContent="center" alignItems="center">
-      <VStack width="90%" alignItems="center" space="md">
-        {placesList.map((place) => (
-          <EachPlace placeName={place.placeName} Img={place.Img} />
-        ))}
-      </VStack>
+      <ScrollView width="100%" height="100%">
+        <VStack width="100%" alignItems="center" space="md">
+          {placeInfoList.map((place) => (
+            <EachPlace placeName={place.placeName} Img={place.img} />
+          ))}
+        </VStack>
+      </ScrollView>
     </Box>
   );
 }
