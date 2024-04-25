@@ -18,6 +18,19 @@ import { TinderCard } from "rn-tinder-card";
 import { useColorThemeAtom } from "~/src/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
+const _TagText = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Box
+      backgroundColor="rgba(255, 255, 255, 0.75)"
+      margin={3}
+      padding={5}
+      borderRadius={20}
+    >
+      <Text color="black">{children}</Text>
+    </Box>
+  );
+};
+
 export function Swiper() {
   const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
   const { colorTheme } = useColorThemeAtom();
