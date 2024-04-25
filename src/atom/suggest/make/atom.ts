@@ -10,7 +10,7 @@ const makeSuggestDataAtom = atom<SuggestData[]>(INITIAL_MAKE_SUGGEST_DATA);
 const makeFavoriteDataAtom = atom<SuggestData[]>(INITIAL_MAKE_FAVORITE_DATA);
 const makeDoneDataAtom = atom<SuggestData[]>(INITIAL_MAKE_DONE_DATA);
 
-export const useEatSuggestAtom = () => {
+export const useMakeSuggestAtom = () => {
   const [makeSuggestData, setMakeSuggestData] = useAtom(makeSuggestDataAtom);
   const [makeFavoriteData, setMakeFavoriteData] = useAtom(makeFavoriteDataAtom);
   const [makeDoneData, setMakeDoneData] = useAtom(makeDoneDataAtom);
