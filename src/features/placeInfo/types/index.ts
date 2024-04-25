@@ -9,10 +9,8 @@ export type PlaceInfo = {
   img: ImageSourcePropType;
   placeName: string;
   comment: string;
-  TagInfo: {
-    [key: number]: string | null;
-  };
-  DetailInfo: {
+  tags: string[];
+  detail: {
     star: {
       [key: string]: number;
     };

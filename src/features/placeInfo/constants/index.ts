@@ -16,14 +16,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[0],
     placeName: "お箸はそろそろ飽きたでしょ？",
     comment: "豪快に素手でたべるべし！",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "魚介",
-      [3]: "アメリカン",
-      [4]: "スパイシー,",
-      [5]: "ワイルド",
-    },
-    DetailInfo: {
+    tags: ["東京", "魚介", "アメリカン", "スパイシー,", "ワイルド"],
+    detail: {
       star: {
         ワイルド: 8,
         鮮度: 4,
@@ -37,12 +31,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[1],
     placeName: "アイスって焼いて食べるモノ？",
     comment: "焼けばなんでもおいしくなるはず！",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "フレンチ",
-      [3]: "老舗",
-    },
-    DetailInfo: {
+    tags: ["東京", "フレンチ", "老舗"],
+    detail: {
       star: {
         店の歴史: 5,
         メニューの豊富さ: 4,
@@ -56,13 +46,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[2],
     placeName: "戦国時代にタイムスリップ",
     comment: "美味しものを食べて天下統一だ！",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "日本食",
-      [3]: "個室",
-      [4]: "動乱の戦国時代",
-    },
-    DetailInfo: {
+    tags: ["東京", "日本食", "個室", "動乱の戦国時代"],
+    detail: {
       star: {
         雰囲気: 9,
         落ち着く: 5,
@@ -76,12 +61,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[3],
     placeName: "ロボットとカフェタイム",
     comment: "ロボット、ト、コーヒー。",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "日本食",
-      [3]: "ロボット",
-    },
-    DetailInfo: {
+    tags: ["東京", "日本食", "ロボット"],
+    detail: {
       star: {
         奇抜さ: 6,
         落ち着く: 5,
@@ -94,12 +75,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[4],
     placeName: "お化け屋敷でお食事",
     comment: "うらめしや～",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "日本食",
-      [3]: "お化け",
-    },
-    DetailInfo: {
+    tags: ["東京", "日本食", "お化け"],
+    detail: {
       star: {
         怖さ: 5,
         楽しさ: 5,
@@ -113,12 +90,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[5],
     placeName: "信じられないほどたくさんの怪獣がいるよ！",
     comment: "豪快に素手でたべるべし！",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "日本食",
-      [3]: "怪獣",
-    },
-    DetailInfo: {
+    tags: ["東京", "日本食", "怪獣"],
+    detail: {
       star: {
         落ち着かなさ: 5,
         アットホーム感: 5,
@@ -132,12 +105,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[6],
     placeName: "ペンギンとごはん",
     comment: "豪快に素手でたべるべし！",
-    TagInfo: {
-      [1]: "沖縄",
-      [2]: "ダイニングBar",
-      [3]: "動物",
-    },
-    DetailInfo: {
+    tags: ["沖縄", "ダイニングBar", "動物"],
+    detail: {
       star: {
         かわいさ: 5,
         ペンギン度: 4,
@@ -150,13 +119,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[7],
     placeName: "冷蔵庫の中でお食事",
     comment: "冷蔵庫の中で飲むビールは格別だ。",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "日本食",
-      [3]: "寒いかも",
-      [4]: "生肉LOVER",
-    },
-    DetailInfo: {
+    tags: ["東京", "日本食", "寒いかも", "生肉LOVER"],
+    detail: {
       star: {
         寒い感: 5,
         メニューの豊富さ: 4,
@@ -170,13 +134,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[8],
     placeName: "食べたいものは自分で捕獲",
     comment: "豪快に素手でたべるべし！",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "魚介",
-      [3]: "新鮮",
-      [4]: "釣り",
-    },
-    DetailInfo: {
+    tags: ["東京", "魚介", "新鮮", "釣り"],
+    detail: {
       star: {
         達成感: 7,
         鮮度: 5,
@@ -189,12 +148,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[9],
     placeName: "忍者メシ",
     comment: "にんにん！",
-    TagInfo: {
-      [1]: "東京",
-      [2]: "日本食",
-      [3]: "忍法",
-    },
-    DetailInfo: {
+    tags: ["東京", "日本食", "忍法"],
+    detail: {
       star: {
         日本らしさ: 5,
         異世界感: 7,
@@ -208,8 +163,8 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     img: imgList[10],
     placeName: "",
     comment: "",
-    TagInfo: {},
-    DetailInfo: {
+    tags: [],
+    detail: {
       star: {},
       GoogleUrl: "",
     },

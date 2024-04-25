@@ -110,11 +110,9 @@ export function Swiper() {
                     mt={5}
                     mb={5}
                   >
-                    {Object.keys(item.TagInfo).map((key) => {
-                      const label = item.TagInfo[Number.parseInt(key)];
-                      if (label) {
-                        return <TagText key={key}>{label}</TagText>;
-                      }
+                    {item.tags.map((tag) => {
+                      if (!tag) return;
+                      return <TagText key={item.index}>{tag}</TagText>;
                     })}
                   </HStack>
                 </Box>
