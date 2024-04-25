@@ -8,6 +8,8 @@ export const INITIAL_PLACE_INFO_LENGTH_ATOM = imgList.length;
 
 //index・img・placeNameはList/Swiperで使用しているので、一旦は変更しないように。
 //その他はまだ変更可能。
+//PlaceInfo[]の一番最後から降順にPlaceInfoが表示されることに注意。
+//スワイプ開始時に最後のPlaceInfoが表示されるが、画像は透けて表示されるので、次のPlaceInfoが透けて見える。なので、PlaceInfo[]の最後には、何も表示されない画像を入れておく。
 export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
   {
     index: 0,
