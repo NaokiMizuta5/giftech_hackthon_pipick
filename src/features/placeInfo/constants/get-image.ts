@@ -10,7 +10,7 @@ const img_6 = require("./Images/0.png");
 const img_7 = require("./Images/1.png");
 const img_8 = require("./Images/0.png");
 const img_9 = require("./Images/1.png");
-const img_10 = require("./Images/black.jpeg");
+const img_10 = require("./Images/black.jpeg"); //black.jpegである必要はないが、null許容してないので適当な画像を入れている
 
 export function getImages(length = 11): ImageSourcePropType[] {
   const imageList = [
