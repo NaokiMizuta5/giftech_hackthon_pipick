@@ -2,11 +2,14 @@ import {
   Box,
   Button,
   ButtonText,
+  HStack,
   Image,
   Text,
   VStack,
 } from "@gluestack-ui/themed";
 import { StyleSheet } from "react-native";
+import type { ImageSourcePropType } from "react-native";
+import { useCharactersInfoAtom } from "../../../character/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 export function PlaceDetail({ index }: { index: number }) {
@@ -16,6 +19,19 @@ export function PlaceDetail({ index }: { index: number }) {
   // } = usePlaceDetailAtom();
   const { placeInfoList } = usePlaceInfoAtom();
   const { img, placeName, detail } = placeInfoList[index];
+
+  //ジャンルに応じてキャラクター画像を変更
+  const { currentCharacterId } = useCharactersInfoAtom();
+  let characterImg: ImageSourcePropType;
+  if (currentCharacterId === "1") {
+    characterImg = require("~/assets/images/MeikaFace.png");
+  } else if (currentCharacterId === "2") {
+    characterImg = require("~/assets/images/AbbieFace.png");
+  } else if (currentCharacterId === "3") {
+    characterImg = require("~/assets/images/CooFace.png");
+  } else {
+    characterImg = require("~/assets/images/MirukiFace.png");
+  }
   if (!img) {
     return <Text textAlign="center">Please Swipe!</Text>;
   }
@@ -24,7 +40,7 @@ export function PlaceDetail({ index }: { index: number }) {
       <VStack>
         <Box style={styles.box1}>
           <Text style={styles.text1}>{placeName}</Text>
-          <Image source={img} style={styles.image} />
+          <Image source={img} style={styles.image1} />
         </Box>
         <Box style={styles.box2}>
           {Object.entries(detail.star).map(([key, value]) => (
@@ -38,6 +54,15 @@ export function PlaceDetail({ index }: { index: number }) {
             </Text>
           ))}
         </Box>
+        {/* コメントとキャラクター画像を表示 */}
+        <Box style={styles.box3}>
+          <HStack>
+            <Image source={characterImg} style={styles.image2} />
+            <Box style={styles.box4}>
+              <Text style={styles.text3}>{detail.comment}</Text>
+            </Box>
+          </HStack>
+        </Box>
         <Button style={styles.button}>
           <ButtonText>Webを見る</ButtonText>
         </Button>
@@ -50,8 +75,7 @@ const styles = StyleSheet.create({
   box1: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: -20,
   },
   text1: {
     color: "white",
@@ -60,7 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
   },
-  image: {
+  image1: {
     width: "70%",
     height: "70%",
     borderRadius: 10,
@@ -68,7 +92,7 @@ const styles = StyleSheet.create({
   box2: {
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    marginTop: 10,
+    marginTop: -10,
     marginBottom: 10,
   },
   text2: {
@@ -76,6 +100,28 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     marginLeft: 10,
+  },
+  box3: {
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  image2: {
+    width: 50,
+    height: 50,
+    marginLeft: 10,
+  },
+  box4: {
+    backgroundColor: "#464646",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "75%",
+    marginLeft: 10,
+    borderRadius: 10,
+  },
+  text3: {
+    color: "white",
+    textAlign: "center",
+    width: "80%",
   },
   button: {
     alignSelf: "center",
