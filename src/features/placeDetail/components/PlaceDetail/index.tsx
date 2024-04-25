@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   ButtonText,
   HStack,
   Image,
@@ -9,6 +8,7 @@ import {
 } from "@gluestack-ui/themed";
 import { StyleSheet } from "react-native";
 import type { ImageSourcePropType } from "react-native";
+import { Linking, Pressable } from "react-native";
 import { useCharactersInfoAtom } from "../../../character/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
@@ -35,6 +35,13 @@ export function PlaceDetail({ index }: { index: number }) {
   if (!img) {
     return <Text textAlign="center">Please Swipe!</Text>;
   }
+
+  const handlePress = (url: string) => {
+    Linking.openURL(url).catch((err) =>
+      console.error("リンクを開けませんでした。", err),
+    );
+  };
+
   return (
     <Box>
       <VStack>
@@ -63,9 +70,12 @@ export function PlaceDetail({ index }: { index: number }) {
             </Box>
           </HStack>
         </Box>
-        <Button style={styles.button}>
+        <Pressable
+          style={styles.button}
+          onPress={() => handlePress(detail.GoogleUrl)}
+        >
           <ButtonText>Webを見る</ButtonText>
-        </Button>
+        </Pressable>
       </VStack>
     </Box>
   );
