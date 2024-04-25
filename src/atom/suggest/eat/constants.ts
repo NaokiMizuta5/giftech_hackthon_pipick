@@ -49,15 +49,16 @@ export const INITIAL_EAT_SUGGEST_DATA: SuggestData[] = [
   {
     index: 3,
     img: require("~/assets/images/1.png"),
-    placeName: "ロボットとカフェタイム",
-    tags: ["東京", "日本食", "ロボット"],
+    placeName: "料理はサイエンス？",
+    tags: ["東京", "Bar", "理系おススメ"],
     detail: {
       star: {
-        奇抜さ: 6,
-        落ち着く: 5,
+        クールさ: 4,
+        楽しさ: 6,
+        なつかしさ: 5,
       },
-      GoogleUrl: "https://maps.app.goo.gl/8hd2bexmbdwmUkV97",
-      comment: "ロボット、ト、コーヒー。",
+      GoogleUrl: "https://maps.app.goo.gl/3sjqExWrR7qqKaKp8",
+      comment: "科学的においしいお酒が飲めるはず！",
     },
   },
   {
@@ -159,6 +160,20 @@ export const INITIAL_EAT_SUGGEST_DATA: SuggestData[] = [
       comment: "",
     },
   },
+  {
+    index: 11,
+    img: require("~/assets/images/1.png"),
+    placeName: "ロボットとカフェタイム",
+    tags: ["東京", "日本食", "ロボット"],
+    detail: {
+      star: {
+        奇抜さ: 6,
+        落ち着く: 5,
+      },
+      GoogleUrl: "https://maps.app.goo.gl/8hd2bexmbdwmUkV97",
+      comment: "ロボット、ト、コーヒー。",
+    },
+  },
 ];
 
 export const INITIAL_EAT_FAVORITE_DATA: SuggestData[] = [
@@ -213,15 +228,16 @@ export const INITIAL_EAT_DONE_DATA: SuggestData[] = [
   {
     index: 3,
     img: require("~/assets/images/1.png"),
-    placeName: "ロボットとカフェタイム",
-    tags: ["東京", "日本食", "ロボット"],
+    placeName: "料理はサイエンス？",
+    tags: ["東京", "Bar", "理系おススメ"],
     detail: {
       star: {
-        奇抜さ: 6,
-        落ち着く: 5,
+        クールさ: 4,
+        楽しさ: 6,
+        なつかしさ: 5,
       },
-      GoogleUrl: "https://maps.app.goo.gl/8hd2bexmbdwmUkV97",
-      comment: "ロボット、ト、コーヒー。",
+      GoogleUrl: "https://maps.app.goo.gl/3sjqExWrR7qqKaKp8",
+      comment: "科学的においしいお酒が飲めるはず！",
     },
   },
 ];
