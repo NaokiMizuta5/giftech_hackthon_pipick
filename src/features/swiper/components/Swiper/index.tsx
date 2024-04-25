@@ -2,6 +2,7 @@ import { getThemeOneColor } from "@/utils";
 import {
   Box,
   CloseIcon,
+  HStack,
   Heading,
   Modal,
   ModalBackdrop,
@@ -18,7 +19,7 @@ import { TinderCard } from "rn-tinder-card";
 import { useColorThemeAtom } from "~/src/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
-const _TagText = ({ children }: { children: React.ReactNode }) => {
+const TagText = ({ children }: { children: React.ReactNode }) => {
   return (
     <Box
       backgroundColor="rgba(255, 255, 255, 0.75)"
@@ -92,9 +93,30 @@ export function Swiper() {
                 {/* 表示する画像 */}
                 <Image alt="swiper" source={item.img} style={styles.image} />
                 <Box style={styles.infoBox}>
-                  <Text fontSize="$xl" fontWeight="bold" color="white" mt={15}>
+                  <Text
+                    fontSize="$xl"
+                    fontWeight="bold"
+                    color="white"
+                    mt={15}
+                    width="90%"
+                    textAlign="center"
+                  >
                     {item.placeName}
                   </Text>
+                  <HStack
+                    flexWrap="wrap"
+                    justifyContent="center"
+                    borderRadius={20}
+                    mt={5}
+                    mb={5}
+                  >
+                    {Object.keys(item.TagInfo).map((key) => {
+                      const label = item.TagInfo[Number.parseInt(key)];
+                      if (label) {
+                        return <TagText key={key}>{label}</TagText>;
+                      }
+                    })}
+                  </HStack>
                 </Box>
               </TinderCard>
             </Box>
