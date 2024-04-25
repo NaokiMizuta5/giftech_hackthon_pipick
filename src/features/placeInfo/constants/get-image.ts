@@ -10,8 +10,9 @@ const img_6 = require("./Images/0.png");
 const img_7 = require("./Images/1.png");
 const img_8 = require("./Images/0.png");
 const img_9 = require("./Images/1.png");
+const img_10 = require("./Images/black.jpeg");
 
-export function getImages(length = 10): ImageSourcePropType[] {
+export function getImages(length = 11): ImageSourcePropType[] {
   const imageList = [
     img_0,
     img_1,
@@ -23,6 +24,7 @@ export function getImages(length = 10): ImageSourcePropType[] {
     img_7,
     img_8,
     img_9,
+    img_10,
   ];
   if (length < 1) {
     return [];

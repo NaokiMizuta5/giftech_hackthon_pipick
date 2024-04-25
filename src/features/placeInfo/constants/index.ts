@@ -201,4 +201,15 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
       GoogleUrl: "https://maps.app.goo.gl/73qwSZaDaE3Vwemy7",
     },
   },
+  {
+    index: 10,
+    img: imgList[10],
+    placeName: "",
+    comment: "",
+    TagInfo: {},
+    DetailInfo: {
+      star: {},
+      GoogleUrl: "",
+    },
+  },
 ];
