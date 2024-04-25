@@ -6,50 +6,48 @@ import {
   INITIAL_PLAY_SUGGEST_DATA,
 } from "./constants";
 
-const playSuggestDataAtom = atom<SuggestData[]>(INITIAL_PLAY_SUGGEST_DATA);
-const playFavoriteDataAtom = atom<SuggestData[]>(INITIAL_PLAY_FAVORITE_DATA);
-const playDoneDataAtom = atom<SuggestData[]>(INITIAL_PLAY_DONE_DATA);
+const suggestDataAtom = atom<SuggestData[]>(INITIAL_PLAY_SUGGEST_DATA);
+const favoriteDataAtom = atom<SuggestData[]>(INITIAL_PLAY_FAVORITE_DATA);
+const doneDataAtom = atom<SuggestData[]>(INITIAL_PLAY_DONE_DATA);
 
 export const usePlaySuggestAtom = () => {
-  const [playSuggestData, setPlaySuggestData] = useAtom(playSuggestDataAtom);
-  const [playFavoriteData, setPlayFavoriteData] = useAtom(playFavoriteDataAtom);
-  const [playDoneData, setPlayDoneData] = useAtom(playDoneDataAtom);
+  const [suggestData, setSuggestData] = useAtom(suggestDataAtom);
+  const [favoriteData, setFavoriteData] = useAtom(favoriteDataAtom);
+  const [doneData, setDoneData] = useAtom(doneDataAtom);
 
-  const addPlaySuggestData = (data: SuggestData) => {
-    setPlaySuggestData([...playSuggestData, data]);
+  const addSuggestData = (data: SuggestData) => {
+    setSuggestData([...suggestData, data]);
   };
 
-  const removePlaySuggestData = (index: number) => {
-    setPlaySuggestData(playSuggestData.filter((item) => item.index !== index));
+  const removeSuggestData = (index: number) => {
+    setSuggestData(suggestData.filter((item) => item.index !== index));
   };
 
-  const addPlayFavoriteData = (data: SuggestData) => {
-    setPlayFavoriteData([...playFavoriteData, data]);
+  const addFavoriteData = (data: SuggestData) => {
+    setFavoriteData([...favoriteData, data]);
   };
 
-  const removePlayFavoriteData = (index: number) => {
-    setPlayFavoriteData(
-      playFavoriteData.filter((item) => item.index !== index),
-    );
+  const removeFavoriteData = (index: number) => {
+    setFavoriteData(favoriteData.filter((item) => item.index !== index));
   };
 
-  const addPlayDoneData = (data: SuggestData) => {
-    setPlayDoneData([...playDoneData, data]);
+  const addDoneData = (data: SuggestData) => {
+    setDoneData([...doneData, data]);
   };
 
-  const removePlayDoneData = (index: number) => {
-    setPlayDoneData(playDoneData.filter((item) => item.index !== index));
+  const removeDoneData = (index: number) => {
+    setDoneData(doneData.filter((item) => item.index !== index));
   };
 
   return {
-    playSuggestData,
-    addPlaySuggestData,
-    removePlaySuggestData,
-    playFavoriteData,
-    addPlayFavoriteData,
-    removePlayFavoriteData,
-    playDoneData,
-    addPlayDoneData,
-    removePlayDoneData,
+    suggestData,
+    addSuggestData,
+    removeSuggestData,
+    favoriteData,
+    addFavoriteData,
+    removeFavoriteData,
+    doneData,
+    addDoneData,
+    removeDoneData,
   };
 };

@@ -1,5 +1,6 @@
-import { atom, useAtom } from "jotai";
+import { atom, useAtom, useAtomValue } from "jotai";
 import {
+  INITIAL_CURRENT_MENU_ATOM,
   INITIAL_IS_LEFT_ICON_ATOM,
   INITIAL_IS_RIGHT_ICON_ATOM,
   INITIAL_MENU_ITEMS_ATOM,
@@ -9,6 +10,12 @@ import type { MenuItem } from "../types";
 const isLeftIconAtom = atom(INITIAL_IS_LEFT_ICON_ATOM);
 const isRightIconAtom = atom(INITIAL_IS_RIGHT_ICON_ATOM);
 const menuItemsAtom = atom(INITIAL_MENU_ITEMS_ATOM);
+const currentMenuAtom = atom((get) => {
+  const menuItems = get(menuItemsAtom);
+  return (
+    menuItems.find((menuItem) => menuItem.active) || INITIAL_CURRENT_MENU_ATOM
+  );
+});
 
 export const useHeaderAtom = () => {
   const [isLeftIcon, setIsLeftIcon] = useAtom(isLeftIconAtom);
@@ -31,6 +38,7 @@ export const useHeaderAtom = () => {
   };
 
   const [menuItems, setMenuItems] = useAtom(menuItemsAtom);
+  const currentMenu = useAtomValue(currentMenuAtom);
 
   const replaceMenuItems = (newMenuItems: MenuItem[]) => {
     setMenuItems(newMenuItems);
@@ -60,6 +68,7 @@ export const useHeaderAtom = () => {
     showRightIcon,
     hideRightIcon,
     menuItems,
+    currentMenu,
     replaceMenuItems,
     activateMenu,
   };

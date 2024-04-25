@@ -6,54 +6,48 @@ import {
   INITIAL_WATCH_SUGGEST_DATA,
 } from "./constants";
 
-const watchSuggestDataAtom = atom<SuggestData[]>(INITIAL_WATCH_SUGGEST_DATA);
-const watchFavoriteDataAtom = atom<SuggestData[]>(INITIAL_WATCH_FAVORITE_DATA);
-const watchDoneDataAtom = atom<SuggestData[]>(INITIAL_WATCH_DONE_DATA);
+const suggestDataAtom = atom<SuggestData[]>(INITIAL_WATCH_SUGGEST_DATA);
+const favoriteDataAtom = atom<SuggestData[]>(INITIAL_WATCH_FAVORITE_DATA);
+const doneDataAtom = atom<SuggestData[]>(INITIAL_WATCH_DONE_DATA);
 
 export const useWatchSuggestAtom = () => {
-  const [watchSuggestData, setWatchSuggestData] = useAtom(watchSuggestDataAtom);
-  const [watchFavoriteData, setWatchFavoriteData] = useAtom(
-    watchFavoriteDataAtom,
-  );
-  const [watchDoneData, setWatchDoneData] = useAtom(watchDoneDataAtom);
+  const [suggestData, setSuggestData] = useAtom(suggestDataAtom);
+  const [favoriteData, setFavoriteData] = useAtom(favoriteDataAtom);
+  const [doneData, setDoneData] = useAtom(doneDataAtom);
 
-  const addWatchSuggestData = (data: SuggestData) => {
-    setWatchSuggestData([...watchSuggestData, data]);
+  const addSuggestData = (data: SuggestData) => {
+    setSuggestData([...suggestData, data]);
   };
 
-  const removeWatchSuggestData = (index: number) => {
-    setWatchSuggestData(
-      watchSuggestData.filter((item) => item.index !== index),
-    );
+  const removeSuggestData = (index: number) => {
+    setSuggestData(suggestData.filter((item) => item.index !== index));
   };
 
-  const addWatchFavoriteData = (data: SuggestData) => {
-    setWatchFavoriteData([...watchFavoriteData, data]);
+  const addFavoriteData = (data: SuggestData) => {
+    setFavoriteData([...favoriteData, data]);
   };
 
-  const removeWatchFavoriteData = (index: number) => {
-    setWatchFavoriteData(
-      watchFavoriteData.filter((item) => item.index !== index),
-    );
+  const removeFavoriteData = (index: number) => {
+    setFavoriteData(favoriteData.filter((item) => item.index !== index));
   };
 
-  const addWatchDoneData = (data: SuggestData) => {
-    setWatchDoneData([...watchDoneData, data]);
+  const addDoneData = (data: SuggestData) => {
+    setDoneData([...doneData, data]);
   };
 
-  const removeWatchDoneData = (index: number) => {
-    setWatchDoneData(watchDoneData.filter((item) => item.index !== index));
+  const removeDoneData = (index: number) => {
+    setDoneData(doneData.filter((item) => item.index !== index));
   };
 
   return {
-    watchSuggestData,
-    addWatchSuggestData,
-    removeWatchSuggestData,
-    watchFavoriteData,
-    addWatchFavoriteData,
-    removeWatchFavoriteData,
-    watchDoneData,
-    addWatchDoneData,
-    removeWatchDoneData,
+    suggestData,
+    addSuggestData,
+    removeSuggestData,
+    favoriteData,
+    addFavoriteData,
+    removeFavoriteData,
+    doneData,
+    addDoneData,
+    removeDoneData,
   };
 };
