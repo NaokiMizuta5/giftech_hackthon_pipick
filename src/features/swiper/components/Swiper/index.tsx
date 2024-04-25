@@ -1,8 +1,8 @@
 import { getThemeOneColor } from "@/utils";
 import {
   Box,
-  Button,
   CloseIcon,
+  HStack,
   Heading,
   Modal,
   ModalBackdrop,
@@ -18,6 +18,19 @@ import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
 import { useColorThemeAtom } from "~/src/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
+
+const TagText = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Box
+      backgroundColor="rgba(255, 255, 255, 0.75)"
+      margin={3}
+      padding={5}
+      borderRadius={20}
+    >
+      <Text color="black">{children}</Text>
+    </Box>
+  );
+};
 
 export function Swiper() {
   const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
@@ -80,26 +93,28 @@ export function Swiper() {
                 {/* 表示する画像 */}
                 <Image alt="swiper" source={item.img} style={styles.image} />
                 <Box style={styles.infoBox}>
-                  <Text fontSize="$xl" fontWeight="bold" color="white" mt={15}>
+                  <Text
+                    fontSize="$xl"
+                    fontWeight="bold"
+                    color="white"
+                    mt={15}
+                    width="90%"
+                    textAlign="center"
+                  >
                     {item.placeName}
                   </Text>
-                  {/* 詳細を見るボタン */}
-                  <Button
-                    backgroundColor="rgba(0, 0, 0, 0)"
+                  <HStack
+                    flexWrap="wrap"
+                    justifyContent="center"
                     borderRadius={20}
-                    width={280}
-                    height={50}
-                    onPress={() => {}} //Modalを表示する処理を追加
+                    mt={5}
+                    mb={5}
                   >
-                    <Image
-                      source={require("../../Images/detailMark.png")}
-                      style={{
-                        width: 20, // 幅を小さくするための値を指定
-                        height: 20, // 高さを小さくするための値を指定
-                      }}
-                    />
-                    <Text color="white"> 詳細を見る</Text>
-                  </Button>
+                    {item.tags.map((tag) => {
+                      if (!tag) return;
+                      return <TagText key={item.index}>{tag}</TagText>;
+                    })}
+                  </HStack>
                 </Box>
               </TinderCard>
             </Box>
