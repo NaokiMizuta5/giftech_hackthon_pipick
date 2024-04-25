@@ -13,3 +13,5 @@ export type SuggestData = {
     comment: string;
   };
 };
+
+export type SuggestType = "watch" | "play" | "make" | "eat";
