@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   image: {
-    width: "80%",
-    height: "80%",
+    width: "70%",
+    height: "70%",
     borderRadius: 10,
   },
   box2: {
