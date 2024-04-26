@@ -50,7 +50,7 @@ export function PlacesList() {
         <VStack width="100%" alignItems="center" space="md">
           {placeInfoList.map((place) => (
             <EachPlace
-              key={place.index}
+              key={`${place.img}`}
               placeName={place.placeName}
               Img={place.img}
             />
