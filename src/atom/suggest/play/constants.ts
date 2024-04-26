@@ -3,7 +3,7 @@ import type { SuggestData } from "../types";
 export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('https://drive.google.com/file/d/1qF0SDt3fY52f3HCv2dkikWZe20hZsJgI/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1qF0SDt3fY52f3HCv2dkikWZe20hZsJgI/view?usp=drive_link' },
         placeName: 'ペイントバトル',
         tags: ['#北海道', '#リアルスプ◯トゥーン', '#ハラハラドキドキ', '#アメリカスポーツ', '#旗取った人が勝ち'],
         detail: {
@@ -18,7 +18,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('https://drive.google.com/file/d/1lt0YMG2ukC_ME98lRqCqx7tlKTFJQldT/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1lt0YMG2ukC_ME98lRqCqx7tlKTFJQldT/view?usp=drive_link' },
         placeName: '目に見えるものだけが全てじゃない',
         tags: ['#東京', '#怖', '#もはや目は必要ない', '#どこに連れてかれるの？', '#ハラハラドキドキ'],
         detail: {
@@ -33,7 +33,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 2,
-        img: require('https://drive.google.com/file/d/153MzZtpW6iCBYAkCR9c7boD4ciaD2PFF/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/153MzZtpW6iCBYAkCR9c7boD4ciaD2PFF/view?usp=drive_link' },
         placeName: '"それ"が付いたらオワリ',
         tags: ['#theEND', '#どこまでできるか', '#IQ1以上', '#攻めが肝心'],
         detail: {
@@ -48,7 +48,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 3,
-        img: require('https://drive.google.com/file/d/1WocCVl2fxEeJ_6ufQdRmjX4NGOJiB7hw/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1WocCVl2fxEeJ_6ufQdRmjX4NGOJiB7hw/view?usp=drive_link' },
         placeName: '水のうえを駆け回る',
         tags: ['#滋賀', '#ハムスターかな？', '#全身筋肉痛ww', '#アクティビティ', '#浮遊感がおもろい', '#駐車場有'],
         detail: {
@@ -63,7 +63,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 4,
-        img: require('https://drive.google.com/file/d/1j2x7dTE7hGB7Ug_Z_h3GBc-DuLtbU9_e/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1j2x7dTE7hGB7Ug_Z_h3GBc-DuLtbU9_e/view?usp=drive_link'},
         placeName: '青い温泉',
         tags: ['#アイスランド', '#癒し', '#ブルーラグーン', '#事前予約', '#ちょっとぬるめでちょうどいい'],
         detail: {
@@ -78,7 +78,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 5,
-        img: require('https://drive.google.com/file/d/1MSDKr0ntOVTQCMlg3V8ivVhIU-VCal1z/view?usp=drive_link'),
+        img: {uri:'https://drive.google.com/file/d/1MSDKr0ntOVTQCMlg3V8ivVhIU-VCal1z/view?usp=drive_link'},
         placeName: '아이돌',
         tags: ['#韓国', '#かわいい', '#まるで別人', '#他撮でも盛れる', '#♡♡♡', '#韓国アイドルメイク', '#🇰🇷', '#要予約'],
         detail: {
@@ -93,7 +93,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 6,
-        img: require('https://drive.google.com/file/d/11yln0BTB4TlRZcBUOOGzuC0YPd3P2nOJ/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/11yln0BTB4TlRZcBUOOGzuC0YPd3P2nOJ/view?usp=drive_link'},
         placeName: 'オトナマキ',
         tags: ['#東京', '#健康法', '#SNSで話題になった', '#ミイラマキもいける', '#要予約'],
         detail: {
@@ -108,7 +108,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 7,
-        img: require('https://drive.google.com/file/d/1eKp13ZO3CIrnBjANpjhG4ImgnMPTzZAA/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1eKp13ZO3CIrnBjANpjhG4ImgnMPTzZAA/view?usp=drive_link'},
         placeName: '己に眠る野獣を目覚めさせる',
         tags: ['#東京', '#ストレス発散', '#家電も壊せる', '#新感覚', '#エンターテイメント'],
         detail: {
@@ -123,7 +123,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 8,
-        img: require('https://drive.google.com/file/d/13111vj-01DOgSQDwvOYLuaryg8zpn41f/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/13111vj-01DOgSQDwvOYLuaryg8zpn41f/view?usp=drive_link'},
         placeName: 'ゴム跳びLev.100',
         tags: ['#東京', '#バランス感覚', '#5cmのロープでアクロバティック', '#体幹', '#医療の分野でも注目されてるらしい'],
         detail: {
@@ -138,7 +138,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 9,
-        img: require('https://drive.google.com/file/d/1sDcol0K7zp8MR6S3YVbMiJKBruFzSIcd/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1sDcol0K7zp8MR6S3YVbMiJKBruFzSIcd/view?usp=drive_link'},
         placeName: '謎解き！脱出ゲーム！',
         tags: ['#東京', '#謎解き', '#やっぱり王道なのはココ', '#キャラコラボ', '#大人数'],
         detail: {
@@ -153,7 +153,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 10,
-        img: require('https://drive.google.com/file/d/1M8Yg2rcqBF1IhvNpfU7hlRs4fDAY9aCp/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1M8Yg2rcqBF1IhvNpfU7hlRs4fDAY9aCp/view?usp=drive_link'},
         placeName: 'スダテリョウ',
         tags: ['#東京', '#簀立', '#謎の棒がたくさん', '#新鮮', '#これはここでしか味わえない'],
         detail: {
@@ -168,7 +168,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 11,
-        img: require('https://drive.google.com/file/d/1fkuTVPjkmus3GsuvjDvZv-gVC7HhFwF9/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1fkuTVPjkmus3GsuvjDvZv-gVC7HhFwF9/view?usp=drive_link'},
         placeName: '流れに身を任せましょう',
         tags: ['#京都', '#スリル満点', '#日本最古の川下り', '#涼味', '#奇岩', '#怪石'],
         detail: {
@@ -183,7 +183,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 12,
-        img: require('https://drive.google.com/file/d/13uVYQAeLSr7kxM41pYw7-hw1zSkhiI1b/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/13uVYQAeLSr7kxM41pYw7-hw1zSkhiI1b/view?usp=drive_link'},
         placeName: '無人島体験',
         tags: ['#長崎', '#火おこし', '#サバイバル', '#魚釣り', '#イカダで脱出', '#自給自足生活', '#要予約'],
         detail: {
@@ -198,7 +198,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 13,
-        img: require('https://drive.google.com/file/d/18jmmSj7lFv-lPYXtqTB11btQfwzejlFr/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/18jmmSj7lFv-lPYXtqTB11btQfwzejlFr/view?usp=drive_link'},
         placeName: 'うんこっていいたい',
         tags: ['#うんこ', '#💩', '#パニック', '#MAXうんこカワイイ', '#縛りプレイ'],
         detail: {
@@ -211,7 +211,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 14,
-        img: require('https://drive.google.com/file/d/1lIXtGwGhVmt1W5vyHbX-NqadYffWOUIa/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1lIXtGwGhVmt1W5vyHbX-NqadYffWOUIa/view?usp=drive_link'},
         placeName: '世界一怖いアスレチック',
         tags: ['#神奈川', '#マッスルモンスター', '#空中浮遊', '#これは死んだw', '#絶叫系アスレチック'],
         detail: {
@@ -226,7 +226,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 15,
-        img: require('https://drive.google.com/file/d/18DIb24OXhUXAaaWl6buNvS_c31XGD5M2/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/18DIb24OXhUXAaaWl6buNvS_c31XGD5M2/view?usp=drive_link'},
         placeName: '自転車の国',
         tags: ['#静岡', '#大量の自転車', '#自転車型の迷路', '#世界の自転車が集まる場', '#穴場スポット'],
         detail: {
@@ -241,7 +241,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 16,
-        img: require('https://drive.google.com/file/d/1QIuNs-lVx1UDfUbCCnkYA7zkVmZbA9tT/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1QIuNs-lVx1UDfUbCCnkYA7zkVmZbA9tT/view?usp=drive_link'},
         placeName: 'タロット占い3D',
         tags: ['#東京', '#占い', '#新感覚', '#VR', '#選んだカードのストーリを楽しめる'],
         detail: {
@@ -256,7 +256,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 17,
-        img: require('https://drive.google.com/file/d/1V9ROJfg69yZ16elAntInPeTPbsBD3st6/view?usp=drive_link'),
+        img: {uri: 'https://drive.google.com/file/d/1V9ROJfg69yZ16elAntInPeTPbsBD3st6/view?usp=drive_link'},
         placeName: '和心村の大自然でで猫まみれ',
         tags: ['#ぬこさま', '#和心村', '#大自然', '#グランピング'],
         detail: {
@@ -269,11 +269,12 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
         comment: '',
         },
     },
+
 ];
 export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('https://drive.google.com/file/d/1qF0SDt3fY52f3HCv2dkikWZe20hZsJgI/view?usp=drive_link'),
+        img: { uri: 'https://drive.google.com/file/d/1qF0SDt3fY52f3HCv2dkikWZe20hZsJgI/view?usp=drive_link' },
         placeName: 'ペイントバトル',
         tags: ['#北海道', '#リアルスプ◯トゥーン', '#ハラハラドキドキ', '#アメリカスポーツ', '#旗取った人が勝ち'],
         detail: {
@@ -288,7 +289,7 @@ export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('https://drive.google.com/file/d/1lt0YMG2ukC_ME98lRqCqx7tlKTFJQldT/view?usp=drive_link'),
+        img: { uri: 'https://drive.google.com/file/d/1lt0YMG2ukC_ME98lRqCqx7tlKTFJQldT/view?usp=drive_link' },
         placeName: '目に見えるものだけが全てじゃない',
         tags: ['#東京', '#怖', '#もはや目は必要ない', '#どこに連れてかれるの？', '#ハラハラドキドキ'],
         detail: {
@@ -305,7 +306,7 @@ export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
 export const INITIAL_PLAY_DONE_DATA: SuggestData[] = [
     {
         index: 2,
-        img: require('https://drive.google.com/file/d/153MzZtpW6iCBYAkCR9c7boD4ciaD2PFF/view?usp=drive_link'),
+        img: { uri: 'https://drive.google.com/file/d/153MzZtpW6iCBYAkCR9c7boD4ciaD2PFF/view?usp=drive_link' },
         placeName: '"それ"が付いたらオワリ',
         tags: ['#theEND', '#どこまでできるか', '#IQ1以上', '#攻めが肝心'],
         detail: {
@@ -320,7 +321,7 @@ export const INITIAL_PLAY_DONE_DATA: SuggestData[] = [
     },
     {
         index: 3,
-        img: require('https://drive.google.com/file/d/1WocCVl2fxEeJ_6ufQdRmjX4NGOJiB7hw/view?usp=drive_link'),
+        img: { uri: 'https://drive.google.com/file/d/1WocCVl2fxEeJ_6ufQdRmjX4NGOJiB7hw/view?usp=drive_link' },
         placeName: '水のうえを駆け回る',
         tags: ['#滋賀', '#ハムスターかな？', '#全身筋肉痛ww', '#アクティビティ', '#浮遊感がおもろい', '#駐車場有'],
         detail: {
