@@ -3,7 +3,7 @@ import type { SuggestData } from "../types";
 export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('./assets/1.jpg'),
+        img: require('https://drive.google.com/file/d/1nDUjez-angJrZW1WwgDuvUOFWEhk8pC-/view?usp=drive_link'),
         placeName: 'ブルーマン東京',
         tags: ['#パフォーマンス', '#ジャパンツアー', '#奇想天外', '#口からマシュマロ'],
         detail: {
@@ -18,7 +18,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('./assets/2.jpg'),
+        img: require('https://drive.google.com/file/d/1-e6QnlNxGXaoMfaNsMJuz0CoayYam488/view?usp=drive_link'),
         placeName: 'サマソニ',
         tags: ['#千葉', '#音楽フェスティバル', '#ロック', '#夏といえば'],
         detail: {
@@ -33,7 +33,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 2,
-        img: require('./assets/3.jpg'),
+        img: require('https://drive.google.com/file/d/1lDRiX9-CKcM78_Vf-7ufmZKBs_NR6HFD/view?usp=drive_link'),
         placeName: 'イケイケ乗り物',
         tags: ['#静岡', '#バイク', '#ミュージアム', '#無免許', '#スーパーカー'],
         detail: {
@@ -48,7 +48,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 3,
-        img: require('./assets/4.jpg'),
+        img: require('https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link'),
         placeName: '天空テラス',
         tags: ['#長野', '#リゾート', '#絶景', '#アルプス超え', '#最高'],
         detail: {
@@ -63,7 +63,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 4,
-        img: require('./assets/5.jpg'),
+        img: require('https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link'),
         placeName: '日本のウユニ塩湖',
         tags: ['#香川', '#絶景', '#非日常', '#天空の鏡', '#死ぬまでに見たい夕陽'],
         detail: {
@@ -78,7 +78,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 5,
-        img: require('./assets/6.jpg'),
+        img: require('https://drive.google.com/file/d/1P8idepB7aikTTSrIYw83GiiRSJLBxAVh/view?usp=drive_link'),
         placeName: '青い池',
         tags: ['#北海道', '#絶景', '#神秘的', '#青', '#iPhone'],
         detail: {
@@ -93,7 +93,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 6,
-        img: require('./assets/7.jpg'),
+        img: require('https://drive.google.com/file/d/1aJUAicqoO_nVmyvt2GAVk9-aSPkhzI-l/view?usp=drive_link'),
         placeName: 'まじでデカい美術館',
         tags: ['#徳島', '#美術館', '#デカい', '#米津', '#礼拝堂'],
         detail: {
@@ -108,7 +108,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 7,
-        img: require('./assets/8.jpg'),
+        img: require('https://drive.google.com/file/d/1l_l5J0Tl0nVcLkv9wmaAVmCxmeyTIsPl/view?usp=drive_link'),
         placeName: '幻の村',
         tags: ['#北海道', '#かまくら', '#氷', '#温泉', '#湖'],
         detail: {
@@ -123,7 +123,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 8,
-        img: require('./assets/9.jpg'),
+        img: require(' https://drive.google.com/file/d/1dnWEXpcsP7UZXWtcXCcN59a9bTRQ4UpB/view?usp=drive_link'),
         placeName: '日本一危険な公園',
         tags: ['#岐阜', '#公園', '#奇妙', '#感覚バグ', '#不思議空間'],
         detail: {
@@ -138,7 +138,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 9,
-        img: require('./assets/10.jpg'),
+        img: require('https://drive.google.com/file/d/1HzjjoeAG55bPU6EM-3yA2fjN-HnE9KQk/view?usp=drive_link'),
         placeName: '美術の島',
         tags: ['#香川', '#地中', '#銭湯', '#水玉かぼちゃ', '#ヘンテコ建築'],
         detail: {
@@ -155,7 +155,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
 export const INITIAL_WATCH_FAVORITE_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('./assets/1.jpg'),
+        img: require('https://drive.google.com/file/d/1nDUjez-angJrZW1WwgDuvUOFWEhk8pC-/view?usp=drive_link'),
         placeName: 'ブルーマン東京',
         tags: ['#パフォーマンス', '#ジャパンツアー', '#奇想天外', '#口からマシュマロ'],
         detail: {
@@ -170,7 +170,7 @@ export const INITIAL_WATCH_FAVORITE_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('./assets/2.jpg'),
+        img: require('https://drive.google.com/file/d/1-e6QnlNxGXaoMfaNsMJuz0CoayYam488/view?usp=drive_link'),
         placeName: 'サマソニ',
         tags: ['#千葉', '#音楽フェスティバル', '#ロック', '#夏といえば'],
         detail: {
@@ -186,8 +186,23 @@ export const INITIAL_WATCH_FAVORITE_DATA: SuggestData[] = [
 ];
 export const INITIAL_WATCH_DONE_DATA: SuggestData[] = [
     {
+        index: 2,
+        img: require('https://drive.google.com/file/d/1lDRiX9-CKcM78_Vf-7ufmZKBs_NR6HFD/view?usp=drive_link'),
+        placeName: 'イケイケ乗り物',
+        tags: ['#静岡', '#バイク', '#ミュージアム', '#無免許', '#スーパーカー'],
+        detail: {
+            star: {
+                かっこいい: 3,
+                ロマン: 2,
+                メカ: 5,
+            },
+            GoogleUrl: 'https://g.co/kgs/4WJmtH',
+            comment: 'あれもこれも乗り放題！',
+        },
+    },
+    {
         index: 3,
-        img: require('./assets/4.jpg'),
+        img: require('https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link'),
         placeName: '天空テラス',
         tags: ['#長野', '#リゾート', '#絶景', '#アルプス超え', '#最高'],
         detail: {
@@ -198,21 +213,6 @@ export const INITIAL_WATCH_DONE_DATA: SuggestData[] = [
             },
             GoogleUrl: 'https://g.co/kgs/fPgzoL',
             comment: '天空テラスに行くしかないね。',
-        },
-    },
-    {
-        index: 4,
-        img: require('./assets/5.jpg'),
-        placeName: '日本のウユニ塩湖',
-        tags: ['#香川', '#絶景', '#非日常', '#天空の鏡', '#死ぬまでに見たい夕陽'],
-        detail: {
-            star: {
-                運: 5,
-                感動: 7,
-                映え: 10,
-            },
-            GoogleUrl: 'https://g.co/kgs/f3TmF2',
-            comment: '日本でウユニ塩湖見れるのはお得すぎるよ。',
         },
     },
 ];
