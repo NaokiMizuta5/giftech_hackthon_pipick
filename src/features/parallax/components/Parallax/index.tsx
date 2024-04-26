@@ -1,4 +1,4 @@
-import { PAGE_WIDTH } from "@/constants";
+import { PAGE_HEIGHT, PAGE_WIDTH } from "@/constants";
 import { Box } from "@gluestack-ui/themed";
 import { type ComponentProps, useEffect, useRef, useState } from "react";
 import { useSharedValue } from "react-native-reanimated";
@@ -19,7 +19,7 @@ export function Parallax() {
   const baseOptions = {
     vertical: false,
     width: PAGE_WIDTH - 20,
-    height: PAGE_WIDTH * 1.2,
+    height: PAGE_HEIGHT * 0.66,
   } as CarouselProps;
 
   const { menuItems, activateMenu } = useHeaderAtom();
