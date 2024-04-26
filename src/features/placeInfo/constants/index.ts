@@ -15,7 +15,6 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
     index: 0,
     img: imgList[0],
     placeName: "お箸はそろそろ飽きたでしょ？",
-    comment: "豪快に素手でたべるべし！",
     tags: ["東京", "魚介", "アメリカン", "スパイシー,", "ワイルド"],
     detail: {
       star: {
@@ -24,13 +23,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         珍しさ: 4,
       },
       GoogleUrl: "https://maps.app.goo.gl/gU4Z1MvZHm8XszM3A",
+      comment: "豪快に素手でたべるべし！",
     },
   },
   {
     index: 1,
     img: imgList[1],
     placeName: "アイスって焼いて食べるモノ？",
-    comment: "焼けばなんでもおいしくなるはず！",
     tags: ["東京", "フレンチ", "老舗"],
     detail: {
       star: {
@@ -39,13 +38,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         落ち着く: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/WxDoLEnkxKGN1xbj6",
+      comment: "焼けばなんでもおいしくなるはず！",
     },
   },
   {
     index: 2,
     img: imgList[2],
     placeName: "戦国時代にタイムスリップ",
-    comment: "美味しものを食べて天下統一だ！",
     tags: ["東京", "日本食", "個室", "動乱の戦国時代"],
     detail: {
       star: {
@@ -54,13 +53,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         日本らしさ: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/aQ9mAKCDfAJJwXgh6",
+      comment: "美味しものを食べて天下統一だ！",
     },
   },
   {
     index: 3,
     img: imgList[3],
     placeName: "ロボットとカフェタイム",
-    comment: "ロボット、ト、コーヒー。",
     tags: ["東京", "日本食", "ロボット"],
     detail: {
       star: {
@@ -68,13 +67,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         落ち着く: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/8hd2bexmbdwmUkV97",
+      comment: "ロボット、ト、コーヒー。",
     },
   },
   {
     index: 4,
     img: imgList[4],
     placeName: "お化け屋敷でお食事",
-    comment: "うらめしや～",
     tags: ["東京", "日本食", "お化け"],
     detail: {
       star: {
@@ -83,13 +82,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         奇抜さ: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/M1qK4xkWcaRhpGyR8",
+      comment: "うらめしや～",
     },
   },
   {
     index: 5,
     img: imgList[5],
     placeName: "信じられないほどたくさんの怪獣がいるよ！",
-    comment: "豪快に素手でたべるべし！",
     tags: ["東京", "日本食", "怪獣"],
     detail: {
       star: {
@@ -98,13 +97,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         懐かしさ: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/Purm5Q5FXNUbK81G8",
+      comment: "豪快に素手でたべるべし！",
     },
   },
   {
     index: 6,
     img: imgList[6],
     placeName: "ペンギンとごはん",
-    comment: "豪快に素手でたべるべし！",
     tags: ["沖縄", "ダイニングBar", "動物"],
     detail: {
       star: {
@@ -112,13 +111,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         ペンギン度: 4,
       },
       GoogleUrl: "https://maps.app.goo.gl/yXCMiWCYjwDmduin8",
+      comment: "豪快に素手でたべるべし！",
     },
   },
   {
     index: 7,
     img: imgList[7],
     placeName: "冷蔵庫の中でお食事",
-    comment: "冷蔵庫の中で飲むビールは格別だ。",
     tags: ["東京", "日本食", "寒いかも", "生肉LOVER"],
     detail: {
       star: {
@@ -127,13 +126,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         新鮮さ: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/L3YEGfHkiPsUUg7L6",
+      comment: "冷蔵庫の中で飲むビールは格別だ。",
     },
   },
   {
     index: 8,
     img: imgList[8],
     placeName: "食べたいものは自分で捕獲",
-    comment: "豪快に素手でたべるべし！",
     tags: ["東京", "魚介", "新鮮", "釣り"],
     detail: {
       star: {
@@ -141,13 +140,13 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         鮮度: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/iBBfjXZsiTSBDkpj8",
+      comment: "豪快に素手でたべるべし！",
     },
   },
   {
     index: 9,
     img: imgList[9],
     placeName: "忍者メシ",
-    comment: "にんにん！",
     tags: ["東京", "日本食", "忍法"],
     detail: {
       star: {
@@ -156,17 +155,18 @@ export const INITIAL_PLACE_INFO_LIST_ATOM: PlaceInfo[] = [
         サプライズ: 5,
       },
       GoogleUrl: "https://maps.app.goo.gl/73qwSZaDaE3Vwemy7",
+      comment: "にんにん！",
     },
   },
   {
     index: 10,
     img: imgList[10],
     placeName: "",
-    comment: "",
     tags: [],
     detail: {
       star: {},
       GoogleUrl: "",
+      comment: "",
     },
   },
 ];

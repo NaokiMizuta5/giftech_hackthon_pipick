@@ -8,13 +8,13 @@ export type PlaceInfo = {
   index: number;
   img: ImageSourcePropType;
   placeName: string;
-  comment: string;
   tags: string[];
   detail: {
     star: {
       [key: string]: number;
     };
     GoogleUrl: string;
+    comment: string;
   };
 };
 
