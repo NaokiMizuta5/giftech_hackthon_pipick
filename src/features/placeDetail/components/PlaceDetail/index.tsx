@@ -74,7 +74,7 @@ export function PlaceDetail({ index }: { index: number }) {
           <HStack>
             {characterImg === undefined ? (
               <Image
-                source={require("~/assets/images/CooFace.png")}
+                source={require("~/assets/images/AbbieFace.png")}
                 style={styles.image2}
               />
             ) : (
