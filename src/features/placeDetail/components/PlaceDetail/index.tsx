@@ -1,14 +1,16 @@
 import {
   Box,
+  Button,
   ButtonText,
   HStack,
   Image,
   Text,
   VStack,
 } from "@gluestack-ui/themed";
+import { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import type { ImageSourcePropType } from "react-native";
-import { Linking, Pressable } from "react-native";
+import { Linking } from "react-native";
 import { useCharactersInfoAtom } from "../../../character/atom";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
@@ -22,16 +24,22 @@ export function PlaceDetail({ index }: { index: number }) {
 
   //ジャンルに応じてキャラクター画像を変更
   const { currentCharacterId } = useCharactersInfoAtom();
-  let characterImg: ImageSourcePropType;
-  if (currentCharacterId === "1") {
-    characterImg = require("~/assets/images/MeikaFace.png");
-  } else if (currentCharacterId === "2") {
-    characterImg = require("~/assets/images/AbbieFace.png");
-  } else if (currentCharacterId === "3") {
-    characterImg = require("~/assets/images/CooFace.png");
-  } else {
-    characterImg = require("~/assets/images/MirukiFace.png");
-  }
+  const [characterImg, setCharacterImg] = useState<
+    ImageSourcePropType | undefined
+  >(undefined);
+  useEffect(() => {
+    // currentCharacterId の値に応じて画像を設定
+    if (currentCharacterId === "1") {
+      setCharacterImg(require("~/assets/images/MeikaFace.png"));
+    } else if (currentCharacterId === "2") {
+      setCharacterImg(require("~/assets/images/AbbieFace.png"));
+    } else if (currentCharacterId === "3") {
+      setCharacterImg(require("~/assets/images/CooFace.png"));
+    } else {
+      setCharacterImg(require("~/assets/images/MirukiFace.png"));
+    }
+  }, [currentCharacterId]);
+
   if (!img) {
     return <Text textAlign="center">Please Swipe!</Text>;
   }
@@ -64,18 +72,25 @@ export function PlaceDetail({ index }: { index: number }) {
         {/* コメントとキャラクター画像を表示 */}
         <Box style={styles.box3}>
           <HStack>
-            <Image source={characterImg} style={styles.image2} />
+            {characterImg === undefined ? (
+              <Image
+                source={require("~/assets/images/CooFace.png")}
+                style={styles.image2}
+              />
+            ) : (
+              <Image source={characterImg} style={styles.image2} />
+            )}
             <Box style={styles.box4}>
               <Text style={styles.text3}>{detail.comment}</Text>
             </Box>
           </HStack>
         </Box>
-        <Pressable
+        <Button
           style={styles.button}
           onPress={() => handlePress(detail.GoogleUrl)}
         >
           <ButtonText>Webを見る</ButtonText>
-        </Pressable>
+        </Button>
       </VStack>
     </Box>
   );
