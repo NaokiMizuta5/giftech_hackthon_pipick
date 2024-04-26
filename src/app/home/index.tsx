@@ -13,7 +13,11 @@ export default function Home() {
     <FadeInOutView>
       <Box display="flex" flexDirection="column" alignItems="center">
         <Header />
-        {currentCharacter && <Gauge character={currentCharacter} />}
+        {currentCharacter && (
+          <Box marginTop={10}>
+            <Gauge character={currentCharacter} />
+          </Box>
+        )}
         <Parallax />
         <HStack gap="$6" alignItems="center">
           <ListButton />
