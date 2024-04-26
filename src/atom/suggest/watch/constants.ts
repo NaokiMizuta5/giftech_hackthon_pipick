@@ -63,7 +63,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 4,
-        img: require('https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link'),
+        img: require('https://drive.google.com/file/d/1UWN5y64bGlxE3sASXcY8YNroNCpmhT7Y/view?usp=drive_link'),
         placeName: '日本のウユニ塩湖',
         tags: ['#香川', '#絶景', '#非日常', '#天空の鏡', '#死ぬまでに見たい夕陽'],
         detail: {
@@ -108,7 +108,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 7,
-        img: require('https://drive.google.com/file/d/1l_l5J0Tl0nVcLkv9wmaAVmCxmeyTIsPl/view?usp=drive_link'),
+        img: require('https://drive.google.com/file/d/1P02ds89mlkQKxQeL_MbouuYdZhckYM-L/view?usp=drive_link'),
         placeName: '幻の村',
         tags: ['#北海道', '#かまくら', '#氷', '#温泉', '#湖'],
         detail: {
@@ -123,7 +123,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 8,
-        img: require(' https://drive.google.com/file/d/1dnWEXpcsP7UZXWtcXCcN59a9bTRQ4UpB/view?usp=drive_link'),
+        img: require('https://drive.google.com/file/d/1dnWEXpcsP7UZXWtcXCcN59a9bTRQ4UpB/view?usp=drive_link'),
         placeName: '日本一危険な公園',
         tags: ['#岐阜', '#公園', '#奇妙', '#感覚バグ', '#不思議空間'],
         detail: {
