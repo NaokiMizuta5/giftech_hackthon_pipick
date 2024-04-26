@@ -81,7 +81,7 @@ export function Header() {
                   );
                   return (
                     <Button
-                      key={item.id}
+                      key={`${item.id}-${item.enCharacterName}`}
                       onPress={() =>
                         handlePressButton({
                           color: item.color,

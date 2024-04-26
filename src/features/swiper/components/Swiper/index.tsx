@@ -112,7 +112,11 @@ export function Swiper() {
                   >
                     {item.tags.map((tag) => {
                       if (!tag) return;
-                      return <TagText key={item.index}>{tag}</TagText>;
+                      return (
+                        <TagText key={`${item.index}-${item.img}`}>
+                          {tag}
+                        </TagText>
+                      );
                     })}
                   </HStack>
                 </Box>
