@@ -3,7 +3,7 @@ import type { SuggestData } from "../types";
 export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('https://drive.google.com/file/d/1nDUjez-angJrZW1WwgDuvUOFWEhk8pC-/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1nDUjez-angJrZW1WwgDuvUOFWEhk8pC-/view?usp=drive_link"},
         placeName: 'ブルーマン東京',
         tags: ['#パフォーマンス', '#ジャパンツアー', '#奇想天外', '#口からマシュマロ'],
         detail: {
@@ -18,7 +18,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('https://drive.google.com/file/d/1-e6QnlNxGXaoMfaNsMJuz0CoayYam488/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1-e6QnlNxGXaoMfaNsMJuz0CoayYam488/view?usp=drive_link"},
         placeName: 'サマソニ',
         tags: ['#千葉', '#音楽フェスティバル', '#ロック', '#夏といえば'],
         detail: {
@@ -33,7 +33,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 2,
-        img: require('https://drive.google.com/file/d/1lDRiX9-CKcM78_Vf-7ufmZKBs_NR6HFD/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1lDRiX9-CKcM78_Vf-7ufmZKBs_NR6HFD/view?usp=drive_link"},
         placeName: 'イケイケ乗り物',
         tags: ['#静岡', '#バイク', '#ミュージアム', '#無免許', '#スーパーカー'],
         detail: {
@@ -48,7 +48,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 3,
-        img: require('https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link"},
         placeName: '天空テラス',
         tags: ['#長野', '#リゾート', '#絶景', '#アルプス超え', '#最高'],
         detail: {
@@ -63,7 +63,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 4,
-        img: require('https://drive.google.com/file/d/1UWN5y64bGlxE3sASXcY8YNroNCpmhT7Y/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1UWN5y64bGlxE3sASXcY8YNroNCpmhT7Y/view?usp=drive_link"},
         placeName: '日本のウユニ塩湖',
         tags: ['#香川', '#絶景', '#非日常', '#天空の鏡', '#死ぬまでに見たい夕陽'],
         detail: {
@@ -78,7 +78,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 5,
-        img: require('https://drive.google.com/file/d/1P8idepB7aikTTSrIYw83GiiRSJLBxAVh/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1P8idepB7aikTTSrIYw83GiiRSJLBxAVh/view?usp=drive_link"},
         placeName: '青い池',
         tags: ['#北海道', '#絶景', '#神秘的', '#青', '#iPhone'],
         detail: {
@@ -93,7 +93,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 6,
-        img: require('https://drive.google.com/file/d/1aJUAicqoO_nVmyvt2GAVk9-aSPkhzI-l/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1aJUAicqoO_nVmyvt2GAVk9-aSPkhzI-l/view?usp=drive_link"},
         placeName: 'まじでデカい美術館',
         tags: ['#徳島', '#美術館', '#デカい', '#米津', '#礼拝堂'],
         detail: {
@@ -108,7 +108,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 7,
-        img: require('https://drive.google.com/file/d/1P02ds89mlkQKxQeL_MbouuYdZhckYM-L/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1P02ds89mlkQKxQeL_MbouuYdZhckYM-L/view?usp=drive_link"},
         placeName: '幻の村',
         tags: ['#北海道', '#かまくら', '#氷', '#温泉', '#湖'],
         detail: {
@@ -123,7 +123,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 8,
-        img: require('https://drive.google.com/file/d/1dnWEXpcsP7UZXWtcXCcN59a9bTRQ4UpB/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1dnWEXpcsP7UZXWtcXCcN59a9bTRQ4UpB/view?usp=drive_link"},
         placeName: '日本一危険な公園',
         tags: ['#岐阜', '#公園', '#奇妙', '#感覚バグ', '#不思議空間'],
         detail: {
@@ -138,7 +138,7 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 9,
-        img: require('https://drive.google.com/file/d/1HzjjoeAG55bPU6EM-3yA2fjN-HnE9KQk/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1HzjjoeAG55bPU6EM-3yA2fjN-HnE9KQk/view?usp=drive_link"},
         placeName: '美術の島',
         tags: ['#香川', '#地中', '#銭湯', '#水玉かぼちゃ', '#ヘンテコ建築'],
         detail: {
@@ -152,10 +152,11 @@ export const INITIAL_WATCH_SUGGEST_DATA: SuggestData[] = [
         },
     },
 ];
+
 export const INITIAL_WATCH_FAVORITE_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('https://drive.google.com/file/d/1nDUjez-angJrZW1WwgDuvUOFWEhk8pC-/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1nDUjez-angJrZW1WwgDuvUOFWEhk8pC-/view?usp=drive_link"},
         placeName: 'ブルーマン東京',
         tags: ['#パフォーマンス', '#ジャパンツアー', '#奇想天外', '#口からマシュマロ'],
         detail: {
@@ -170,7 +171,7 @@ export const INITIAL_WATCH_FAVORITE_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('https://drive.google.com/file/d/1-e6QnlNxGXaoMfaNsMJuz0CoayYam488/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1-e6QnlNxGXaoMfaNsMJuz0CoayYam488/view?usp=drive_link"},
         placeName: 'サマソニ',
         tags: ['#千葉', '#音楽フェスティバル', '#ロック', '#夏といえば'],
         detail: {
@@ -184,10 +185,11 @@ export const INITIAL_WATCH_FAVORITE_DATA: SuggestData[] = [
         },
     },
 ];
+
 export const INITIAL_WATCH_DONE_DATA: SuggestData[] = [
     {
         index: 2,
-        img: require('https://drive.google.com/file/d/1lDRiX9-CKcM78_Vf-7ufmZKBs_NR6HFD/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1lDRiX9-CKcM78_Vf-7ufmZKBs_NR6HFD/view?usp=drive_link"},
         placeName: 'イケイケ乗り物',
         tags: ['#静岡', '#バイク', '#ミュージアム', '#無免許', '#スーパーカー'],
         detail: {
@@ -202,7 +204,7 @@ export const INITIAL_WATCH_DONE_DATA: SuggestData[] = [
     },
     {
         index: 3,
-        img: require('https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link'),
+        img: {uri: "https://drive.google.com/file/d/1RdPDAtmB_fAroou19v3_DpBNMmSZI296/view?usp=drive_link"},
         placeName: '天空テラス',
         tags: ['#長野', '#リゾート', '#絶景', '#アルプス超え', '#最高'],
         detail: {
