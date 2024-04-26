@@ -128,7 +128,7 @@ export function Swiper() {
       })}
       <Modal isOpen={visible} onClose={() => setVisible(false)}>
         <ModalBackdrop />
-        <ModalContent style={styles.modal}>
+        <ModalContent bgColor="black" width="80%" height="70%">
           <ModalHeader>
             <ModalCloseButton>
               <Icon as={CloseIcon} />
@@ -178,10 +178,5 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)", //黒色の50%透明度
     justifyContent: "center",
     alignItems: "center",
-  },
-  modal: {
-    backgroundColor: "black",
-    height: "70%",
-    width: "80%",
   },
 });
