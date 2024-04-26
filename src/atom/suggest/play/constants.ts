@@ -3,7 +3,7 @@ import type { SuggestData } from "../types";
 export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     {
         index: 0,
-        img: require('./assets/1.jpg'),
+        img: require('https://drive.google.com/file/d/1tCR71gvPNTE4OWoV7QKd26hQQmKl6zMj/view?usp=drive_link'),
         placeName: 'ペイントバトル',
         tags: ['#北海道', '#リアルスプ◯トゥーン', '#ハラハラドキドキ', '#アメリカスポーツ', '#旗取った人が勝ち'],
         detail: {
@@ -18,7 +18,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 1,
-        img: require('./assets/2.jpg'),
+        img: require('https://drive.google.com/file/d/17t3mwjMMcIw8Go7tlpsW23LmyoET1ryG/view?usp=drive_link'),
         placeName: '目に見えるものだけが全てじゃない',
         tags: ['#東京', '#怖', '#もはや目は必要ない', '#どこに連れてかれるの？', '#ハラハラドキドキ'],
         detail: {
@@ -31,7 +31,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 2,
-        img: require('./assets/3.jpg'),
+        img: require('https://drive.google.com/file/d/1_3w2fglbM9X78J08EB0AGi60Tyq3LGBs/view?usp=drive_link'),
         placeName: '"それ"が付いたらオワリ',
         tags: ['#theEND', '#どこまでできるか', '#IQ1以上', '#攻めが肝心'],
         detail: {
@@ -60,7 +60,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
     {
         index: 4,
-        img: require('./assets/5.jpg'),
+        img: require('https://drive.google.com/file/d/1ix-VtzhwMvaCqMv0DsQCUYn1eJIPEgmE/view?usp=drive_link'),
         placeName: '青い温泉',
         tags: ['#アイスランド', '#癒し', '#ブルーラグーン', '#事前予約', '#ちょっとぬるめでちょうどいい'],
         detail: {
