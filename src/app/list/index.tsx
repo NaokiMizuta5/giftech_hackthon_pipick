@@ -7,6 +7,7 @@ import { Box } from "@gluestack-ui/themed";
 
 export default function ListPage() {
   const { currentCharacter } = useCharactersInfoAtom();
+
   return (
     <FadeInOutView>
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -16,7 +17,7 @@ export default function ListPage() {
             <Gauge character={currentCharacter} withAvatar={true} />
           </Box>
         )}
-        <PlacesList />
+        <PlacesList character={currentCharacter} />
       </Box>
     </FadeInOutView>
   );

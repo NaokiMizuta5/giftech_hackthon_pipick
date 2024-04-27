@@ -17,6 +17,7 @@ import {
 import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-components";
 import * as React from "react";
 import { type ImageSourcePropType, Pressable } from "react-native";
+import type { Character } from "~/src/features/character";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 //List画面で表示する変数は、場所名と画像のみで良い。
@@ -25,11 +26,11 @@ type EachPlaceProps = {
   Img: ImageSourcePropType;
 };
 
-export function PlacesList() {
-  // const {  } = usePlacesList();
-  // const {
-  //   count: atomCount,
-  // } = usePlacesListAtom();
+type PlacesListProps = {
+  character: Character;
+};
+
+export function PlacesList({ character }: PlacesListProps) {
   const { placeInfoList } = usePlaceInfoAtom();
 
   const [visible, setVisible] = React.useState(false);
@@ -79,7 +80,7 @@ export function PlacesList() {
               </ModalCloseButton>
             </ModalHeader>
             <ModalBody>
-              <PlaceDetail index={visibleIndex} />
+              <PlaceDetail index={visibleIndex} character={character} />
             </ModalBody>
           </ModalContent>
         </Modal>

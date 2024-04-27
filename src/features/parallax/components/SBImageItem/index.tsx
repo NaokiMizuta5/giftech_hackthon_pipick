@@ -24,6 +24,7 @@ export const SBImageItem: React.FC<Props> = ({ style, index: _index, img }) => {
     <View style={[styles.container, style]}>
       <ActivityIndicator size="small" />
       <Image
+        alt="memory-disk"
         cachePolicy={"memory-disk"}
         key={index}
         style={styles.image}

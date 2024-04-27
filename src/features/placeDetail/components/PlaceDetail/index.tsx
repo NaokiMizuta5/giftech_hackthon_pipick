@@ -7,41 +7,26 @@ import {
   Text,
   VStack,
 } from "@gluestack-ui/themed";
-import { useEffect, useState } from "react";
-import type { ImageSourcePropType } from "react-native";
+import { useEffect } from "react";
 import { Linking } from "react-native";
-import { useCharactersInfoAtom } from "../../../character/atom";
+import type { Character } from "~/src/features/character";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
-export function PlaceDetail({ index }: { index: number }) {
-  // const {  } = usePlaceDetail();
-  // const {
-  //   count: atomCount,
-  // } = usePlaceDetailAtom();
+type Props = {
+  index: number;
+  character: Character;
+};
+
+export function PlaceDetail({ index, character }: Props) {
   const { placeInfoList } = usePlaceInfoAtom();
   const { img, placeName, detail } = placeInfoList[index];
 
   //ジャンルに応じてキャラクター画像を変更
-  const { currentCharacterId } = useCharactersInfoAtom();
-  const [characterImg, setCharacterImg] = useState<
-    ImageSourcePropType | undefined
-  >(undefined);
-  useEffect(() => {
-    // currentCharacterId の値に応じて画像を設定
-    if (currentCharacterId === "1") {
-      setCharacterImg(require("~/assets/images/MeikaFace.png"));
-    } else if (currentCharacterId === "2") {
-      setCharacterImg(require("~/assets/images/AbbieFace.png"));
-    } else if (currentCharacterId === "3") {
-      setCharacterImg(require("~/assets/images/CooFace.png"));
-    } else {
-      setCharacterImg(require("~/assets/images/MilkyFace.png"));
-    }
-  }, [currentCharacterId]);
-
   if (!img) {
     return <Text textAlign="center">Please Swipe!</Text>;
   }
+
+  useEffect(() => {});
 
   const handlePress = (url: string) => {
     Linking.openURL(url).catch((err) =>
@@ -50,7 +35,7 @@ export function PlaceDetail({ index }: { index: number }) {
   };
 
   return (
-    <Box>
+    <Box paddingBottom="$4">
       <VStack>
         <Box justifyContent="center" alignItems="center">
           <Text
@@ -63,7 +48,13 @@ export function PlaceDetail({ index }: { index: number }) {
           >
             {placeName}
           </Text>
-          <Image source={img} width={200} height={200} borderRadius={10} />
+          <Image
+            alt="suggest contents"
+            source={img}
+            width={200}
+            height={200}
+            borderRadius={10}
+          />
         </Box>
         <Box justifyContent="flex-start" alignItems="flex-start" marginTop="$4">
           {Object.entries(detail.star).map(([key, value]) => (
@@ -75,9 +66,9 @@ export function PlaceDetail({ index }: { index: number }) {
               fontSize={18}
             >
               {key}:
-              {Array.from({ length: value }).map(() => (
+              {Array.from({ length: value }).map((_, index) => (
                 <Text
-                  key={key}
+                  key={`${index}-${key}`}
                   color="$white"
                   textAlign="center"
                   marginLeft={10}
@@ -92,26 +83,27 @@ export function PlaceDetail({ index }: { index: number }) {
         {/* コメントとキャラクター画像を表示 */}
         <Box marginTop="$5" marginBottom="$5">
           <HStack>
-            {characterImg === undefined ? (
+            {character && (
               <Image
-                source={require("~/assets/images/AbbieFace.png")}
-                width={50}
-                height={50}
-                marginLeft={10}
-              />
-            ) : (
-              <Image
-                source={characterImg}
-                width={50}
-                height={50}
-                marginLeft={10}
+                alt="character Abbie"
+                source={
+                  character.enName === "Meika"
+                    ? require("~/assets/images/MeikaFace.png")
+                    : character.enName === "Abbie"
+                      ? require("~/assets/images/AbbieFace.png")
+                      : character.enName === "Coo"
+                        ? require("~/assets/images/CooFace.png")
+                        : character.enName === "Milky"
+                          ? require("~/assets/images/MilkyFace.png")
+                          : null
+                }
               />
             )}
             <Box
               bgColor="#464646"
               justifyContent="center"
               alignItems="center"
-              width="75%"
+              width="65%"
               marginLeft={10}
               borderRadius={10}
             >
