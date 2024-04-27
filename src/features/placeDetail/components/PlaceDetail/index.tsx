@@ -9,17 +9,19 @@ import {
 } from "@gluestack-ui/themed";
 import { useEffect } from "react";
 import { Linking } from "react-native";
+import type { SuggestData } from "~/src/atom/suggest/types";
 import type { Character } from "~/src/features/character";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 type Props = {
   index: number;
   character: Character;
+  suggestData: SuggestData[];
 };
 
-export function PlaceDetail({ index, character }: Props) {
+export function PlaceDetail({ index, character, suggestData }: Props) {
   const { placeInfoList } = usePlaceInfoAtom();
-  const { img, placeName, detail } = placeInfoList[index];
+  const { img, placeName, detail } = suggestData[index];
 
   //ジャンルに応じてキャラクター画像を変更
   if (!img) {
