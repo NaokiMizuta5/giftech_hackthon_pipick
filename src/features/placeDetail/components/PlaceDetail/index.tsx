@@ -115,7 +115,7 @@ export function PlaceDetail({ index }: { index: number }) {
               marginLeft={10}
               borderRadius={10}
             >
-              <Text color="white" textAlign="center" width="80%">
+              <Text color="white" textAlign="left" width="80%">
                 {detail.comment}
               </Text>
             </Box>
