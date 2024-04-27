@@ -262,5 +262,4 @@ export const INITIAL_MAKE_DONE_DATA: SuggestData[] = [
             comment: "自分で植えてお世話したおこめは味も格別よ🌾",
         },
     },
-  },
 ];
