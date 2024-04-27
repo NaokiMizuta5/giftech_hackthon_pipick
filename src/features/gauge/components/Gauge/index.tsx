@@ -35,6 +35,8 @@ export function Gauge({ character, withAvatar }: Props) {
               <AvatarImage source={require("~/assets/images/AbbieFace.png")} />
             ) : character.enName === "Coo" ? (
               <AvatarImage source={require("~/assets/images/CooFace.png")} />
+            ) : character.enName === "Milky" ? (
+              <AvatarImage source={require("~/assets/images/MilkyFace.png")} />
             ) : null}
           </Avatar>
         )}

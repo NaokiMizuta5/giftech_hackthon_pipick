@@ -67,15 +67,17 @@ export function Header() {
               paddingLeft="$4"
               paddingRight="$4"
             >
-              <Pressable onPress={() => lazyRouterPush("home")}>
-                <Icon
-                  as={ChevronLeftIcon}
-                  color="$white"
-                  size="xl"
-                  opacity={isHomePath ? 0 : 100}
-                />
-              </Pressable>
-              <HStack gap="$2" alignItems="center">
+              {!isHomePath && (
+                <Pressable onPress={() => lazyRouterPush("home")}>
+                  <Icon as={ChevronLeftIcon} color="$white" size="xl" />
+                </Pressable>
+              )}
+              <HStack
+                alignItems="center"
+                marginLeft="$4"
+                gap="$1"
+                overflow="scroll"
+              >
                 {isListPath
                   ? renderListMenuItems.map(
                       (item) =>

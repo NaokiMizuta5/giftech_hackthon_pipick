@@ -85,6 +85,13 @@ export function Parallax() {
             return (
               <SBItem index={index} img={require("~/assets/images/Coo.png")} />
             );
+          if (menuItems[index].enCharacterName === "Milky")
+            return (
+              <SBItem
+                index={index}
+                img={require("~/assets/images/Milky.png")}
+              />
+            );
           return <SBItem index={index} />;
         }}
       />
