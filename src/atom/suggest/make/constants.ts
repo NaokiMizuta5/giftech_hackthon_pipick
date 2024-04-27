@@ -1,3 +1,4 @@
+
 import type { SuggestData } from "../types";
 
 export const INITIAL_MAKE_SUGGEST_DATA: SuggestData[] = [
