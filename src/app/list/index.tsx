@@ -8,16 +8,16 @@ import { Box } from "@gluestack-ui/themed";
 import { useSuggestAtom } from "~/src/atom/suggest/atom";
 
 export default function ListPage() {
-  const { currentMenu } = useHeaderAtom();
+  const { currentMenu, selectedListMenu } = useHeaderAtom();
   const { currentCharacter } = useCharactersInfoAtom();
   const {
     suggestData,
     // addSuggestData,
     // removeSuggestData,
-    // favoriteData,
+    favoriteData,
     // addFavoriteData,
     // removeFavoriteData,
-    // doneData,
+    doneData,
     // addDoneData,
     // removeDoneData,
   } = useSuggestAtom(currentMenu.menuName);
@@ -31,8 +31,14 @@ export default function ListPage() {
             <Gauge character={currentCharacter} withAvatar={true} />
           </Box>
         )}
-        {currentCharacter && (
-          <PlacesList character={currentCharacter} suggestData={suggestData} />
+        {currentCharacter && selectedListMenu && (
+          <PlacesList
+            character={currentCharacter}
+            suggestData={suggestData}
+            favoriteData={favoriteData}
+            doneData={doneData}
+            selectedListMenu={selectedListMenu}
+          />
         )}
       </Box>
     </FadeInOutView>

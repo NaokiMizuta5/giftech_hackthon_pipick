@@ -19,7 +19,7 @@ import * as React from "react";
 import { type ImageSourcePropType, Pressable } from "react-native";
 import type { SuggestData } from "~/src/atom/suggest/types";
 import type { Character } from "~/src/features/character";
-import { usePlaceInfoAtom } from "../../../placeInfo/atom";
+import type { ListMenuItem } from "~/src/features/header";
 
 //List画面で表示する変数は、場所名と画像のみで良い。
 type EachPlaceProps = {
@@ -30,11 +30,18 @@ type EachPlaceProps = {
 type PlacesListProps = {
   character: Character;
   suggestData: SuggestData[];
+  favoriteData: SuggestData[];
+  doneData: SuggestData[];
+  selectedListMenu: ListMenuItem;
 };
 
-export function PlacesList({ character, suggestData }: PlacesListProps) {
-  const { placeInfoList } = usePlaceInfoAtom();
-
+export function PlacesList({
+  character,
+  suggestData,
+  favoriteData,
+  doneData,
+  selectedListMenu,
+}: PlacesListProps) {
   const [visible, setVisible] = React.useState(false);
   const [visibleIndex, setVisibleIndex] = React.useState<number>(0);
 
@@ -97,20 +104,35 @@ export function PlacesList({ character, suggestData }: PlacesListProps) {
   return (
     <Box backgroundColor="$black" justifyContent="center" alignItems="center">
       <ScrollView width="100%" height="100%">
-        {suggestData.map((place) => (
-          <Pressable
-            key={`${place.index}`}
-            onPress={() => handlePress(place.index)}
-          >
-            <VStack width="100%" alignItems="center" space="md">
-              <EachPlace
+        {selectedListMenu.id === "0"
+          ? favoriteData.map((place) => (
+              <Pressable
                 key={`${place.index}`}
-                placeName={place.placeName}
-                Img={place.img}
-              />
-            </VStack>
-          </Pressable>
-        ))}
+                onPress={() => handlePress(place.index)}
+              >
+                <VStack width="100%" alignItems="center" space="md">
+                  <EachPlace
+                    key={`${place.index}`}
+                    placeName={place.placeName}
+                    Img={place.img}
+                  />
+                </VStack>
+              </Pressable>
+            ))
+          : doneData.map((place) => (
+              <Pressable
+                key={`${place.index}`}
+                onPress={() => handlePress(place.index)}
+              >
+                <VStack width="100%" alignItems="center" space="md">
+                  <EachPlace
+                    key={`${place.index}`}
+                    placeName={place.placeName}
+                    Img={place.img}
+                  />
+                </VStack>
+              </Pressable>
+            ))}
       </ScrollView>
     </Box>
   );
