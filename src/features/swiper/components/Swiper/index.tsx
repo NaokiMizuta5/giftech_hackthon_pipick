@@ -16,6 +16,7 @@ import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
 import { useColorThemeAtom } from "~/src/atom";
+import { PAGE_HEIGHT, PAGE_WIDTH } from "~/src/constants";
 import { PlaceDetail } from "~/src/features/placeDetail";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
@@ -87,8 +88,8 @@ export function Swiper() {
           >
             <Box pointerEvents="box-none">
               <TinderCard
-                cardWidth={320}
-                cardHeight={640}
+                cardWidth={PAGE_WIDTH * 0.85}
+                cardHeight={PAGE_HEIGHT * 0.72}
                 OverlayLabelRight={OverlayRight}
                 OverlayLabelLeft={OverlayLeft}
                 cardStyle={styles.card}
@@ -118,9 +119,7 @@ export function Swiper() {
                     {item.tags.map((tag) => {
                       if (!tag) return;
                       return (
-                        <TagText key={`${item.index}-${item.img}`}>
-                          {tag}
-                        </TagText>
+                        <TagText key={`${item.index}-${tag}`}>{tag}</TagText>
                       );
                     })}
                   </HStack>
