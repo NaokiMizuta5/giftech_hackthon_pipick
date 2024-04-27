@@ -14,3 +14,8 @@ export type MenuItem = {
   color: Color;
 };
 export type InitialMenuItemsAtom = MenuItem[];
+export type ListMenuItem = {
+  id: "0" | "1" | "2" | "3";
+  label: string;
+  active: boolean;
+};

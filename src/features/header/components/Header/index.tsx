@@ -18,7 +18,8 @@ import type { Color } from "~/src/utils";
 import { useHeaderAtom } from "../../atom";
 
 export function Header() {
-  const { menuItems, activateMenu } = useHeaderAtom();
+  const { menuItems, renderListMenuItems, activateMenu, acvivateListMenu } =
+    useHeaderAtom();
   const { colorTheme, setSelectedColorTheme } = useColorThemeAtom();
   const { getCharacterIdByEnCharacterName, setCurrentCharacterId } =
     useCharactersInfoAtom();
@@ -75,44 +76,71 @@ export function Header() {
                 />
               </Pressable>
               <HStack gap="$2" alignItems="center">
-                {renderMenuItems.map((item) => {
-                  const characterId = getCharacterIdByEnCharacterName(
-                    item.enCharacterName,
-                  );
-                  return (
-                    <Button
-                      key={`${item.id}-${item.enCharacterName}`}
-                      onPress={() =>
-                        handlePressButton({
-                          color: item.color,
-                          itemId: item.id,
-                          characterId: characterId,
-                        })
-                      }
-                      paddingHorizontal="$4"
-                      {...(item.active && renderMenuItems.length > 1
-                        ? {
-                            backgroundColor: "$white",
-                            borderRadius: "$3xl",
+                {isListPath
+                  ? renderListMenuItems.map(
+                      (item) =>
+                        item && (
+                          <Button
+                            key={item.id}
+                            onPress={() => acvivateListMenu(item.id)}
+                            paddingHorizontal="$4"
+                            {...(item.active
+                              ? {
+                                  backgroundColor: "$white",
+                                  borderRadius: "$3xl",
+                                }
+                              : {
+                                  backgroundColor: "transparent",
+                                })}
+                          >
+                            <Text
+                              color={item.active ? "$black" : "$white"}
+                              fontSize="$sm"
+                              fontWeight="$bold"
+                            >
+                              {item.label}
+                            </Text>
+                          </Button>
+                        ),
+                    )
+                  : renderMenuItems.map((item) => {
+                      const characterId = getCharacterIdByEnCharacterName(
+                        item.enCharacterName,
+                      );
+                      return (
+                        <Button
+                          key={`${item.id}-${item.enCharacterName}`}
+                          onPress={() =>
+                            handlePressButton({
+                              color: item.color,
+                              itemId: item.id,
+                              characterId: characterId,
+                            })
                           }
-                        : {
-                            backgroundColor: "transparent",
-                          })}
-                    >
-                      <Text
-                        color={
-                          item.active && renderMenuItems.length > 1
-                            ? "$black "
-                            : "$white"
-                        }
-                        fontSize="$sm"
-                        fontWeight="$bold"
-                      >
-                        {item.label}
-                      </Text>
-                    </Button>
-                  );
-                })}
+                          paddingHorizontal="$4"
+                          {...(item.active && renderMenuItems.length > 1
+                            ? {
+                                backgroundColor: "$white",
+                                borderRadius: "$3xl",
+                              }
+                            : {
+                                backgroundColor: "transparent",
+                              })}
+                        >
+                          <Text
+                            color={
+                              item.active && renderMenuItems.length > 1
+                                ? "$black "
+                                : "$white"
+                            }
+                            fontSize="$sm"
+                            fontWeight="$bold"
+                          >
+                            {item.label}
+                          </Text>
+                        </Button>
+                      );
+                    })}
               </HStack>
               <Pressable onPress={() => lazyRouterPush("list")}>
                 <Icon
