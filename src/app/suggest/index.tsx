@@ -2,10 +2,13 @@ import { FadeInOutView } from "@/features/fadeInOutView";
 import { Header } from "@/features/header";
 import { useHeaderAtom } from "@/features/header";
 import { Box } from "@gluestack-ui/themed";
+import { useEffect } from "react";
 import { useSuggestAtom } from "~/src/atom/suggest/atom";
+import { useCharactersInfoAtom } from "~/src/features/character";
 import { Swiper } from "~/src/features/swiper";
 
 export default function Suggest() {
+  const { currentCharacter } = useCharactersInfoAtom();
   const { currentMenu } = useHeaderAtom();
   const {
     suggestData,
@@ -18,6 +21,8 @@ export default function Suggest() {
     addDoneData,
     removeDoneData,
   } = useSuggestAtom(currentMenu.menuName);
+
+  useEffect(() => {}, []);
 
   return (
     <FadeInOutView>
