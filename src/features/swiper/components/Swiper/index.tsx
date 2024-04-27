@@ -16,9 +16,10 @@ import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
 import { useColorThemeAtom } from "~/src/atom";
+import type { SuggestData } from "~/src/atom/suggest/types";
 import { PAGE_HEIGHT, PAGE_WIDTH } from "~/src/constants";
+import type { Character } from "~/src/features/character";
 import { PlaceDetail } from "~/src/features/placeDetail";
-import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 const TagText = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -33,8 +34,12 @@ const TagText = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export function Swiper() {
-  const { placeInfoList } = usePlaceInfoAtom(); //表示する画像等の情報を取得
+type Props = {
+  character: Character;
+  suggestData: SuggestData[];
+};
+
+export function Swiper({ character, suggestData }: Props) {
   const { colorTheme } = useColorThemeAtom();
   const backgroundColor = getThemeOneColor(colorTheme);
   const OverlayRight = () => {
@@ -80,7 +85,7 @@ export function Swiper() {
 
   return (
     <Box flex={1}>
-      {placeInfoList.map((item) => {
+      {suggestData.map((item) => {
         return (
           <Pressable
             onPress={handlePress(item.index)}
@@ -138,7 +143,11 @@ export function Swiper() {
             </ModalCloseButton>
           </ModalHeader>
           <ModalBody>
-            <PlaceDetail index={selectedPlaceIndex} />
+            <PlaceDetail
+              character={character}
+              suggestData={suggestData}
+              index={selectedPlaceIndex}
+            />
           </ModalBody>
         </ModalContent>
       </Modal>

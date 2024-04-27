@@ -17,6 +17,7 @@ import {
 import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-components";
 import * as React from "react";
 import { type ImageSourcePropType, Pressable } from "react-native";
+import type { SuggestData } from "~/src/atom/suggest/types";
 import type { Character } from "~/src/features/character";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
@@ -28,9 +29,10 @@ type EachPlaceProps = {
 
 type PlacesListProps = {
   character: Character;
+  suggestData: SuggestData[];
 };
 
-export function PlacesList({ character }: PlacesListProps) {
+export function PlacesList({ character, suggestData }: PlacesListProps) {
   const { placeInfoList } = usePlaceInfoAtom();
 
   const [visible, setVisible] = React.useState(false);
@@ -80,7 +82,11 @@ export function PlacesList({ character }: PlacesListProps) {
               </ModalCloseButton>
             </ModalHeader>
             <ModalBody>
-              <PlaceDetail index={visibleIndex} character={character} />
+              <PlaceDetail
+                index={visibleIndex}
+                character={character}
+                suggestData={suggestData}
+              />
             </ModalBody>
           </ModalContent>
         </Modal>
@@ -91,7 +97,7 @@ export function PlacesList({ character }: PlacesListProps) {
   return (
     <Box backgroundColor="$black" justifyContent="center" alignItems="center">
       <ScrollView width="100%" height="100%">
-        {placeInfoList.map((place) => (
+        {suggestData.map((place) => (
           <Pressable
             key={`${place.index}`}
             onPress={() => handlePress(place.index)}
