@@ -7,7 +7,7 @@ export const INITIAL_EAT_SUGGEST_DATA: SuggestData[] = [
       uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihYntrLXJPM1THVHhJy4nGhQ_JvqXzLhzNtiwA0a92KM9W6if_9lSvDkcKg5fy0nwrz7QLCF8I7DDigU3RW-PDILxL4dm53ljw=w950-h993-rw-v1",
     },
     placeName: "お箸はそろそろ飽きたでしょ？",
-    tags: ["東京", "魚介", "アメリカン", "スパイシー,", "ワイルド"],
+    tags: ["東京", "魚介", "アメリカン", "スパイシー", "ワイルド"],
     detail: {
       star: {
         ワイルド: 8,

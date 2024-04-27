@@ -2,6 +2,7 @@ import type {
   InitialIsLeftIconAtom,
   InitialIsRightIconAtom,
   InitialMenuItemsAtom,
+  ListMenuItem,
   MenuItem,
 } from "../types";
 
@@ -32,6 +33,14 @@ export const INITIAL_MENU_ITEMS_ATOM: InitialMenuItemsAtom = [
     active: false,
     color: "orange",
   },
+  {
+    id: "4",
+    menuName: "watch",
+    enCharacterName: "Milky",
+    label: "みる",
+    active: false,
+    color: "green",
+  },
 ];
 export const INITIAL_CURRENT_MENU_ATOM: MenuItem = {
   id: "1",
@@ -41,3 +50,30 @@ export const INITIAL_CURRENT_MENU_ATOM: MenuItem = {
   active: true,
   color: "pink",
 };
+export const INITIAL_LIST_MENU_ITEMS_ATOM: ListMenuItem[] = [
+  {
+    id: "0",
+    label: "気になる",
+    active: true,
+  },
+  {
+    id: "1",
+    label: "つくった",
+    active: false,
+  },
+  {
+    id: "2",
+    label: "あそんだ",
+    active: false,
+  },
+  {
+    id: "3",
+    label: "たべた",
+    active: false,
+  },
+  {
+    id: "4",
+    label: "みた",
+    active: false,
+  },
+];

@@ -24,7 +24,7 @@ export function FindButton() {
     >
       <HStack gap="$4">
         <Icon as={FavouriteIcon} size="xl" color="$white" />
-        <ButtonText textAlign="center">みつける</ButtonText>
+        <ButtonText textAlign="center">PICKする</ButtonText>
       </HStack>
     </Button>
   );

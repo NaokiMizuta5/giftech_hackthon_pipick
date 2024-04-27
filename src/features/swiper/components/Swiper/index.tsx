@@ -3,7 +3,6 @@ import {
   Box,
   CloseIcon,
   HStack,
-  Heading,
   Modal,
   ModalBackdrop,
   ModalBody,
@@ -17,6 +16,8 @@ import * as React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
 import { TinderCard } from "rn-tinder-card";
 import { useColorThemeAtom } from "~/src/atom";
+import { PAGE_HEIGHT, PAGE_WIDTH } from "~/src/constants";
+import { PlaceDetail } from "~/src/features/placeDetail";
 import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 const TagText = ({ children }: { children: React.ReactNode }) => {
@@ -47,7 +48,7 @@ export function Swiper() {
         backgroundColor={backgroundColor}
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
-          Like
+          PICK
         </Text>
       </Box>
     );
@@ -62,16 +63,18 @@ export function Swiper() {
         alignItems="center"
         backgroundColor="$gray"
       >
-        <Text color="$white" fontWeight="$bold" fontSize="$xl">
-          Nope
+        <Text color="$black" fontWeight="$bold" fontSize="$xl">
+          SKIP
         </Text>
       </Box>
     );
   };
 
   const [visible, setVisible] = React.useState(false);
+  const [selectedPlaceIndex, setSelectedPlaceIndex] = React.useState(0);
 
-  const handlePress = () => {
+  const handlePress = (index: number) => () => {
+    setSelectedPlaceIndex(index); //indexを元に、、詳細情報を取得する。
     setVisible(true);
   };
 
@@ -79,11 +82,14 @@ export function Swiper() {
     <Box flex={1}>
       {placeInfoList.map((item) => {
         return (
-          <Pressable onPress={handlePress} key={`${item.index}-${item.img}`}>
+          <Pressable
+            onPress={handlePress(item.index)}
+            key={`${item.index}-${item.img}`}
+          >
             <Box pointerEvents="box-none">
               <TinderCard
-                cardWidth={320}
-                cardHeight={500}
+                cardWidth={PAGE_WIDTH * 0.85}
+                cardHeight={PAGE_HEIGHT * 0.72}
                 OverlayLabelRight={OverlayRight}
                 OverlayLabelLeft={OverlayLeft}
                 cardStyle={styles.card}
@@ -112,7 +118,9 @@ export function Swiper() {
                   >
                     {item.tags.map((tag) => {
                       if (!tag) return;
-                      return <TagText key={item.index}>{tag}</TagText>;
+                      return (
+                        <TagText key={`${item.index}-${tag}`}>{tag}</TagText>
+                      );
                     })}
                   </HStack>
                 </Box>
@@ -123,23 +131,14 @@ export function Swiper() {
       })}
       <Modal isOpen={visible} onClose={() => setVisible(false)}>
         <ModalBackdrop />
-        <ModalContent>
+        <ModalContent bgColor="black" width="80%" height="70%">
           <ModalHeader>
-            <Heading size="lg">header</Heading>
             <ModalCloseButton>
               <Icon as={CloseIcon} />
             </ModalCloseButton>
           </ModalHeader>
           <ModalBody>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              pulvinar, nisl nec vestibulum commodo, mauris nisl efficitur
-              libero, id ultricies mi nisl nec purus. Nullam sit amet
-              sollicitudin libero, sit amet ultricies elit. Nullam euismod
-              tincidunt orci, ut vehicula libero. Nullam sit amet sollicitudin
-              libero, sit amet ultricies elit. Nullam euismod tincidunt orci, ut
-              vehicula libero.
-            </Text>
+            <PlaceDetail index={selectedPlaceIndex} />
           </ModalBody>
         </ModalContent>
       </Modal>

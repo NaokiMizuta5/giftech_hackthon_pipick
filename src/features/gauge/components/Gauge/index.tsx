@@ -29,7 +29,27 @@ export function Gauge({ character, withAvatar }: Props) {
         {withAvatar && (
           <Avatar backgroundColor={themeOneColor}>
             <AvatarFallbackText>{character.enName}</AvatarFallbackText>
-            <AvatarImage />
+            {character.enName === "Meika" ? (
+              <AvatarImage
+                alt="character Meika"
+                source={require("~/assets/images/MeikaFace.png")}
+              />
+            ) : character.enName === "Abbie" ? (
+              <AvatarImage
+                alt="character Abbie"
+                source={require("~/assets/images/AbbieFace.png")}
+              />
+            ) : character.enName === "Coo" ? (
+              <AvatarImage
+                alt="character Coo"
+                source={require("~/assets/images/CooFace.png")}
+              />
+            ) : character.enName === "Milky" ? (
+              <AvatarImage
+                alt="character Milky"
+                source={require("~/assets/images/MilkyFace.png")}
+              />
+            ) : null}
           </Avatar>
         )}
         <VStack>

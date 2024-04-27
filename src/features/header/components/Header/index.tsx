@@ -18,7 +18,8 @@ import type { Color } from "~/src/utils";
 import { useHeaderAtom } from "../../atom";
 
 export function Header() {
-  const { menuItems, activateMenu } = useHeaderAtom();
+  const { menuItems, renderListMenuItems, activateMenu, acvivateListMenu } =
+    useHeaderAtom();
   const { colorTheme, setSelectedColorTheme } = useColorThemeAtom();
   const { getCharacterIdByEnCharacterName, setCurrentCharacterId } =
     useCharactersInfoAtom();
@@ -48,7 +49,7 @@ export function Header() {
     <Box bgColor="$black" width="$full">
       <LinearGradient
         color={colorTheme}
-        height="$24"
+        height={120}
         width="$full"
         borderBottomLeftRadius="$3xl"
         borderBottomRightRadius="$3xl"
@@ -66,53 +67,82 @@ export function Header() {
               paddingLeft="$4"
               paddingRight="$4"
             >
-              <Pressable onPress={() => lazyRouterPush("home")}>
-                <Icon
-                  as={ChevronLeftIcon}
-                  color="$white"
-                  size="xl"
-                  opacity={isHomePath ? 0 : 100}
-                />
-              </Pressable>
-              <HStack gap="$2" alignItems="center">
-                {renderMenuItems.map((item) => {
-                  const characterId = getCharacterIdByEnCharacterName(
-                    item.enCharacterName,
-                  );
-                  return (
-                    <Button
-                      key={item.id}
-                      onPress={() =>
-                        handlePressButton({
-                          color: item.color,
-                          itemId: item.id,
-                          characterId: characterId,
-                        })
-                      }
-                      paddingHorizontal="$4"
-                      {...(item.active && renderMenuItems.length > 1
-                        ? {
-                            backgroundColor: "$white",
-                            borderRadius: "$3xl",
+              {!isHomePath && (
+                <Pressable onPress={() => lazyRouterPush("home")}>
+                  <Icon as={ChevronLeftIcon} color="$white" size="xl" />
+                </Pressable>
+              )}
+              <HStack
+                alignItems="center"
+                marginLeft="$4"
+                gap="$1"
+                overflow="scroll"
+              >
+                {isListPath
+                  ? renderListMenuItems.map(
+                      (item) =>
+                        item && (
+                          <Button
+                            key={item.id}
+                            onPress={() => acvivateListMenu(item.id)}
+                            paddingHorizontal="$4"
+                            {...(item.active
+                              ? {
+                                  backgroundColor: "$white",
+                                  borderRadius: "$3xl",
+                                }
+                              : {
+                                  backgroundColor: "transparent",
+                                })}
+                          >
+                            <Text
+                              color={item.active ? "$black" : "$white"}
+                              fontSize="$sm"
+                              fontWeight="$bold"
+                            >
+                              {item.label}
+                            </Text>
+                          </Button>
+                        ),
+                    )
+                  : renderMenuItems.map((item) => {
+                      const characterId = getCharacterIdByEnCharacterName(
+                        item.enCharacterName,
+                      );
+                      return (
+                        <Button
+                          key={`${item.id}-${item.enCharacterName}`}
+                          onPress={() =>
+                            handlePressButton({
+                              color: item.color,
+                              itemId: item.id,
+                              characterId: characterId,
+                            })
                           }
-                        : {
-                            backgroundColor: "transparent",
-                          })}
-                    >
-                      <Text
-                        color={
-                          item.active && renderMenuItems.length > 1
-                            ? "$black "
-                            : "$white"
-                        }
-                        fontSize="$sm"
-                        fontWeight="$bold"
-                      >
-                        {item.label}
-                      </Text>
-                    </Button>
-                  );
-                })}
+                          paddingHorizontal="$4"
+                          {...(item.active && renderMenuItems.length > 1
+                            ? {
+                                backgroundColor: "$white",
+                                borderRadius: "$3xl",
+                              }
+                            : {
+                                backgroundColor: "transparent",
+                              })}
+                        >
+                          <Text
+                            color={
+                              item.active && renderMenuItems.length > 1
+                                ? "$black "
+                                : "$white"
+                            }
+                            fontSize="$sm"
+                            fontWeight="$bold"
+                          >
+                            {item.label}
+                          </Text>
+                        </Button>
+                      );
+                    })}
               </HStack>
               <Pressable onPress={() => lazyRouterPush("list")}>
                 <Icon
