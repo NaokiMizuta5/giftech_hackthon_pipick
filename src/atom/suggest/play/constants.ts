@@ -269,7 +269,295 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
         comment: '',
         },
     },
-
+    {
+        index: 18,
+        img: {
+            uri: "https://drive.google.com/file/d/1QrCOR__gWyLhzmYaRhrXGGsynMoGdl7k/view?usp=drive_link"
+        },
+        placeName: "スチームパンククルーズ",
+        tags: ["#神奈川", "#夜のクルーズ", "#夜景", "#幻想的", "#SF", "#要予約"],
+        detail: {
+            star: {
+                異世界: 1,
+                SF: 3,
+                非日常: 3
+            },
+            GoogleUrl: "https://www.yokohama-cruising.jp/index.php?act=cruise&do=course_calendar&ship_id=003&course_id=00324",
+            comment: "15ヶ所の夜景スポットを堪能できるよ"
+        }
+    },
+    {
+        index: 19,
+        img: {
+            uri: "https://drive.google.com/file/d/1-24x2z6lwUNoqEqRAJv_X1DcOVHk7-dA/view?usp=drive_link"
+        },
+        placeName: "野性の動物を間近で楽しむ",
+        tags: ["#アフリカ", "#ゼロ距離動物園", "#夜は真っ暗", "#ホテル割と綺麗", "#要予約"],
+        detail: {
+            star: {
+                予防接種: 5,
+                清潔感: 3,
+                動物園: 1
+            },
+            GoogleUrl: "https://activities.his-j.com/TourLeaf/CPT0047/",
+            comment: "いつもは檻越しに見てた動物がこんなに近くで観察できちゃう...!"
+        }
+    },
+    {
+        index: 20,
+        img: {
+            uri: "https://drive.google.com/file/d/1_263lcqqGacuq3ZUGAEQwxmCwAWW2LD3/view?usp=drive_link"
+        },
+        placeName: "お城に泊まろう！",
+        tags: ["#ドイツ", "#気分は王族", "#ドレス持参", "#一生に一度は体験してみたい", "#ファンタジー", "#要予約"],
+        detail: {
+            star: {
+                ゴージャス: 5,
+                リッチな気持ち: 5,
+                かくれんぼ: 3
+            },
+            GoogleUrl: "https://www.booking.com/hotel/de/burghotel-auf-schonburg.ja.html",
+            comment: "お城の探索は2時間かかるくらい広いみたい"
+        }
+    },
+    {
+        index: 21,
+        img: {
+            uri: "https://drive.google.com/file/d/1CVW8LvHa9GDPVgmzLeGa32ye2ARiekb2/view?usp=drive_link"
+        },
+        placeName: "生姜に魅了される",
+        tags: ["#栃木", "#しょうがねーな！行ってやるか", "#生姜の部屋", "#新生姜", "#みんな生姜が大好き", "#イワシカ", "#♡"],
+        detail: {
+            star: {
+                ピンク: 5,
+                夢に出る: 5,
+                美味しそう: 1
+            },
+            GoogleUrl: "https://shinshoga-museum.com/",
+            comment: "ぜーんぶピンクで新しい映えスポットかも？"
+        }
+    },
+    {
+        index: 22,
+        img: {
+            uri: "https://drive.google.com/file/d/1ZHjAmxHy1sRm9wqSP9wZD1ncH7Um24Pd/view?usp=drive_link"
+        },
+        placeName: "気分は忍者",
+        tags: ["#長野", "#手裏剣投げ", "#リアル忍者", "#カラクリ屋敷", "#江戸"],
+        detail: {
+            star: {
+                忍び: 5,
+                カラクリ: 5,
+                "手裏剣に見えてきた？": 1
+            },
+            GoogleUrl: "https://www.togakushi-ninja.com/",
+            comment: "カラクリ屋敷から脱出できるかな？"
+        }
+    },
+    {
+        index: 23,
+        img: {
+            uri: "https://drive.google.com/file/d/1DU7Y9jIJY0Zie-l3jH4PgtpTgJKonqKv/view?usp=drive_link"
+        },
+        placeName: "化石発掘体験",
+        tags: ["#福井", "#恐竜はここにいた！", "#化石", "#発掘", "#ツアー"],
+        detail: {
+            star: {
+                砂: 5,
+                大発見の可能性: 5,
+                元気: 3
+            },
+            GoogleUrl: "https://www.dinosaur.pref.fukui.jp/visit/fieldstation",
+            comment: "世紀の大発見になるかも？発掘チームの一員として化石を探すから、すごいものを見つけたら博物館に飾ってもらえるかも！？"
+        }
+    },
+    {
+        index: 24,
+        img: {
+            uri: "https://drive.google.com/file/d/1Th9J-10anDgtqgGvpEtN5g5B8aW1BnIF/view?usp=drive_link"
+        },
+        placeName: "完全没入体験",
+        tags: ["#東京", "#映画の世界", "#ドラマの世界", "#没入", "#現実", "#非日常", "#全員当事者"],
+        detail: {
+            star: {
+                中世: 2,
+                いろいろ: 4,
+                ドラマチック: 5
+            },
+            GoogleUrl: "https://immersivefort.com/",
+            comment: "次々起こるドラマチックな出来事に眼が離せないー！"
+        }
+    },
+    {
+        index: 25,
+        img: {
+            uri: "https://drive.google.com/file/d/1SNBud8xF0MnHnw9UASfJPoEGP5OtXJpy/view?usp=drive_link"
+        },
+        placeName: "イルカと泳ぐ",
+        tags: ["#静岡", "#憧れのイルカショー", "#イルカと泳ぐ", "#餌やり", "#イルカと友達", "#もはやイルカの気分"],
+        detail: {
+            star: {
+                イルカ: 5,
+                一生の思い出: 4,
+                潮の香り: 5
+            },
+            GoogleUrl: "https://dolphin-fantasy.com/",
+            comment: "水族館のイルカだけじゃなくて、野生のイルカとも戯れちゃう！？"
+        }
+    },
+    {
+        index: 26,
+        img: {
+            uri: "https://drive.google.com/file/d/1oGSb1ypfAkgVWgQYEdlU163cwABzZ3aH/view?usp=drive_link"
+        },
+        placeName: "海底遺跡探検",
+        tags: ["#沖縄", "#ダイビング", "#初心者OK", "#ワクワク", "#冒険"],
+        detail: {
+            star: {
+                冒険: 5,
+                珍しさ: 4,
+                パイレーツ: 1
+            },
+            GoogleUrl: "https://yonaguniyds.com/diving/",
+            comment: "日本で海底遺跡が見られるのはここだけ！"
+        }
+    },
+    {
+        index: 27,
+        img: {
+            uri: "https://drive.google.com/file/d/1cFw3LoJC0cuE-IENZanntCDlDSwOOt6-/view?usp=drive_link"
+        },
+        placeName: "MR.JUMP",
+        tags: ["#愛知", "#トランポリンパーク", "#トランポリンだけじゃない？", "#ジャンプ", "#足腰"],
+        detail: {
+            star: {
+                ジャンプ: 5,
+                弾力: 4,
+                ビョーン: 5
+            },
+            GoogleUrl: "https://mrjump.jp/",
+            comment: "結構高さあるトランポリンを使った色んなアクティビティが室内で楽しめるよ"
+        }
+    },
+    {
+        index: 28,
+        img: {
+            uri: "https://drive.google.com/file/d/14ejzGmrwm8LZV_uC4A8XEyUVUQ9B440k/view?usp=drive_link"
+        },
+        placeName: "大人のための謎解きパズル",
+        tags: ["#パズル", "#難易度エグい", "#謎解き", "#大人用", "#ストーリー"],
+        detail: {
+            star: {
+                謎: 5,
+                運: 1,
+                難易度: 5
+            },
+            GoogleUrl: "https://store.kibidango.com/products/cluebox",
+            comment: "何時間でクリアできる？立体になったパズルの箱を開けるとそこには...?"
+        }
+    },
+    {
+        index: 29,
+        img: {
+            uri: "https://drive.google.com/file/d/1q6WKdUK2-bDoMHvtiOn-0v6ijY_J-bCS/view?usp=drive_link"
+        },
+        placeName: "世界をゲームで制覇！",
+        tags: ["#東京", "#ボードゲームカフェ", "#世界", "#種類多すぎ", "#知らない人とめちゃ盛り上がる", "#時間が溶ける"],
+        detail: {
+            star: {
+                数: 5,
+                時間の感覚: 1,
+                居心地の良さ: 4
+            },
+            GoogleUrl: "https://jellyjellycafe.com/about",
+            comment: "迷ったら店員さんがおすすめしてくれるから安心！"
+        }
+    },
+    {
+        index: 30,
+        img: {
+            uri: "https://drive.google.com/file/d/133iG1MGN-bzPG-afhyDuEJsnp01W1enl/view?usp=drive_link"
+        },
+        placeName: "レーサー気分で汗をかこう",
+        tags: ["#千葉", "#車", "#レース", "#昨日までの自分を追い抜く", "#ストレス発散", "#良い運動", "#免許不要"],
+        detail: {
+            star: {
+                運動不足解消: 5,
+                競争心: 3,
+                かっこいい: 5
+            },
+            GoogleUrl: "https://www.neospeedpark.com/",
+            comment: "だんだん上達していく感覚が最高に楽しい！"
+        }
+    },
+    {
+        index: 31,
+        img: {
+            uri: "https://drive.google.com/file/d/1J3FxlM9GzP0k3WmLhJJ7s7ucKRXvwL_D/view?usp=drive_link"
+        },
+        placeName: "このゲームの鍵は\"缶\"",
+        tags: ["#缶蹴り", "#桃缶", "#隠れる場所必要", "#結構ハマる", "#そして走る", "#大人数"],
+        detail: {
+            star: {
+                運動能力: 3,
+                飛距離: 2,
+                替えの缶: 3
+            },
+            GoogleUrl: "https://www.japan-sports.or.jp/portals/0/acp_SP/shidousya_kankeri.html",
+            comment: "簡単なルールだからこそハマっちゃう"
+        }
+    },
+    {
+        index: 32,
+        img: {
+            uri: "https://drive.google.com/file/d/1ewPjKnnPNAoTzHMWVXuIuTGQPBmnwVwy/view?usp=drive_link"
+        },
+        placeName: "2本の大縄",
+        tags: ["#ダブルダッチ", "#3人以上", "#世界的な大会が開かれるレベル", "#新スポーツ", "#最近はクラブもできている"],
+        detail: {
+            star: {
+                ジャンプ: 4,
+                楽しさ: 5,
+                持久力: 5
+            },
+            GoogleUrl: "https://www.recreation.jp/asobi/article/86/3/9",
+            comment: "最近流行っていて大学のサークルにもあるんだとか"
+        }
+    },
+    {
+        index: 33,
+        img: {
+            uri: "https://drive.google.com/file/d/1NoiLb0bS3XenCaFSWMxsSPqcfHY9-i3Q/view?usp=drive_link"
+        },
+        placeName: "小さな暴走族",
+        tags: ["#ラジコン", "#操作が肝心", "#色んな車種が試せる", "#家にあるだけでかっこいい説"],
+        detail: {
+            star: {
+                音: 4,
+                馬力: 3,
+                繊細さ: 2
+            },
+            GoogleUrl: "https://www.tamiya.com/japan/rc/index.html",
+            comment: "好みの車種を見つけるところからもう楽しい！カスタムもいいね"
+        }
+    },
+    {
+        index: 34,
+        img: {
+            uri: "https://drive.google.com/file/d/1kMGFan2SGJRcy4aczRHjsemDtP85aquS/view?usp=drive_link"
+        },
+        placeName: "スケボー",
+        tags: ["#かっこいい", "#技がたくさん", "#奥が深い", "#バランス感覚", "#思いきりが肝心"],
+        detail: {
+            star: {
+                バランス: 4,
+                勢い: 3,
+                ちょっとした恐怖: 2
+            },
+            GoogleUrl: "https://www.seiko.co.jp/magazine/article/00057.html",
+            comment: "スケボーは持ち運びやすいから慣れたら移動手段にも！"
+        }
+    }
 ];
 export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
     {
