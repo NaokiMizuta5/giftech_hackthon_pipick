@@ -28,6 +28,14 @@ export const INITIAL_CHARACTERS_INFO_ATOM: InitialCharactersInfoAtom = [
     requireNext: 3,
     currentStep: 2,
   },
+  {
+    id: "4",
+    enName: "Milky",
+    jaName: "ミルキー",
+    level: 4,
+    requireNext: 4,
+    currentStep: 3,
+  },
 ];
 
 export const INITIAL_CURRENT_CHARACTER_ID_ATOM: InitialCurrentCharacterIdAtom =

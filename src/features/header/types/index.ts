@@ -3,8 +3,8 @@ import type { Color } from "@/utils";
 
 export type InitialIsLeftIconAtom = boolean;
 export type InitialIsRightIconAtom = boolean;
-export type MenuId = "1" | "2" | "3";
-export type MenuName = "make" | "play" | "eat";
+export type MenuId = "1" | "2" | "3" | "4";
+export type MenuName = "make" | "play" | "eat" | "watch";
 export type MenuItem = {
   id: MenuId;
   menuName: MenuName;
@@ -15,7 +15,7 @@ export type MenuItem = {
 };
 export type InitialMenuItemsAtom = MenuItem[];
 export type ListMenuItem = {
-  id: "0" | "1" | "2" | "3";
+  id: "0" | "1" | "2" | "3" | "4";
   label: string;
   active: boolean;
 };
