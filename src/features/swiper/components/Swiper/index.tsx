@@ -47,7 +47,7 @@ export function Swiper() {
         backgroundColor={backgroundColor}
       >
         <Text color="$white" fontWeight="$bold" fontSize="$xl">
-          Like
+          PICK
         </Text>
       </Box>
     );
@@ -62,8 +62,8 @@ export function Swiper() {
         alignItems="center"
         backgroundColor="$gray"
       >
-        <Text color="$white" fontWeight="$bold" fontSize="$xl">
-          Nope
+        <Text color="$black" fontWeight="$bold" fontSize="$xl">
+          SKIP
         </Text>
       </Box>
     );
