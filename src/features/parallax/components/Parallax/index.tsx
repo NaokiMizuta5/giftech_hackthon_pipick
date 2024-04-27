@@ -1,5 +1,5 @@
 import { PAGE_HEIGHT, PAGE_WIDTH } from "@/constants";
-import { Box } from "@gluestack-ui/themed";
+import { Box, Text } from "@gluestack-ui/themed";
 import { type ComponentProps, useEffect, useRef, useState } from "react";
 import { useSharedValue } from "react-native-reanimated";
 import Carousel from "react-native-reanimated-carousel";
@@ -28,11 +28,19 @@ export function Parallax() {
 
   const carouselRef = useRef<any>(null);
   const [_currentIndex, _setCurrentIndex] = useState(0);
+  const [scrolling, setScrolling] = useState(false);
+
+  const [msg, setMsg] = useState("");
+
+  const handleOnScrollBegin = () => {
+    setScrolling(true);
+  };
 
   const handleOnScrollEnd = (index: number) => {
     setSelectedColorTheme(menuItems[index].color);
     setCurrentCharacterId(`${index + 1}` as CharacterId);
     activateMenu(`${index + 1}`);
+    setScrolling(false);
   };
 
   useEffect(() => {
@@ -41,6 +49,15 @@ export function Parallax() {
       if (targetMenuItem) {
         const targetIndex = menuItems.indexOf(targetMenuItem);
         carouselRef.current.scrollTo({ index: targetIndex });
+        if (targetMenuItem.enCharacterName === "Meika") {
+          setMsg("今日は何つくろかっな~");
+        } else if (targetMenuItem.enCharacterName === "Abbie") {
+          setMsg("･･･アビーと遊ぼ？");
+        } else if (targetMenuItem.enCharacterName === "Coo") {
+          setMsg("世の中の食べもの制覇するぞ〜！！");
+        } else {
+          setMsg("たくさんみて学ぶのよ");
+        }
       }
     }
   }, [menuItems]);
@@ -59,6 +76,7 @@ export function Parallax() {
           progressValue.value = absoluteProgress;
           _setCurrentIndex(absoluteProgress);
         }}
+        onScrollBegin={handleOnScrollBegin}
         onScrollEnd={handleOnScrollEnd}
         mode="parallax"
         modeConfig={{
@@ -95,6 +113,24 @@ export function Parallax() {
           return <SBItem index={index} />;
         }}
       />
+      {!scrolling && (
+        <Box
+          bgColor="#464646"
+          width={280}
+          height="$12"
+          borderRadius={10}
+          justifyContent="center"
+          style={{
+            position: "absolute",
+            bottom: "10%",
+            left: "12%",
+          }}
+        >
+          <Text textAlign="left" color="white" paddingLeft={10}>
+            {msg}
+          </Text>
+        </Box>
+      )}
     </Box>
   );
 }
