@@ -224,8 +224,9 @@ export const INITIAL_MAKE_FAVORITE_DATA: SuggestData[] = [
             GoogleUrl: "https://maps.app.goo.gl/xW2Kwb6MeHviTYqo7",
             comment: "よく飲むアレの作り方って難しいか確かめてみたくない？",
         },
-    },
-];
+      },
+  ]
+
 export const INITIAL_MAKE_DONE_DATA: SuggestData[] = [
     {
         index: 8,
@@ -261,4 +262,5 @@ export const INITIAL_MAKE_DONE_DATA: SuggestData[] = [
             comment: "自分で植えてお世話したおこめは味も格別よ🌾",
         },
     },
+  },
 ];
