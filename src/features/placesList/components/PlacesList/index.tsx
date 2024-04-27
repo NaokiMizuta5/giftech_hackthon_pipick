@@ -45,7 +45,12 @@ export function PlacesList() {
       return null;
     }
     return (
-      <Box backgroundColor="#333333" borderRadius={10} width="100%">
+      <Box
+        backgroundColor="#333333"
+        borderRadius={10}
+        width="100%"
+        marginTop={10}
+      >
         <HStack alignItems="center" mt="$2" mb="$2" ml="$4">
           <Image source={Img} alt="Place Image" borderRadius={10} />
           <Text
