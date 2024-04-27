@@ -49,7 +49,7 @@ export function Header() {
     <Box bgColor="$black" width="$full">
       <LinearGradient
         color={colorTheme}
-        height="$24"
+        height={120}
         width="$full"
         borderBottomLeftRadius="$3xl"
         borderBottomRightRadius="$3xl"
