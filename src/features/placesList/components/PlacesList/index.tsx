@@ -21,7 +21,6 @@ import { usePlaceInfoAtom } from "../../../placeInfo/atom";
 
 //List画面で表示する変数は、場所名と画像のみで良い。
 type EachPlaceProps = {
-  index: number;
   placeName: string;
   Img: ImageSourcePropType;
 };
@@ -34,15 +33,15 @@ export function PlacesList() {
   const { placeInfoList } = usePlaceInfoAtom();
 
   const [visible, setVisible] = React.useState(false);
-  // const [visibleIndex, setVisibleIndex] = React.useState<number>(0);
+  const [visibleIndex, setVisibleIndex] = React.useState<number>(0);
 
-  const handlePress = () => {
-    // setVisibleIndex(visibleIndex);
+  const handlePress = (targetIndex: number) => {
+    setVisibleIndex(targetIndex);
     setVisible(true);
   };
 
-  const EachPlace: React.FC<EachPlaceProps> = ({ index, placeName, Img }) => {
-    if (!(placeName && Img && index)) {
+  const EachPlace: React.FC<EachPlaceProps> = ({ placeName, Img }) => {
+    if (!(placeName && Img)) {
       return null;
     }
     return (
@@ -60,7 +59,13 @@ export function PlacesList() {
             {placeName}
           </Text>
         </HStack>
-        <Modal isOpen={visible} onClose={() => setVisible(false)}>
+        <Modal
+          isOpen={visible}
+          onClose={() => {
+            setVisible(false);
+            setVisibleIndex(0);
+          }}
+        >
           <ModalBackdrop />
           <ModalContent bgColor="black" width="80%" height="70%">
             <ModalHeader>
@@ -69,7 +74,7 @@ export function PlacesList() {
               </ModalCloseButton>
             </ModalHeader>
             <ModalBody>
-              <PlaceDetail index={index} />
+              <PlaceDetail index={visibleIndex} />
             </ModalBody>
           </ModalContent>
         </Modal>
@@ -80,18 +85,20 @@ export function PlacesList() {
   return (
     <Box backgroundColor="$black" justifyContent="center" alignItems="center">
       <ScrollView width="100%" height="100%">
-        <Pressable onPress={handlePress}>
-          <VStack width="100%" alignItems="center" space="md">
-            {placeInfoList.map((place) => (
+        {placeInfoList.map((place) => (
+          <Pressable
+            key={`${place.index}`}
+            onPress={() => handlePress(place.index)}
+          >
+            <VStack width="100%" alignItems="center" space="md">
               <EachPlace
                 key={`${place.index}`}
-                index={place.index}
                 placeName={place.placeName}
                 Img={place.img}
               />
-            ))}
-          </VStack>
-        </Pressable>
+            </VStack>
+          </Pressable>
+        ))}
       </ScrollView>
     </Box>
   );
