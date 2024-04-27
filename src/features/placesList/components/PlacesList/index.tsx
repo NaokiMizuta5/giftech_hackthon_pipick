@@ -18,6 +18,7 @@ import { Icon } from "@gluestack-ui/themed/build/components/Badge/styled-compone
 import * as React from "react";
 import { type ImageSourcePropType, Pressable } from "react-native";
 import type { SuggestData } from "~/src/atom/suggest/types";
+import { PAGE_HEIGHT } from "~/src/constants";
 import type { Character } from "~/src/features/character";
 import type { ListMenuItem } from "~/src/features/header";
 
@@ -102,8 +103,13 @@ export function PlacesList({
   };
 
   return (
-    <Box backgroundColor="$black" justifyContent="center" alignItems="center">
-      <ScrollView width="100%" height="100%">
+    <Box
+      backgroundColor="$black"
+      justifyContent="center"
+      alignItems="center"
+      height={PAGE_HEIGHT * 0.65}
+    >
+      <ScrollView width="100%">
         {selectedListMenu.id === "0"
           ? favoriteData.map((place) => (
               <Pressable
