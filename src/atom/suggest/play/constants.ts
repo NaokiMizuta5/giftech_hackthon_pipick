@@ -235,7 +235,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 10,
     img: {
-      uri: "https://drive.google.com/file/d/1M8Yg2rcqBF1IhvNpfU7hlRs4fDAY9aCp/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZ35-9rshW87h2DtpLx5AcHNjza1EhfccCAMT4R9nAlbi90GTD7qyISPWAz2Qx1fMPgStHuqwDEBLKKDlanPuXp2jxh9cS4Aw=w3600-h2010-rw-v1",
     },
     placeName: "スダテリョウ",
     tags: [
@@ -770,7 +770,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
   },
 ];
-export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [ 
+export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
   {
     index: 19,
     img: {
@@ -845,46 +845,46 @@ export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
   },
 ];
 export const INITIAL_PLAY_DONE_DATA: SuggestData[] = [
-    {
-        index: 2,
-        img: {
-          uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBhrbzK6__tkwiM-ugdMNS8bVHudaMEXqQpIVQlEs8EtRrRXKoK7_O3n1A1rzSpRxxAFTxkF7-gJb1BYXgoVEX3Jg99eYhCw=w1920-h908",
-        },
-        placeName: '"それ"が付いたらオワリ',
-        tags: ["theEND", "どこまでできるか", "IQ1以上", "攻めが肝心"],
-        detail: {
-          star: {
-            緊張感: 0,
-            ホラー: 0,
-            ドキドキ: 0,
-          },
-          GoogleUrl:
-            "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%8A%E3%81%A8%E3%82%8A",
-          comment: "どこまでできるか、、見ものだね、、",
-        },
+  {
+    index: 2,
+    img: {
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBhrbzK6__tkwiM-ugdMNS8bVHudaMEXqQpIVQlEs8EtRrRXKoK7_O3n1A1rzSpRxxAFTxkF7-gJb1BYXgoVEX3Jg99eYhCw=w1920-h908",
+    },
+    placeName: '"それ"が付いたらオワリ',
+    tags: ["theEND", "どこまでできるか", "IQ1以上", "攻めが肝心"],
+    detail: {
+      star: {
+        緊張感: 0,
+        ホラー: 0,
+        ドキドキ: 0,
       },
-      {
-        index: 3,
-        img: {
-          uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbxjjyHCwhS6pqj4yN3RWIAk4Rrp38m8xV_QTuLhusbaIwyyCtKjJAiWCGGlhhVDQuj1p6sA50Jy1xGKiTgadEQVTQGvml6Sb0=w1920-h908",
-        },
-        placeName: "水のうえを駆け回る",
-        tags: [
-          "滋賀",
-          "ハムスターかな？",
-          "全身筋肉痛ww",
-          "アクティビティ",
-          "浮遊感がおもろい",
-          "駐車場有",
-        ],
-        detail: {
-          star: {
-            体力: 4,
-            元気: 3,
-            水: 5,
-          },
-          GoogleUrl: "https://www.asoview.com/base/153749/",
-          comment: "水上の浮遊感って新しい感覚！",
-        },
+      GoogleUrl:
+        "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%8A%E3%81%A8%E3%82%8A",
+      comment: "どこまでできるか、、見ものだね、、",
+    },
+  },
+  {
+    index: 3,
+    img: {
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbxjjyHCwhS6pqj4yN3RWIAk4Rrp38m8xV_QTuLhusbaIwyyCtKjJAiWCGGlhhVDQuj1p6sA50Jy1xGKiTgadEQVTQGvml6Sb0=w1920-h908",
+    },
+    placeName: "水のうえを駆け回る",
+    tags: [
+      "滋賀",
+      "ハムスターかな？",
+      "全身筋肉痛ww",
+      "アクティビティ",
+      "浮遊感がおもろい",
+      "駐車場有",
+    ],
+    detail: {
+      star: {
+        体力: 4,
+        元気: 3,
+        水: 5,
       },
+      GoogleUrl: "https://www.asoview.com/base/153749/",
+      comment: "水上の浮遊感って新しい感覚！",
+    },
+  },
 ];
