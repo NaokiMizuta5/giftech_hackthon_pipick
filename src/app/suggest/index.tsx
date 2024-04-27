@@ -14,7 +14,7 @@ export default function Suggest() {
     // addSuggestData,
     // removeSuggestData,
     // favoriteData,
-    // addFavoriteData,
+    addFavoriteData,
     // removeFavoriteData,
     // doneData,
     // addDoneData,
@@ -27,7 +27,11 @@ export default function Suggest() {
         <Header />
         <Box padding="$4" />
         {currentCharacter && (
-          <Swiper character={currentCharacter} suggestData={suggestData} />
+          <Swiper
+            character={currentCharacter}
+            suggestData={suggestData}
+            addFavoriteData={addFavoriteData}
+          />
         )}
       </Box>
     </FadeInOutView>
