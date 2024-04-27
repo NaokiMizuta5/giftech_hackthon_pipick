@@ -4,7 +4,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 0,
     img: {
-      uri: "https://drive.google.com/file/d/1qF0SDt3fY52f3HCv2dkikWZe20hZsJgI/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbdlpgmZatHlSJCgEzhtVHTvpg63y2gThC3i6J2eBcoHAn7a8ofKuMcGqH91TJX7pe0csPwvLj-_8gQ2A6zpLaxprgg78iL7C0=w1920-h908",
     },
     placeName: "ペイントバトル",
     tags: [
@@ -27,7 +27,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 1,
     img: {
-      uri: "https://drive.google.com/file/d/1lt0YMG2ukC_ME98lRqCqx7tlKTFJQldT/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbTwu4I4tEmScFTr3v3FkKkLSAqpWhqF7hfgOPvvtR28He0xtFYoDkesPsXmJcYqwabw21GQFkmuRa5UbaTzhWnpfpb1OuLfXU=w1920-h908",
     },
     placeName: "目に見えるものだけが全てじゃない",
     tags: [
@@ -50,7 +50,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 2,
     img: {
-      uri: "https://drive.google.com/file/d/153MzZtpW6iCBYAkCR9c7boD4ciaD2PFF/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBhrbzK6__tkwiM-ugdMNS8bVHudaMEXqQpIVQlEs8EtRrRXKoK7_O3n1A1rzSpRxxAFTxkF7-gJb1BYXgoVEX3Jg99eYhCw=w1920-h908",
     },
     placeName: '"それ"が付いたらオワリ',
     tags: ["theEND", "どこまでできるか", "IQ1以上", "攻めが肝心"],
@@ -68,7 +68,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 3,
     img: {
-      uri: "https://drive.google.com/file/d/1WocCVl2fxEeJ_6ufQdRmjX4NGOJiB7hw/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbxjjyHCwhS6pqj4yN3RWIAk4Rrp38m8xV_QTuLhusbaIwyyCtKjJAiWCGGlhhVDQuj1p6sA50Jy1xGKiTgadEQVTQGvml6Sb0=w1920-h908",
     },
     placeName: "水のうえを駆け回る",
     tags: [
@@ -92,7 +92,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 4,
     img: {
-      uri: "https://drive.google.com/file/d/1j2x7dTE7hGB7Ug_Z_h3GBc-DuLtbU9_e/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbXdwlfCGPovg80WcvX6A_j3HgzL4G4qpTTD5k9MTpHjrLFZLE0W1GFgh8KRf_23gVz1Apw-oltG8uGdb3uJVAkevGy0aj__lQ=w1920-h908-rw-v1",
     },
     placeName: "青い温泉",
     tags: [
@@ -115,7 +115,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 5,
     img: {
-      uri: "https://drive.google.com/file/d/1MSDKr0ntOVTQCMlg3V8ivVhIU-VCal1z/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbwXoKzR6AGph0eRt5HOT_bOQccGCYaQL78TjK6e1u1zFGENCxDxbx5hubqB7mYDCih-QshJ4bBmP94xBRhvbgx6tDEk9gK2Q=w1920-h908-rw-v1",
     },
     placeName: "아이돌",
     tags: [
@@ -143,7 +143,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 6,
     img: {
-      uri: "https://drive.google.com/file/d/11yln0BTB4TlRZcBUOOGzuC0YPd3P2nOJ/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihYcAHTb6_THAxec8gc4XwpNdrkU_hoNb-IBU4-fcG8OkXgaW7o-mg6IOys6GUCkYAvq3lIWxuCP0SgnqMI2w_vNqHQwGi5iCw=w1920-h908-rw-v1",
     },
     placeName: "オトナマキ",
     tags: [
@@ -166,7 +166,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 7,
     img: {
-      uri: "https://drive.google.com/file/d/1eKp13ZO3CIrnBjANpjhG4ImgnMPTzZAA/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbuLcmN7mG1MNyKPCiDjoiAUunsjh3IS8In_u4U_97gVKFbQKRdNeUlo9dclNZj5thI6g0zObllLjiBPaaX4_OFqOGGjhXwxQM=w1920-h908",
     },
     placeName: "己に眠る野獣を目覚めさせる",
     tags: [
@@ -189,7 +189,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 8,
     img: {
-      uri: "https://drive.google.com/file/d/13111vj-01DOgSQDwvOYLuaryg8zpn41f/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZJh_xqyC0TIwl4G9Ub0g2wQ_Iuoyp1UlUmsAml7YulH8XsmHlUrN-rUznG1qnHMf47BE5YuQ0cxqCpuiLlmY6JyZ6IOFLt48k=w1920-h908",
     },
     placeName: "ゴム跳びLev.100",
     tags: [
@@ -212,7 +212,7 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
   {
     index: 9,
     img: {
-      uri: "https://drive.google.com/file/d/1sDcol0K7zp8MR6S3YVbMiJKBruFzSIcd/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZsZGdyeEfsoZeV3x8LYnwz_N1PR95dtldxzgmSNgWNtVHbs_PEcrJ8-fL-yeIX3rPedM3SSDeYzsB81EpQqOwO2-VSITD11R4=w1920-h908-rw-v1",
     },
     placeName: "謎解き！脱出ゲーム！",
     tags: [
@@ -770,11 +770,11 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
     },
   },
 ];
-export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
+export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [ 
   {
     index: 19,
     img: {
-      uri: "https://drive.google.com/file/d/1-24x2z6lwUNoqEqRAJv_X1DcOVHk7-dA/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZireM0nzQQiyruvOUKZUancqxfDhyykuYevJ0_XQgxLGXvUweboSRd4gZRZQ2D7TyDv-K4j400GuYcmx5gmdZZyPwzX3rmx-4=w1920-h908",
     },
     placeName: "野性の動物を間近で楽しむ",
     tags: [
@@ -797,7 +797,7 @@ export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
   {
     index: 20,
     img: {
-      uri: "https://drive.google.com/file/d/1_263lcqqGacuq3ZUGAEQwxmCwAWW2LD3/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihatXrNU6Ew1AjdM82VjayppnGRAsaEsDKBnUqseRIRdR88JbQ5zTw7TmtwoNnirQPY9zAhyNW6W7q3msIpMAURptRDBvE1ubg=w1920-h908",
     },
     placeName: "お城に泊まろう！",
     tags: [
@@ -822,7 +822,7 @@ export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
   {
     index: 25,
     img: {
-      uri: "https://drive.google.com/file/d/1SNBud8xF0MnHnw9UASfJPoEGP5OtXJpy/view?usp=drive_link",
+      uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihaX6d4h4yz6BQodBd6ziERpOjwWNzRSJYTDwy2SxjuykAqoUIdfONy60KSE5CoPuHE5pIXJ65XF8-J1w0CbIxrP0pYWeIEKxA=w1920-h908-rw-v1",
     },
     placeName: "イルカと泳ぐ",
     tags: [
@@ -845,46 +845,46 @@ export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
   },
 ];
 export const INITIAL_PLAY_DONE_DATA: SuggestData[] = [
-  {
-    index: 2,
-    img: {
-      uri: "https://drive.google.com/file/d/153MzZtpW6iCBYAkCR9c7boD4ciaD2PFF/view?usp=drive_link",
-    },
-    placeName: '"それ"が付いたらオワリ',
-    tags: ["theEND", "どこまでできるか", "IQ1以上", "攻めが肝心"],
-    detail: {
-      star: {
-        緊張感: 0,
-        ホラー: 0,
-        ドキドキ: 0,
+    {
+        index: 2,
+        img: {
+          uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBhrbzK6__tkwiM-ugdMNS8bVHudaMEXqQpIVQlEs8EtRrRXKoK7_O3n1A1rzSpRxxAFTxkF7-gJb1BYXgoVEX3Jg99eYhCw=w1920-h908",
+        },
+        placeName: '"それ"が付いたらオワリ',
+        tags: ["theEND", "どこまでできるか", "IQ1以上", "攻めが肝心"],
+        detail: {
+          star: {
+            緊張感: 0,
+            ホラー: 0,
+            ドキドキ: 0,
+          },
+          GoogleUrl:
+            "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%8A%E3%81%A8%E3%82%8A",
+          comment: "どこまでできるか、、見ものだね、、",
+        },
       },
-      GoogleUrl:
-        "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%8A%E3%81%A8%E3%82%8A",
-      comment: "どこまでできるか、、見ものだね、、",
-    },
-  },
-  {
-    index: 3,
-    img: {
-      uri: "https://drive.google.com/file/d/1WocCVl2fxEeJ_6ufQdRmjX4NGOJiB7hw/view?usp=drive_link",
-    },
-    placeName: "水のうえを駆け回る",
-    tags: [
-      "滋賀",
-      "ハムスターかな？",
-      "全身筋肉痛ww",
-      "アクティビティ",
-      "浮遊感がおもろい",
-      "駐車場有",
-    ],
-    detail: {
-      star: {
-        体力: 4,
-        元気: 3,
-        水: 5,
+      {
+        index: 3,
+        img: {
+          uri: "https://lh3.googleusercontent.com/drive-viewer/AKGpihbxjjyHCwhS6pqj4yN3RWIAk4Rrp38m8xV_QTuLhusbaIwyyCtKjJAiWCGGlhhVDQuj1p6sA50Jy1xGKiTgadEQVTQGvml6Sb0=w1920-h908",
+        },
+        placeName: "水のうえを駆け回る",
+        tags: [
+          "滋賀",
+          "ハムスターかな？",
+          "全身筋肉痛ww",
+          "アクティビティ",
+          "浮遊感がおもろい",
+          "駐車場有",
+        ],
+        detail: {
+          star: {
+            体力: 4,
+            元気: 3,
+            水: 5,
+          },
+          GoogleUrl: "https://www.asoview.com/base/153749/",
+          comment: "水上の浮遊感って新しい感覚！",
+        },
       },
-      GoogleUrl: "https://www.asoview.com/base/153749/",
-      comment: "水上の浮遊感って新しい感覚！",
-    },
-  },
 ];
