@@ -37,9 +37,10 @@ const TagText = ({ children }: { children: React.ReactNode }) => {
 type Props = {
   character: Character;
   suggestData: SuggestData[];
+  addFavoriteData: (suggestData: SuggestData) => void;
 };
 
-export function Swiper({ character, suggestData }: Props) {
+export function Swiper({ character, suggestData, addFavoriteData }: Props) {
   const { colorTheme } = useColorThemeAtom();
   const backgroundColor = getThemeOneColor(colorTheme);
   const OverlayRight = () => {
@@ -98,7 +99,7 @@ export function Swiper({ character, suggestData }: Props) {
                 OverlayLabelRight={OverlayRight}
                 OverlayLabelLeft={OverlayLeft}
                 cardStyle={styles.card}
-                onSwipedRight={() => {}}
+                onSwipedRight={() => addFavoriteData(item)}
                 onSwipedLeft={() => {}}
               >
                 {/* 表示する画像 */}
