@@ -561,34 +561,55 @@ export const INITIAL_PLAY_SUGGEST_DATA: SuggestData[] = [
 ];
 export const INITIAL_PLAY_FAVORITE_DATA: SuggestData[] = [
     {
-        index: 0,
-        img: { uri: 'https://drive.google.com/file/d/1qF0SDt3fY52f3HCv2dkikWZe20hZsJgI/view?usp=drive_link' },
-        placeName: 'ペイントバトル',
-        tags: ['#北海道', '#リアルスプ◯トゥーン', '#ハラハラドキドキ', '#アメリカスポーツ', '#旗取った人が勝ち'],
+        index: 19,
+        img: {
+            uri: "https://drive.google.com/file/d/1-24x2z6lwUNoqEqRAJv_X1DcOVHk7-dA/view?usp=drive_link"
+        },
+        placeName: "野性の動物を間近で楽しむ",
+        tags: ["#アフリカ", "#ゼロ距離動物園", "#夜は真っ暗", "#ホテル割と綺麗", "#要予約"],
         detail: {
             star: {
-                ハラハラ: 4,
-                頭脳戦: 3,
-                チームワーク: 5,
+                予防接種: 5,
+                清潔感: 3,
+                動物園: 1
             },
-            GoogleUrl: 'https://activityjapan.com/publish/feature/2862',
-            comment: '時間内にフラッグを所定の場所に持って行ったら勝ち！',
-        },
+            GoogleUrl: "https://activities.his-j.com/TourLeaf/CPT0047/",
+            comment: "いつもは檻越しに見てた動物がこんなに近くで観察できちゃう...!"
+        }
     },
     {
-        index: 1,
-        img: { uri: 'https://drive.google.com/file/d/1lt0YMG2ukC_ME98lRqCqx7tlKTFJQldT/view?usp=drive_link' },
-        placeName: '目に見えるものだけが全てじゃない',
-        tags: ['#東京', '#怖', '#もはや目は必要ない', '#どこに連れてかれるの？', '#ハラハラドキドキ'],
+        index: 20,
+        img: {
+            uri: "https://drive.google.com/file/d/1_263lcqqGacuq3ZUGAEQwxmCwAWW2LD3/view?usp=drive_link"
+        },
+        placeName: "お城に泊まろう！",
+        tags: ["#ドイツ", "#気分は王族", "#ドレス持参", "#一生に一度は体験してみたい", "#ファンタジー", "#要予約"],
         detail: {
             star: {
-                真っ暗: 5,
-                仲間との絆: 5,
-                視界: 0,
+                ゴージャス: 5,
+                リッチな気持ち: 5,
+                かくれんぼ: 3
             },
-            GoogleUrl: 'https://did.dialogue.or.jp/',
-            comment: 'だんだん感覚が鋭くなっていくんだよ〜',
+            GoogleUrl: "https://www.booking.com/hotel/de/burghotel-auf-schonburg.ja.html",
+            comment: "お城の探索は2時間かかるくらい広いみたい"
+        }
+    },
+    {
+        index: 25,
+        img: {
+            uri: "https://drive.google.com/file/d/1SNBud8xF0MnHnw9UASfJPoEGP5OtXJpy/view?usp=drive_link"
         },
+        placeName: "イルカと泳ぐ",
+        tags: ["#静岡", "#憧れのイルカショー", "#イルカと泳ぐ", "#餌やり", "#イルカと友達", "#もはやイルカの気分"],
+        detail: {
+            star: {
+                イルカ: 5,
+                一生の思い出: 4,
+                潮の香り: 5
+            },
+            GoogleUrl: "https://dolphin-fantasy.com/",
+            comment: "水族館のイルカだけじゃなくて、野生のイルカとも戯れちゃう！？"
+        }
     },
 ];
 export const INITIAL_PLAY_DONE_DATA: SuggestData[] = [
