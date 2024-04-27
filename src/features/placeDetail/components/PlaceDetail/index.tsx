@@ -35,7 +35,7 @@ export function PlaceDetail({ index }: { index: number }) {
     } else if (currentCharacterId === "3") {
       setCharacterImg(require("~/assets/images/CooFace.png"));
     } else {
-      setCharacterImg(require("~/assets/images/MirukiFace.png"));
+      setCharacterImg(require("~/assets/images/MilkyFace.png"));
     }
   }, [currentCharacterId]);
 
